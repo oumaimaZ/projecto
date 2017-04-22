@@ -2,9 +2,7 @@
   include 'includes/header.php';
   include 'includes/side_bar.php';
  ?>
- <!-- Page Heading -->
-  <!-- Page Heading -->
-   <!-- Page Heading -->
+ 
         <div id="page-wrapper">
 
             <div class="container-fluid">
