@@ -30,6 +30,7 @@ $query = $db->prepare('SELECT * FROM user as u
 			
 		}
 	}
+//*****************fin connection******************** 
 
 	if (isset($_POST['inscription'])){
   $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
@@ -70,7 +71,8 @@ $query->execute();
   echo"creation not done ";
 
   
-}
-}
+}}
+// ************** fin inscription *****************
+
 
 ?>

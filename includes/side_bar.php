@@ -4,6 +4,15 @@
                     <li>
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> index.php</a>
                     </li>
+                    <!--
+                        ************ oum ********
+                    <li>
+                        <a href="dashhh.php"><i class="fa fa-fw fa-user"></i> $n_maison</a>
+                    </li>
+-->
+                    <li>
+                        <a href="Confpage.php"><i class="fa fa-fw fa-user"></i> Configuration Maison</a>
+                    </li>
                     <li>
                         <a href="user.php"><i class="fa fa-fw fa-user"></i> user</a>
                     </li>
