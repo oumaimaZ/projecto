@@ -50,6 +50,16 @@
 
 </div>
 
+
+
+
+
+
+
+
+
+
+
 <?php  include 'add_piece.php';?>
 <script>
   $(document).ready(function(){
