@@ -1,101 +1,73 @@
 <?php include 'includes/header.php';
         include 'includes/side_bar.php';
-        include 'confpagescript.php';
+
+  include 'add_piece.php';
+
 ?>
 <div id="page-wrapper">
     <div class="container-fluid">
-        <div class="row">
-            <div class="ccol-lg-12">
-            <h1 class="page-header">
-                <!-- ******* Oum ******* -->
-            <?php //$Maison 
-                ?>
-                <small> Configuration Maison</small>
-            </h1>
-            
-        
-        </div>
-        <div class="panel-body">
-            <form role="form" action="dashhh.php" method="POST" class="form-horizontal" id="tache_form">
-                
-            <fieldset>  
-                <legend>Creation Maison </legend>
-                <h5><strong>Nom Maison  : </strong></h5>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                <input class="form-control" placeholder="nom Maison" name="n_maison" type="text" autofocus required>
-                </div>
-                </div>
-                <h5></h5>
-                </fieldset>
-                 <div class="form-group">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="" name="alarme">Alarme
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="" name="garage">Garage
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="" name="portail">Portail
-                                    </label>
-                                </div>
-                            </div>
+       
+              <!-- Page Heading -->
                 <div class="row">
-           <div class="col-md-12">
-             <button class="btn btn-primary pull-left" type="submit" name="create">Ajouter Maison  </button>
-             
-           </div>
-         </div>
-                
-            </form>
-            <form role="form" action="dashhh.php" method="POST" class="form-horizontal" id="tache_form">
-                <fieldset>  
-                <legend>Ajouter Etage </legend>
-                <h5><strong>   Etage  : </strong></h5>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                <input class="form-control" placeholder="nom Etage" name="n_etage" type="text" autofocus required>
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Maison <small>configuration</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> 
+                            </li>
+                        </ol>
+                    </div>
                 </div>
-                </div>
-                    <fieldset>
-                        <legend> Ajouter piece  </legend>
-                   <div class="form-group">
-                        <div class="col-md-3">
-              <label class="control-label col-md-3" for="piece">type de piece</label>
-              <div class="col-md-9">
-                <select class="form-control" name="type" placeholder="nom Maison" autofocus required>
-                              <?php 
-                              $db = new PDO('mysql:host=localhost;dbname=mgp_data;charset=utf8', 'root', '');
-                              $query = $db->query('SELECT titre, id_projet FROM projet');
-                              foreach ($query as $row) {
-                                echo '<option value="'.$row['id_projet'].'" >'.$row['titre'].'</option>';
-                              }
-                              ?>
-                </select>
-              </div>
-            </div>
-                
-                </div>
-                    </fieldset>
-                     <h5><strong>Nom Maison  : </strong></h5>
-                    <div class="form-group">
-                        <div class="col-md-3">
-                <input class="form-control" placeholder="nom Maison" name="n_maison" type="text" autofocus required>
-                </div>
-                </div>
-               
-                </fieldset>
-                
-            </form>
+                <!-- /.row -->
+ <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
             
-
-        
-        
+    
+            <form role="form" action="Confpage.php" method="POST" class="form-horizontal" id="tache_form">
+                
+            
+               
+               <div class="form-group">
+                          <label  class="col-sm-3 control-label" for="nom">Nom de la maison </label>
+                                  <div class="col-xs-3">
+                                    <input type="text" class="form-control" id="maison" placeholder="nom" name="maison"/>
+                                  </div>
+                    
+                      </div>
+               
+                
+                 <div class="form-group">
+                                 <label  class="col-sm-3 control-label" for="nom">Alarme</label>
+                                    <label class="checkbox-inline control-label">
+                                        <div class="col-xs-3">  
+                                             <input type="checkbox" name="Alarme"/>
+                                        </div>
+                                    </label>      
+                                  
+                </div>
+                <div class="form-group">
+                                 <label  class="col-sm-3 control-label" for="nom">Garage</label>
+                                    <label class="checkbox-inline control-label">
+                                        <div class="col-xs-3">  
+                                             <input type="checkbox" name="garage"/>
+                                        </div>
+                                    </label>      
+                                  
+                </div>
+                <div class="form-group">
+                                 <label  class="col-sm-3 control-label" for="nom">Portail</label>
+                                    <label class="checkbox-inline control-label">
+                                        <div class="col-xs-3">  
+                                             <input type="checkbox" name="garage"/>
+                                        </div>
+                                    </label>      
+                                  
+                </div>
+            
             </div>
         </div>
     </div>
@@ -103,9 +75,18 @@
 
 
 
+<div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+           
+ <button class="btn btn-primary col-md-2" data-toggle="modal" data-target="#add_piece"><i class="fa fa-plus-circle"></i> Ajouter piece </button>
 
 
-
+          </div>
+        </div>
+    </div>
+</div>
 
 <?php include 'includes/footer.php'; 
 ?>

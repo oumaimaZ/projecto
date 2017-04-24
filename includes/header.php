@@ -109,7 +109,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Aceuil</a>
+                <a class="navbar-brand" href="index.php">DOMOTIQUE</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -124,12 +124,12 @@
                                     </span>
                                     <div class="media-body">
                                         <h5 class="media-heading">
-<<<<<<< HEAD
+
                                             <strong><?php
                                                  echo $_SESSION['username'];?></strong>
-=======
+
                                             <strong><?php echo $_SESSION['username'];?></strong>
->>>>>>> origin/master
+
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
