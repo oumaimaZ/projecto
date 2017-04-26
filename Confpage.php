@@ -1,7 +1,7 @@
 <?php include 'includes/header.php';
         include 'includes/side_bar.php';
 
-  include 'add_piece.php';
+        include 'add_piece.php';
 
 ?>
 <div id="page-wrapper">
