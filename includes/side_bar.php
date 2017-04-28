@@ -22,9 +22,7 @@
                     <li>
                         <a href="dash.php"><i class="fa fa-fw fa-user"></i> dash</a>
                     </li>
-                    <li>
-                        <a href="dashboard2.php"><i class="fa fa-fw fa-user"></i> dashboard2</a>
-                    </li>
+                   
                    <!-- <li>
                         <a href="charts.php"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
                     </li>

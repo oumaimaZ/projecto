@@ -41,7 +41,8 @@
                                         <i class="fa fa-comments fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
+                                        <div class="huge">
+                                            <input type="checkbox"/></div>
                                         <div>New Comments!</div>
                                     </div>
                                 </div>

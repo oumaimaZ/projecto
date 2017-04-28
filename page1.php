@@ -5,8 +5,6 @@
 <?php
   include 'add_piece.php';
   ?> 
-  
-
 
         <div id="page-wrapper">
             <div class="container-fluid">
@@ -15,11 +13,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Dashboard <small>maison 1</small>
+                           Maison <small></small>
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-dashboard"></i> Dashboard
+                                <i class="fa fa-dashboard"></i>Dashboard
                             </li>
                         </ol>
                     </div>
@@ -68,13 +66,15 @@
 
 
 
+
+
 <?php  include 'add_piece.php';?>
 <script>
   $(document).ready(function(){
     var maxField = 5; 
     var addButton = $('#add_group'); 
     var wrapper = $('#holder');
-    var fieldHTML = '<div class="form-group"><label class="control-label col-md-3" for="piece">type de piece</label><div class="col-md-9"><select class="form-control" name="type"><?php $db = new PDO('mysql:host=localhost;dbname=mgp_data;charset=utf8', 'root', '');$query = $db->query('SELECT titre, id_projet FROM projet');foreach ($query as $row) {echo '<option value="'.$row['id_projet'].'" >'.$row['titre'].'</option>';}?></select></div></div><div class="form-group"><label class="control-label col-md-2" for="user">piece</label><div class="col-md-5"><input type="text" name="titres[]" class="form-control" placeholder="piece" required></div><div class="col-md-5"><input type="text" name="users[]" class="form-control" placeholder="piece" required></div></div>';
+    var fieldHTML = '<br><div class="form-group"><label class="control-label col-md-3" for="piece">type de piece</label><div class="col-md-9"><select class="form-control" name="type"><option value="cuisine" >cuisine</option><option value="chambre" >chambre</option><option value="salon" >salon</option><option value="couloir" >couloir</option></select></div></div><div class="form-group"><label class="control-label col-md-3" for="user"> piece</label><div class="col-md-9"><input type="text" name="titres[]" class="form-control" placeholder="nom" required></div></div><div class="form-group"><label class="control-label col-md-3" for="user"> etages</label><div class="col-md-9"><select class="form-control" name="etage"><option value="etage1" >etage 1</option><option value="etage2" >etage 2</option><option value="etage3" >etage 3</option><option value="etage4" >etage 4</option></select></div></div>';
     var x = 1; //Initial field counter is 1
 
     $(addButton).click(function(){ //Once add button is clicked

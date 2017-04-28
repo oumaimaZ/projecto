@@ -27,29 +27,24 @@
             </div>
             <div class="form-group">
               <label class="control-label col-md-3" for="user"> piece</label>
-              <div class="col-md-9">
-               <input type="text" name="titres[]" class="form-control" placeholder="nom" required>
+                <div class="col-md-9">
+                 <input type="text" name="titres[]" class="form-control" placeholder="nom" required>
+               </div>
              </div>
-             </div>
-             <div class="form-group">
-              <label class="control-label col-md-3" for="user"> piece</label>
-              <div class="col-md-9">
-               <input type="text" name="titres[]" class="form-control" placeholder="nom" required>
-             </div>
-             </div>
+             
             <div class="form-group">
               <label class="control-label col-md-3" for="user"> etages</label>
-             <div class="col-md-9">
-                <select class="form-control" name="etage">
-                              
-                              <option value="etage1" >etage 1</option>
-                               <option value="etage2" >etage 2</option>
-                                <option value="etage3" >etage 3</option>
-                                <option value="etage4" >etage 4</option>
-                              
-                              
-                </select>
-              </div>
+                 <div class="col-md-9">
+                    <select class="form-control" name="etage">
+                                  
+                                  <option value="etage1" >etage 1</option>
+                                   <option value="etage2" >etage 2</option>
+                                    <option value="etage3" >etage 3</option>
+                                    <option value="etage4" >etage 4</option>
+                                  
+                                  
+                    </select>
+                  </div>
              
            </div>
          </div>
@@ -57,7 +52,7 @@
          <div class="row">
            <div class="col-md-12">
           
-             <button class="btn btn-success pull-left" type="button" id="add_group">+</button>
+             <button class="btn btn-sm btn-warning pull-left" type="button" id="add_group">+</button>
            </div>
          </div>
        </form>  
