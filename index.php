@@ -1,6 +1,9 @@
 <?php
   include 'includes/header.php';
   include 'includes/side_bar.php';
+   include 'add_piece.php';
+   include 'modals/view_user.php';
+   include 'modals/view_eclairage.php';
  ?>
 
         <div id="page-wrapper">
@@ -24,95 +27,71 @@
 
               
                 <!-- /.row -->
-
-               
-
-                <div class="row">
-                    <div class="col-lg-3 col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> activities</h3>
-                            </div>
-                            <div class="panel-body">
-                                 
-                             <center><i class="fa fa-toggle-on fa-5x" aria-hidden="true"></i></center> 
-
-                                
-                                
-                            </div>
-                        </div>
-                    </div>
-                   
-
-             
-                    <div class="col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> activities</h3>
-                            </div>
-                            <div class="panel-body">
-                                 
-                                 <center><i class="fa fa-lock fa-5x" aria-hidden="true"></i></center> 
-
-                                
-                                
-                            </div>
-                        </div>
-                    </div>
-                  
-                    <div class="col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> activities</h3>
-                            </div>
-                            <div class="panel-body">
-                                 
-                             <center><i class="fa fa-lightbulb-o fa-5x" aria-hidden="true"></i></center> 
-
-                                
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> activities</h3>
-                            </div>
-                            <div class="panel-body">
-                                 
-                             <center><i class="fa fa-lightbulb-o fa-5x" aria-hidden="true"></i></center> 
-        <i class="glyphicon glyphicon-door"></i>
-
-                                
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> activities</h3>
-                            </div>
-                            <div class="panel-body">
-                                 
-                             <center><i class="fa fa-lightbulb-o fa-5x" aria-hidden="true"></i></center> 
-
-                                
-                                
-                            </div>
-                        </div>
-                    </div>
-                  
-                   
-            </div>
+                <div="row">
           
+             <div class="col-lg-12 panel panel-default">
+               
+           
+                  
+                    
+                     <div class="col-lg-2">
+                       
+                           <a href="#" class="btn btn-sq-lg btn-primary" data-toggle="modal" data-target="#view_user">
+                            <i class="fa fa-lock fa-5x fa-5x"></i><br/>
+                                    Demo Primary <br>Button
+                            </a>
+                        </div>
+                        
+                        
+
+            
+                  
+                     <div class="col-lg-2">
+                       
+                           <a href="#" class="btn btn-sq-lg btn-primary" data-toggle="modal" data-target="#view_user">
+                            <i class="fa fa-user fa-5x fa-5x"></i><br/>
+                                    Alert <br>
+                                    <?php 
+
+                                    ?>
+                            </a>
+                        </div>
+                        
+                  
+
+                    <div class="col-lg-2">
+                       
+                           <a href="#" class="btn btn-sq-lg btn-primary" data-toggle="modal" data-target="#view_eclairage">
+                            <i class="fa fa-lock fa-5x fa-5x"></i><br/>
+                                    Demo Primary <br>Button
+                            </a>
+                    </div>
+
+                    <div class="col-lg-2">
+                       
+                           <a href="#" class="btn btn-sq-lg btn-primary" data-toggle="modal" data-target="#add_piece">
+                            <i class="fa fa-lock fa-5x fa-5x"></i><br/>
+                                    Demo Primary <br>Button
+                            </a>
+                    </div>
+                    <div class="col-lg-2">
+                       
+                           <a href="#" class="btn btn-sq-lg btn-primary" data-toggle="modal" data-target="#add_piece">
+                            <i class="fa fa-lock fa-5x fa-5x"></i><br/>
+                                    Demo Primary <br>Button
+                            </a>
+                    </div>
+                        
+                    </div>
+
+       
+         </div>
+          </div>
+      </div>
+  </div>
                 <!-- /.row -->
 
 
-
-            </div>
-            <!-- /.container-fluid -->
 
         </div>
         <!-- /#page-wrapper -->

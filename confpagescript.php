@@ -1,4 +1,4 @@
-<?php
+ <?php
 if(isset($_POST['create'])){
     $db =new PDO('mysql:host=localhost;dbname=domotique_data;charest=utf8','root','');
     $n_maison=$POST[''];
