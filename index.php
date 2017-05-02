@@ -83,8 +83,96 @@
                     </div>
                         
                     </div>
+                      <div class="col-lg-12">
+                        <div class="row">
+                           <div class="col-lg-3">
+                                  <div class="panel panel-danger ">
+                                          <div class="panel-heading">
+                                              <h3 class="panel-title">Activités</h3>
+                                          </div>
+                                          <div class="panel-body">
+                                              Panel content
+                                          </div>
+                                  </div>
+                          </div>
+                          <div class="col-lg-3">
+                                  <div class="panel panel-danger ">
+                                          <div class="panel-heading">
+                                              <h3 class="panel-title">Chambres</h3>
+                                          </div>
+                                          <div class="panel-body">
+                                              Panel content
+                                          </div>
+                                  </div>
+                          </div>
+                          <div class="col-lg-3">
+                                  <div class="panel panel-danger ">
+                                          <div class="panel-heading">
+                                              <h3 class="panel-title">Alarmes</h3>
+                                          </div>
+                                          <div class="panel-body">
+                                              Panel content
+                                          </div>
+                                  </div>
+                          </div>
+                          <div class="col-lg-3">
+                                  <div class="panel panel-danger ">
+                                          <div class="panel-heading">
+                                              <h3 class="panel-title">Eclairages</h3>
+                                          </div>
+                                          <div class="panel-body">
+                                              Panel content
+                                          </div>
+                                  </div>
+                          </div>
+              
+                        </div><!-- /.row -->
 
-       
+
+                      <div class="row">
+                           <div class="col-lg-3">
+                                  <div class="panel panel-danger ">
+                                          <div class="panel-heading">
+                                              <h3 class="panel-title">Volets</h3>
+                                          </div>
+                                          <div class="panel-body">
+                                              Panel content
+                                          </div>
+                                  </div>
+                          </div>
+                          <div class="col-lg-3">
+                                  <div class="panel panel-danger ">
+                                          <div class="panel-heading">
+                                              <h3 class="panel-title">Portails</h3>
+                                          </div>
+                                          <div class="panel-body">
+                                              Panel content
+                                          </div>
+                                  </div>
+                          </div>
+                          <div class="col-lg-3">
+                                  <div class="panel panel-danger ">
+                                          <div class="panel-heading">
+                                              <h3 class="panel-title">Cameras</h3>
+                                          </div>
+                                          <div class="panel-body">
+                                              Panel content
+                                          </div>
+                                  </div>
+                          </div>
+                          <div class="col-lg-3">
+                                  <div class="panel panel-danger ">
+                                          <div class="panel-heading">
+                                              <h3 class="panel-title">Securité  (porte)</h3>
+                                          </div>
+                                          <div class="panel-body">
+                                              Panel content
+                                          </div>
+                                  </div>
+                          </div>
+              
+                        </div><!-- /.row -->
+
          </div>
           </div>
       </div>

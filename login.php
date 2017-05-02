@@ -94,7 +94,7 @@
                                     <input class="form-control" placeholder="Password" name="mdp" type="password" required>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button class="btn btn-lg btn-success btn-block" type="submit" name="inscription" data-toggle="modal" data-target="#verrif">nous joindre  </button>
+                                <button class="btn btn-lg btn-success btn-block" type="submit" name="inscription" >nous joindre  </button>
                             </fieldset>
                         </form>
                     </div>
@@ -131,29 +131,7 @@
         </div>
     </div>
 
-<div class="modal fade" id="verrif" tabindex="-1" role="dialog"  aria-hidden="true">
-  <div class="modal-dialog">
-    
-        <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-       
-      
-      <div class="modal-body">
-     <h1> 
 
-
-
-
-        Inscription réussie
-       veuillez vous connecter pour acceder a la plateforme </h1>
-      </div>
-      
-        <button type="button" class="btn btn-default" data-dismiss="modal"><h3> ok   </h3></button>
-        
-      
-    </div>
-  </div>
-</div>'
    <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
