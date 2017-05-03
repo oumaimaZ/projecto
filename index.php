@@ -4,6 +4,11 @@
    include 'add_piece.php';
    include 'modals/view_user.php';
    include 'modals/view_eclairage.php';
+    include 'modals/view_volet.php';
+include 'modals/view_securite.php';
+include 'modals/view_camera.php';
+include 'modals/view_alarm.php';
+include 'modals/view_portail.php';
  ?>
 
         <div id="page-wrapper">
@@ -27,7 +32,8 @@
 
               
                 <!-- /.row -->
-                <div="row">
+                <!-- row button
+                <div class="row">
           
              <div class="col-lg-12 panel panel-default">
                
@@ -83,25 +89,32 @@
                     </div>
                         
                     </div>
+-->
                       <div class="col-lg-12">
                         <div class="row">
                            <div class="col-lg-3">
-                                  <div class="panel panel-danger ">
+                                  <div class="panel panel-danger  " data-toggle="modal" data-target="#view_user">
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Activités</h3>
                                           </div>
                                           <div class="panel-body">
-                                              Panel content
+                                             <center> <img src ='images/activities.png'></center>
+                                             
+                                              <div>
                                           </div>
+                                     
+                                          
                                   </div>
                           </div>
+                            </div>
                           <div class="col-lg-3">
-                                  <div class="panel panel-danger ">
+                                  <div class="panel panel-danger " data-toggle="modal" data-target="#view_room">
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Chambres</h3>
                                           </div>
                                           <div class="panel-body">
-                                              Panel content
+                                              <center> <img src="images/door.png"></center>
+                                             
                                           </div>
                                   </div>
                           </div>
@@ -111,17 +124,17 @@
                                               <h3 class="panel-title">Alarmes</h3>
                                           </div>
                                           <div class="panel-body">
-                                              Panel content
+                                              <center> <img src="images/alarm.png"></center>
                                           </div>
                                   </div>
                           </div>
                           <div class="col-lg-3">
-                                  <div class="panel panel-danger ">
+                                  <div class="panel panel-danger " data-toggle="modal" data-target="#view_eclairage">
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Eclairages</h3>
                                           </div>
                                           <div class="panel-body">
-                                              Panel content
+                                               <center> <img src="images/lamp.png"></center> 
                                           </div>
                                   </div>
                           </div>
@@ -136,7 +149,7 @@
                                               <h3 class="panel-title">Volets</h3>
                                           </div>
                                           <div class="panel-body">
-                                              Panel content
+                                            <center> <img src="images/volet.png"></center>
                                           </div>
                                   </div>
                           </div>
@@ -146,17 +159,18 @@
                                               <h3 class="panel-title">Portails</h3>
                                           </div>
                                           <div class="panel-body">
-                                              Panel content
+                                              <center>
+                                              <img src="images/tesportal.png"></center>
                                           </div>
                                   </div>
                           </div>
                           <div class="col-lg-3">
-                                  <div class="panel panel-danger ">
+                                  <div class="panel panel-danger  "data-toggle="modal" data-target="#view_camera">
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Cameras</h3>
                                           </div>
                                           <div class="panel-body">
-                                              Panel content
+                                            <center> <img src="images/cam64.png"></center>
                                           </div>
                                   </div>
                           </div>
@@ -166,7 +180,7 @@
                                               <h3 class="panel-title">Securité  (porte)</h3>
                                           </div>
                                           <div class="panel-body">
-                                              Panel content
+                                            <center> <img src="images/lock.png"></center>
                                           </div>
                                   </div>
                           </div>

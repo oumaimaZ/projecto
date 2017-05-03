@@ -1,3 +1,4 @@
+
 <!-- Modal -->
 <div id="view_eclairage" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -17,21 +18,25 @@
 
                 <?php 
                 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-                $sql='SELECT * FROM user u,maison_user m where m.username =u.username ';
+                $sql="SELECT * FROM equipement join piece on piece=id_piece and type=?";
                      $query = $db->prepare($sql);
-                  $query->execute();
+                  $query->execute(array('lampe'));
   			 while($ligne = $query->fetch())
                 {
-                	if ($ligne['role'] = '1' ) $role= 'tous les priviléges';
-	                else if($ligne['role'] = '2') $role= 'utilisateur';
-	                else $role= 'aucun';
+                 
+                 
+                	
 
 	           echo "  <div class='panel panel-default '>";
              echo "<div class='panel-body '>";
-
-                echo "<label class='control-label col-md-5' for='user'>Membre :  ".$ligne['username']."</label>";
-                
-                echo " <label class='control-label col-md-5' for='user'>a   ".$role." </label>";
+                 
+                echo "<label class='control-label col-md-3' for='user'> equipement  ".$ligne['e_nom']."</label>";
+                 if($ligne['etat']='1')
+                     echo "<img class='col-md-1' src='images/swatcv16.png'>";
+                else  echo "<img class='col-md-1' src='images/swdesc16.png'>";
+                 // echo "<label class='control-label col-md-3' for='user'> piece :  ".$ligne['nom']."</label>";
+                 
+                //  echo "<label class='control-label col-md-3' for='user'>etage :  ".$ligne['etage']."</label>";
                 echo "</div>";
                 echo "</div>";
                		
