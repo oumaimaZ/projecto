@@ -42,7 +42,10 @@ $query = $db->prepare('SELECT * FROM user as u
   $email=$_POST['email'];
    
               if($username != "" && $nom != "" && $prenom !="" && $mdp != "" && $username !="" && $phone !="" && $email !="" ){
-                $sql = 'INSERT INTO user (username,nom,prenom,mdp,phone,email)
+              
+
+
+ $db->exec('INSERT INTO user (username,nom,prenom,mdp,phone,email)
                 VALUES (
                   "'.$username.'",
                   "'.$nom.'",
@@ -50,29 +53,19 @@ $query = $db->prepare('SELECT * FROM user as u
                   "'.$mdp.'",
                   "'.$phone.'",
                   "'.$email.'")
-                  ';
-$query = $db->prepare($sql);
-$query->execute();
-
-$sql2 = 'INSERT INTO maison_user (id_maison,username,role) VALUES (
-                  null,
-                  "'.$username.'",
-                  "1");';
-$query = $db->prepare($sql2);
-$query->execute();
-
- 
+                  ');
+$id = $db->lastInsertId();
+$db>exec('INSERT INTO maison_user (id_maison,username,role) VALUES (
+                  null,$id,"1")');
 
 
+ echo "Inscription termine";
+        }else{
+            echo "Echec lors de votre inscription";
+        }
 
+  }
 
-
-}else{
-  echo"creation not done ";
-
-  
-}}
 // ************** fin inscription *****************
-
 
 ?>

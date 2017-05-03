@@ -1,4 +1,4 @@
-<?php
+           <?php
 // ****************************************SUPPRIMER********************************************
 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
 if(isset($_POST['delete'])){
