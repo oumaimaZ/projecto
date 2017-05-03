@@ -1,7 +1,7 @@
 <?php
   include 'includes/header.php';
   include 'includes/side_bar.php';
-   include 'add_piece.php';
+   include 'modals/add_piece.php';
    include 'modals/view_user.php';
    include 'modals/view_eclairage.php';
  ?>

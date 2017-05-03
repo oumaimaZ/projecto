@@ -112,16 +112,16 @@ $sql='SELECT * FROM user u,maison_user m where m.username =u.username ';
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="dataTable_wrapper">
-            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-              <thead>
+            <table id="table" class="table table-striped table-bordered" id="dataTables-example">
+              <thead >
                 <tr>
  <!--************************************ TABLEAU D'AFFICHAGE **************************** -->                 
-                  <th>#</th>
-                  <th>Username</th>
-                  <th>e_mail</th>
-                  <th>role</th>
-                  <th>é</th>
-                  <th>d</th>
+                  <th text-align:'center'>#</th>
+                  <th align='center'>Username</th>
+                  <th align='center'>e_mail</th>
+                  <th align='center'>role</th>
+                  <th align='center'>é</th>
+                  <th align='center'>d</th>
                 </tr>
               </thead>
               <tbody>
@@ -140,12 +140,12 @@ $sql='SELECT * FROM user u,maison_user m where m.username =u.username ';
                 echo "<td align='center'>".$ligne['email']."</td>";
                 echo "<td align='center'>".$role."</td>";
                 echo'<td align="center"><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target="#edit_user" onclick="triggerModal('.$ligne['username'].');"></a></td>';
-                echo'<td align="center"><a class="menu-icon fa fa-pencil"  data-target="#delete_user" onclick="triggerModal('.$ligne['username'].');"></a></td>';
+                echo'<td align="center"><a class="menu-icon fa fa-trash"  data-target="#delete_user" onclick="triggerModal('.$ligne['username'].');"></a></td>';
                 echo "</tr>";
               }
               ?>
             </tbody>
- 
+
           
         </table>
       </div>

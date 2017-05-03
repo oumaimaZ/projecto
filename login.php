@@ -54,7 +54,7 @@
 
 
 <body>
-<?php include 'loginScript.php'; ?>
+<?php include 'script/loginScript.php'; ?>
 
     <div class="container">
 
