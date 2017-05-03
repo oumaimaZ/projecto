@@ -12,10 +12,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+<style>
+      ul.ui-autocomplete.ui-menu {
+        z-index: 9999;
+      }
+    </style>
 
 
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+<script src="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"></script>
 
 
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+ <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+ <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+<!-- DataTables CSS -->
+    <link href="../../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
     <title>DOMOTIQUE</title>
     <!-- MetisMenu CSS -->
     <link href="../../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
@@ -225,4 +237,5 @@
                     </ul>
                 </li>
             </ul>
+            s
            

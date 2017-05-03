@@ -3,7 +3,7 @@
   include 'includes/side_bar.php';
  ?>
 <?php
-  include 'add_piece.php';
+  include 'modals/add_piece.php';
   ?> 
 
         <div id="page-wrapper">

@@ -59,11 +59,14 @@
                                   
                 </div>
             
+
       <hr>
+
+
             <div class="form-group">
 
-                  <label class="col-sm-3 control-label" for="piece">Type de piece</label>
-                  <div class="col-lg-4">
+                  <label class="col-sm-3 control-label" for="piece">Emplacement</label>
+                  <div class="col-lg-3">
                   <select class="form-control" name="type">
                                 
                                 <option value="cuisine" >cuisine</option>
@@ -72,18 +75,16 @@
                                 <option value="couloir" >couloir</option>              
                   </select>
                   </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-sm-3 control-label" for="user"> Nom de la piece </label>
-                <div class="col-lg-4">
+          
+             
+                <div class="col-lg-3">
                  <input type="text" name="titres[]" class="form-control" placeholder="nom" >
                </div>
              </div>
              
             <div class="form-group" >
               <label class="control-label col-sm-3" for="user"> Etage </label>
-                 <div class="col-md-4">
+                 <div class="col-md-3">
                     <select class="form-control" name="etage">
                                   
                                   <option value="etage1" >etage 1</option>

@@ -1,8 +1,3 @@
-<?php
-    session_start();
-    if(isset($_SESSION['is_connected'])) header("Location: indexc.php");
-?>
-
 
 
 <head>
@@ -24,11 +19,13 @@
     <link href="css/sb-admin.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
     <!-- DataTables CSS -->
     <link href="../../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- Bootstrap Core CSS -->
     <link href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
     
     <!-- Custom CSS -->
     <link href="../../dist/css/sb-admin-2.css" rel="stylesheet">
@@ -48,13 +45,14 @@
     <script src="../../dist/js/bootstrap-tokenfield.js"></script>
     <!-- jQuery UI -->
     <script src="../../dist/js/jquery-ui.js"></script>
+  
 
 </head>
 
 
 
 <body>
-<?php include 'script/loginScript.php'; ?>
+
 
     <div class="container">
 
@@ -77,7 +75,7 @@
                                 </div>
                     <h5>numero de telephone</h5>
                                     <div class="form-group">
-                                    <input class="form-control" placeholder="phone" name="phone" type="text" autofocus required>
+                                    <input class="form-control" placeholder="numero" name="email" type="text" autofocus required>
                                 </div>
 
                     <h5>Username</h5>
@@ -91,10 +89,10 @@
                     <h5>mot de passe</h5>
 
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="mdp" type="password" required>
+                                    <input class="form-control" placeholder="Password" name="password" type="password" required>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button class="btn btn-lg btn-success btn-block" type="submit" name="inscription" >nous joindre  </button>
+                                <button class="btn btn-lg btn-success btn-block" type="submit" name="submit">nous joindre  </button>
                             </fieldset>
                         </form>
                     </div>
@@ -117,10 +115,10 @@
                     <h5>mot de passe</h5>
 
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="mdp" type="password" required>
+                                    <input class="form-control" placeholder="Password" name="password" type="password" required>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button class="btn btn-lg btn-success btn-block" type="submit" name="connexion">s'identifier </button>
+                                <button class="btn btn-lg btn-success btn-block" type="submit" name="submit">s'identifier </button>
                             </fieldset>
                         </form>
                     </div>
@@ -139,6 +137,5 @@
     <script src="js/bootstrap.min.js"></script>
 
 </body>
-
 
 </html>

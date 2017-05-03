@@ -27,7 +27,7 @@
 <script src="../../dist/js/jquery.validate.js"></script>
 <script>
 $(document).ready(function() {
-    $('#dataTables-example').DataTable({
+    $('#table').DataTable({
             responsive: true
     });
 });
