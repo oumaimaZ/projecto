@@ -20,6 +20,10 @@ $result -> bindValue(1,$_SESSION['id_maison'],PDO::PARAM_INT);
 $result->execute();*/
      
 
+$sql="SELECT * FROM equipement e,piece p where e.type=lampe and piece=id_piece";
+$query = $db->prepare($sql);
+ $query->execute();                 
+
   }
   
 

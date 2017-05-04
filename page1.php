@@ -68,7 +68,7 @@
 
 
 
-<?php  include 'add_piece.php';?>
+<?php  include 'modals/add_piece.php';?>
 <script>
   $(document).ready(function(){
     var maxField = 5; 

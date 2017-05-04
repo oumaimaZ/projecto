@@ -4,26 +4,26 @@
                     <li>
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> tableau de bord</a>
                     </li>
-                    <!--
-                        ************ oum ********
+                   
+                      
                     <li>
-                        <a href="dashhh.php"><i class="fa fa-fw fa-user"></i> $n_maison</a>
+                        <a href="maison.php"><i class="fa fa-fw fa-user"></i> Maison</a>
                     </li>
--->
+
                     <li>
                         <a href="Confpage.php"><i class="fa fa-fw fa-user"></i> Configuration Maison</a>
                     </li>
                     <li>
-                        <a href="user.php"><i class="fa fa-fw fa-user"></i> user</a>
+                        <a href="user.php"><i class="fa fa-fw fa-user"></i> collaborateur</a>
                     </li>
                     <li>
-                        <a href="page1.php"><i class="fa fa-fw fa-user"></i> page1</a>
+                        <a href="page1.php"><i class="fa fa-fw fa-user"></i> test ajout emplacement</a>
                     </li>
-                    <li>
+                   <!--  <li>
                         <a href="dash.php"><i class="fa fa-fw fa-user"></i> dash</a>
                     </li>
                    
-                   <!-- <li>
+                   <li>
                         <a href="charts.php"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
                     </li>
 
@@ -40,10 +40,12 @@
                         <a href="grid.php"><i class="fa fa-fw fa-wrench"></i>Grid</a>
                     </li>
                 -->
-                   
+                   <li >
+                        <a href="historique.php"><i class="fa fa-fw fa-file"></i> historique </a>
+                    </li>
                     
-                    <li class="active">
-                        <a href="blank-page.php"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                    <li >
+                        <a href="blank-page.php"><i class="fa fa-fw fa-file"></i> test </a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
