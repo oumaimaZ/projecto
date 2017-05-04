@@ -18,9 +18,9 @@
 
                 <?php 
                 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-                $sql="SELECT * FROM equipement join piece on piece=id_piece and type=?";
+                $sql="SELECT * FROM equipement e,piece p where e.type='lampe' and e.piece=id_piece";
                      $query = $db->prepare($sql);
-                  $query->execute(array('lampe'));
+                  $query->execute();
   			 while($ligne = $query->fetch())
                 {
                  
@@ -28,6 +28,12 @@
                 	
 
 	           echo "  <div class='panel panel-default '>";
+                 echo " <div class='panel-header'>";
+                  if($ligne['etat']='1')
+                     echo "<img class='col-md-1' src='images/swatcv16.png'>";
+                else  echo "<img class='col-md-1' src='images/swdesc16.png'>";
+                     
+                     echo "</div>";
              echo "<div class='panel-body '>";
                  
                 echo "<label class='control-label col-md-3' for='user'> equipement  ".$ligne['e_nom']."</label>";

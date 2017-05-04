@@ -28,10 +28,10 @@
 */
 	           echo "  <div class='panel panel-default '>";
              echo "<div class='panel-body '>";
-
+                     echo " <label class='control-label col-md-3' for='user'> ".$ligne['type']." </label>";
                 echo "<label class='control-label col-md-4' for='user'>  Piece :".$ligne['nom']."</label>";
                 
-                echo " <label class='control-label col-md-3' for='user'> ".$ligne['type']." </label>";
+               
                  echo " <label class='control-label col-md-3' for='user'>etage :  ".$ligne['etage']." </label>";
                 echo "</div>";
                 echo "</div>";
