@@ -28,21 +28,18 @@
                 	
 
 	           echo "  <div class='panel panel-default '>";
-                 echo " <div class='panel-header'>";
+                echo "<div class='panel-body '>";
                   if($ligne['etat']='1')
-                     echo "<img class='col-md-1' src='images/swatcv16.png'>";
+                     echo "<img class='col-md-1' src='images/alarmact.png'>";
                 else  echo "<img class='col-md-1' src='images/swdesc16.png'>";
                      
-                     echo "</div>";
-             echo "<div class='panel-body '>";
+                    
+            
                  
                 echo "<label class='control-label col-md-3' for='user'> equipement  ".$ligne['e_nom']."</label>";
-                 if($ligne['etat']='1')
-                     echo "<img class='col-md-1' src='images/swatcv16.png'>";
-                else  echo "<img class='col-md-1' src='images/swdesc16.png'>";
-                 // echo "<label class='control-label col-md-3' for='user'> piece :  ".$ligne['nom']."</label>";
+                 echo "<label class='control-label col-md-3' for='user'> piece :  ".$ligne['nom']."</label>";
                  
-                //  echo "<label class='control-label col-md-3' for='user'>etage :  ".$ligne['etage']."</label>";
+                 echo "<label class='control-label col-md-3' for='user'>etage :  ".$ligne['etage']."</label>";
                 echo "</div>";
                 echo "</div>";
                		

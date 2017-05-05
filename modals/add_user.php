@@ -52,9 +52,9 @@
                                                <label  class="col-sm-2 control-label" for="role">privilege </label>
                                                <div class="col-xs-3">
                                               <select class="form-control">
-                                                  <option name='priv[]' value='1' id='priv1'>tous les priviléges</option>
-                                                  <option name='priv[]' value='2' id='priv2'> pilotage seulement</option>
-                                                  <option name='priv[]' value='2' id='priv3'> aucun</option>
+                                                  <option name='role[]' value='1' id='priv1'>tous les priviléges</option>
+                                                  <option name='role[]' value='2' id='priv2'> pilotage seulement</option>
+                                                  <option name='role[]' value='2' id='priv3'> aucun</option>
                                               </select>
                                             </div>
                                     </div>

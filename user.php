@@ -3,22 +3,16 @@
 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
 if(isset($_POST['delete'])){
 
-  $sql = 'SELECT * FROM maison_user where id_maison= "'.$_SESSION['id_maison'].'"';
-  $result = $db->prepare($sql);
-  $result->execute();
+  
   $count = $result->rowCount($result);
   for($i=0;$i<$count;$i++)
   {
 
     $del_id = $_POST['checkbox'][$i];
-    $sql = "DELETE FROM maison_user WHERE username= '$username' and  id_maison= '".$_SESSION['id_maison']."' ";
+    $sql = "DELETE FROM maison_user WHERE username= '$del_id  ";
     $result = $db->prepare($sql);
     $result->execute();
-   /*  $sql = "DELETE FROM maison_user WHERE username= '$username' and  id_maison= ? ";
-$result = $db->prepare($sql);
-$result -> bindValue(1,$_SESSION['id_maison'],PDO::PARAM_INT);
-$result->execute();*/
-     
+ 
 
 $sql="SELECT * FROM equipement e,piece p where e.type=lampe and piece=id_piece";
 $query = $db->prepare($sql);
