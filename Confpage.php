@@ -1,6 +1,7 @@
 <?php include 'includes/header.php';
         include 'includes/side_bar.php';
- 
+
+
 ?>
 <div id="page-wrapper">
     <div class="container-fluid">
@@ -24,7 +25,9 @@
       <div class="panel panel-default">
         <div class="panel-body">
                 
-            <form role="form" method="POST" action="script/maison_script_piece.php" class="form-horizontal" >
+            <form role="form" method="POST" action="script/maison_script_piece.php" class="form-horizontal">
+            <?php echo '<input type="hidden" name="iduser" value='.$_SESSION['username'].'>'?>
+
 
                <div class="form-group">
                           <label  class="col-sm-3 control-label" for="nom">Ma maison </label>
@@ -43,35 +46,24 @@
                   <label class="col-sm-3 control-label" for="piece">Emplacement</label>
                   <div class="col-lg-2">
                   <select class="form-control" name="type[]">
-                                
-                                <option value="cuisine" >cuisine</option>
-                                <option value="chambre" >chambre</option>
-                                <option value="salon" >salon</option>
-                                <option value="couloir" >couloir</option> 
-                                <option value="couloir" >salle de bain</option> 
-                                <option value="couloir" >garage</option>  
-                                <option value="couloir" >balcon</option>
-                                <option value="couloir" >terrasse</option>  
-
-                  </select>
-                  </div>
-          
-             
-                <div class="col-lg-2">
-                 <input type="text" name="nom[]" class="form-control" placeholder="nom" >
-               </div>
-                 <div class="col-md-2">
-                    <select class="form-control" name="etage[]">
-                                  
-                                  <option value="etage1" >etage 1</option>
-                                   <option value="etage2" >etage 2</option>
-                                    <option value="etage3" >etage 3</option>
-                                    <option value="etage4" >etage 4</option>
-                      
-                                  
-                    </select>
-                  </div> 
-           </div>
+                    <option value="cuisine" >cuisine</option>
+                    <option value="chambre" >chambre</option>
+                    <option value="salon" >salon</option>
+                    <option value="couloir" >couloir</option>
+                    <option value="couloir" >salle de bain</option>
+                    <option value="couloir" >garage</option> 
+                    <option value="couloir" >balcon</option><option value="couloir" >terrasse</option> 
+                  </select></div>
+                  <div class="col-lg-2"><input type="text" name="nom[]" class="form-control" placeholder="nom" ></div>
+                  <div class="col-md-2"><select class="form-control" name="etage[]">
+                   <option value="etage1" >etage 1</option> 
+                    <option value="etage2" >etage 2</option>
+                    <option value="etage3" >etage 3</option>
+                    <option value="etage4" >etage 4</option></select>
+                  </div> </div> 
+ 
+                   
+      
                <div id="holder"> 
                </div><button class=" btn btn-sm btn-warning pull-right" type="button" id="add_new_piece"><i class="fa fa-plus-circle"></i> pièce 
              </button>
