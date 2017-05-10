@@ -93,18 +93,22 @@ include 'modals/view_portail.php';
                       <div class="col-lg-12">
                         <div class="row">
                            <div class="col-lg-3">
-                                  <div class="panel panel-danger  " data-toggle="modal" data-target="#view_user">
+                                  <div class="panel panel-danger  " >
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Activités</h3>
                                           </div>
-                                          <div class="panel-body">
+                                          <a href="eclairages.php"><div class="panel-body">
                                              <center> <img src ='images/activities.png'></center>
-                                             
-                                              <div>
-                                          </div>
+                                            
                                      
                                           
-                                  </div>
+                                  </div></a>
+                                       <div data-toggle="modal" data-target="#view_user">
+                                             <center> <label>
+                                                   <span class="pull-left">View Details</span>
+                                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
+                                          </div>
+                                      
                           </div>
                             </div>
                           <div class="col-lg-3">
@@ -122,19 +126,35 @@ include 'modals/view_portail.php';
                                   <div class="panel panel-danger ">
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Alarmes</h3>
-                                          </div>
+                                          </div> <a href="alarme.php">
                                           <div class="panel-body">
+                                              
                                               <center> <img src="images/alarm.png"></center>
-                                          </div>
+                                             
+                                          </div> </a>
+                                       <div data-toggle="modal" data-target="#view_eclairage">
+                                       <center> <label>
+                                                   <span class="pull-left">View Details</span>
+                                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
+                                      
+                                      
                                   </div>
                           </div>
+                            </div>
                           <div class="col-lg-3">
-                                  <div class="panel panel-danger " data-toggle="modal" data-target="#view_eclairage">
+                                  <div class="panel panel-danger ">
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Eclairages</h3>
-                                          </div>
+                                          </div>  <a href="eclairages.php">
                                           <div class="panel-body">
-                                               <center> <img src="images/lamp.png"></center> 
+                                             
+                                               <center> <img src="images/lamp.png"></center>
+
+                                          </div>                                              </a>
+                                      <div data-toggle="modal" data-target="#view_eclairage">
+                                             <center> <label>
+                                                   <span class="pull-left">View Details</span>
+                                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
                                           </div>
                                   </div>
                           </div>
@@ -147,23 +167,39 @@ include 'modals/view_portail.php';
                                   <div class="panel panel-danger ">
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Volets</h3>
-                                          </div>
+                                          </div><a href="volet.php">
                                           <div class="panel-body">
+                                              
+                                                   
                                             <center> <img src="images/volet.png"></center>
-                                          </div>
+                                              
+                                                  </div></a>
+                                      <div data-toggle="modal" data-target="#view_volet">
+                                      <center> <label> <span class="pull-left"> View Details</span>
+                                          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                          </label></center></div>
                                   </div>
                           </div>
                           <div class="col-lg-3">
                                   <div class="panel panel-danger ">
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Portails</h3>
-                                          </div>
+                                          </div> <a href="portail.php">
                                           <div class="panel-body">
+                       
+
                                               <center>
                                               <img src="images/tesportal.png"></center>
+                                      </div>        </a>
+                                      
+                                               <div data-toggle="modal" data-target="#view_portail">
+                                      <center> <label> <span class="pull-left"> View Details</span>
+                                          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                          </label></center></div>
+                                              
                                           </div>
                                   </div>
-                          </div>
+                         
                           <div class="col-lg-3">
                                   <div class="panel panel-danger  "data-toggle="modal" data-target="#view_camera">
                                           <div class="panel-heading">
