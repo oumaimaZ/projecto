@@ -2,10 +2,11 @@
 	
 		if(isset($_POST['maison'])){
 			$maison = $_POST['maison'];
-			$i = 0;
+		
 			$db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
 
 $db->exec('INSERT INTO maison (nom) VALUES ("'.$maison.'")');
+
 $id = $db->lastInsertId();
 $_SESSION['maison']=$maison;
 

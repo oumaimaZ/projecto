@@ -1,4 +1,4 @@
-           <?php
+<?php
 // ****************************************SUPPRIMER********************************************
 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
 if(isset($_POST['delete'])){
@@ -138,7 +138,7 @@ $sql='SELECT * FROM user u,maison_user m where m.username =u.username ';
                 echo "<td align='center'>".$ligne['email']."</td>";
                 echo "<td align='center'>".$role."</td>";
                 echo'<td align="center"><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target="#edit_user" onclick="triggerModal('.$ligne['username'].');"></a></td>';
-                echo'<td align="center"><a class="menu-icon fa fa-trash"  data-target="#delete_user" onclick="triggerModal('.$ligne['username'].');"></a></td>';
+                echo'<td align="center"><a class="menu-icon fa fa-trash"  id="'.$ligne["username"].'"></a></td>';
                 echo "</tr>";
               }
               ?>

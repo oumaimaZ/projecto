@@ -28,7 +28,6 @@
             <form role="form" method="POST" action="script/maison_script_piece.php" class="form-horizontal">
             <?php echo '<input type="hidden" name="iduser" value='.$_SESSION['username'].'>'?>
 
-
                <div class="form-group">
                           <label  class="col-sm-3 control-label" for="nom">Ma maison </label>
                                   <div class="col-lg-4">
