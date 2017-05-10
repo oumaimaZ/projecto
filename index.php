@@ -112,13 +112,18 @@ include 'modals/view_portail.php';
                           </div>
                             </div>
                           <div class="col-lg-3">
-                                  <div class="panel panel-danger " data-toggle="modal" data-target="#view_room">
+                                  <div class="panel panel-danger " >
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Chambres</h3>
-                                          </div>
+                                          </div> <a href="eclairages.php">
                                           <div class="panel-body">
                                               <center> <img src="images/door.png"></center>
                                              
+                                          </div>
+                                      </a><div data-toggle="modal" data-target="#view_user">
+                                             <center> <label>
+                                                   <span class="pull-left">View Details</span>
+                                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
                                           </div>
                                   </div>
                           </div>
@@ -150,7 +155,7 @@ include 'modals/view_portail.php';
                                              
                                                <center> <img src="images/lamp.png"></center>
 
-                                          </div>                                              </a>
+                                          </div></a>
                                       <div data-toggle="modal" data-target="#view_eclairage">
                                              <center> <label>
                                                    <span class="pull-left">View Details</span>
@@ -174,10 +179,11 @@ include 'modals/view_portail.php';
                                             <center> <img src="images/volet.png"></center>
                                               
                                                   </div></a>
-                                      <div data-toggle="modal" data-target="#view_volet">
-                                      <center> <label> <span class="pull-left"> View Details</span>
-                                          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                          </label></center></div>
+                                        <div data-toggle="modal" data-target="#view_user">
+                                             <center> <label>
+                                                   <span class="pull-left">View Details</span>
+                                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
+                                          </div>
                                   </div>
                           </div>
                           <div class="col-lg-3">
@@ -192,21 +198,27 @@ include 'modals/view_portail.php';
                                               <img src="images/tesportal.png"></center>
                                       </div>        </a>
                                       
-                                               <div data-toggle="modal" data-target="#view_portail">
-                                      <center> <label> <span class="pull-left"> View Details</span>
-                                          <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                          </label></center></div>
+                                                  <div data-toggle="modal" data-target="#view_user">
+                                             <center> <label>
+                                                   <span class="pull-left">View Details</span>
+                                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
+                                          </div>
                                               
                                           </div>
                                   </div>
                          
                           <div class="col-lg-3">
-                                  <div class="panel panel-danger  "data-toggle="modal" data-target="#view_camera">
+                                  <div class="panel panel-danger  ">
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Cameras</h3>
-                                          </div>
+                                          </div><a href="portail.php">
                                           <div class="panel-body">
                                             <center> <img src="images/cam64.png"></center>
+                                      </div></a>
+                                      <div data-toggle="modal" data-target="#view_user">
+                                             <center> <label>
+                                                   <span class="pull-left">View Details</span>
+                                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
                                           </div>
                                   </div>
                           </div>
@@ -214,9 +226,14 @@ include 'modals/view_portail.php';
                                   <div class="panel panel-danger ">
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Securité  (porte)</h3>
-                                          </div>
+                                          </div><a href="portail.php">
                                           <div class="panel-body">
                                             <center> <img src="images/lock.png"></center>
+                                      </div></a>
+                                      <div data-toggle="modal" data-target="#view_user">
+                                             <center> <label>
+                                                   <span class="pull-left">View Details</span>
+                                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
                                           </div>
                                   </div>
                           </div>
