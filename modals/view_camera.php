@@ -14,7 +14,6 @@
             <div class="form-group">
               
               <div class="col-md-12">
-
                 <?php 
                 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
                 $sql='SELECT * FROM equipement,piece where id_piece =piece' ;

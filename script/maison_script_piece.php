@@ -22,7 +22,7 @@ $reponse =$db->exec("INSERT INTO piece(nom,type,maison,etage,username) VALUES('$
 
 $ii++;	
 }
-echo 'khrjna amn while';
+echo 'exec';
 
 //header('Location: ../page1.php');  
 exit;

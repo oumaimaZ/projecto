@@ -42,8 +42,8 @@ include 'style.scss';
                                     <div class="col-xs-9 text-right">    
                                         <li class="tg-list-item">
                     
-    <input class="tgl tgl-flat" id="1" type="checkbox"/>
-    <label class="tgl-btn pull-right" for="1"></label>
+    <input class="tgl tgl-flat" id='.$ligne['id_equipement'].' type="checkbox"/>
+    <label class="tgl-btn pull-right" for='.$ligne['id_equipement'].'></label>
   </li> 
                                           
                                        <center>  '.$ligne['e_nom'].'</center>
