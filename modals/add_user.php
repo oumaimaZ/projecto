@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div id="ajouter_user" class="modal fade" role="dialog">
+<div id="add_user" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
@@ -51,10 +51,10 @@
                         <div class="form-group">
                                                <label  class="col-sm-2 control-label" for="role">privilege </label>
                                                <div class="col-xs-3">
-                                              <select class="form-control">
-                                                  <option name='role[]' value='1' id='priv1'>tous les priviléges</option>
-                                                  <option name='role[]' value='2' id='priv2'> pilotage seulement</option>
-                                                  <option name='role[]' value='2' id='priv3'> aucun</option>
+                                              <select class="form-control" name="privilege">
+                                                  <option  value='1'>tous les priviléges</option>
+                                                  <option value='2'> pilotage seulement</option>
+                                                 <!-- <option name='role[]' value='2' id='priv3'> aucun</option>-->
                                               </select>
                                             </div>
                                     </div>
@@ -73,4 +73,3 @@
     </div>
 </div>
   </div>
-

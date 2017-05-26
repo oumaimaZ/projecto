@@ -1,42 +1,55 @@
+<?php 
+include 'modals/add_user.php';
+include 'modals/edit_user.php'; ?>
 <?php
-// ****************************************SUPPRIMER********************************************
+include 'includes/header.php';
+include 'includes/side_bar.php';
+?>
+
+<?php
+
+// *********************** Suprimer *****************
 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-if(isset($_POST['delete'])){
 
-  
-  $count = $result->rowCount($result);
-  for($i=0;$i<$count;$i++)
-  {
-
-    $del_id = $_POST['checkbox'][$i];
-    $sql = "DELETE FROM maison_user WHERE username= '$del_id  ";
-    $result = $db->prepare($sql);
-    $result->execute();
- 
-
-$sql="SELECT * FROM equipement e,piece p where e.type=lampe and piece=id_piece";
-$query = $db->prepare($sql);
- $query->execute();                 
-
-  }
-  
-
-if($result){
-  header('location:user.php');}
-
-$sql = 'SELECT *  FROM maison_user  where id_maison= "'.$_SESSION['id_maison'].'" ';
-$query = $db->prepare($sql);
-$query->execute();
+$reqt=$db->query('select * from maison_user where role=1');
+while($data=$reqt->fetch()){
+if(isset($_POST[$data['username']])){
+     $delet2=$db->prepare('delete from user where username=?');
+        $delet2->execute(array($data['username']));
+        $delet=$db->prepare('delete from maison_user where username=?');
+        $delet->execute(array($data['username']));
+       
+        break;
+    
 }
-  // ****************************************END SUPPRIMER********************************************
+}
 ?>
 
 
 
 
 <?php 
-    //*********************************** CREATION *******************************************************************
+//    **********Creation user ************************
+if(isset($_POST['creer'])){
+$nom=$_POST['nom'];
+$prenom=$_POST['prenom'];
+$username=$_POST['username'];
+$email=$_POST['email'];
+$mdp=$_POST['mdp'];
+$phone=$_POST['phone'];
+    $role=$_POST['privilege'];
+    $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
 
+$requ=$db->prepare('INSERT INTO user(username,phone,email,mdp,nom,prenom) VALUES(?,?,?,?,?,?)');
+    $requ->execute(array($username,$phone,$email,$mdp,$nom,$prenom));
+  $req2=$db->prepare('INSERT INTO maison_user(id_maison,username,role) VALUES(?,?,?)');
+    // a Voir pour ID_MAISON 
+    $req2->execute(array('1',$username,$role));
+}
+
+
+    //*********************************** CREATION *******************************************************************
+/*
 if (isset($_POST['creer'])){
   $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
   $nom =$_POST['nom'];
@@ -79,19 +92,18 @@ $query->execute();
 }
 
 //header("location: index.php");
+*/
 ?>
 <?php
-include 'includes/header.php';
-include 'includes/side_bar.php';
-
-
-
-
  $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-$sql='SELECT * FROM user u,maison_user m where m.username =u.username ';
+$sql='SELECT * FROM user u,maison_user m where m.username =u.username AND role=2 ';
      $query = $db->prepare($sql);
   $query->execute();
-  ?>
+  
+
+
+
+?>
 
 
 
@@ -100,7 +112,7 @@ $sql='SELECT * FROM user u,maison_user m where m.username =u.username ';
   <div class="row">
     <div class="col-md-12">
       <h1 class="page-header">Utilisateur</h1>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#ajouter_user"><i class="fa fa-plus-circle"></i> Nouvel utilisateur</button>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#add_user"><i class="fa fa-plus-circle"></i> Nouvel utilisateur</button>
     </div>
     <!-- /.col-lg-12 -->
   </div>
@@ -125,22 +137,21 @@ $sql='SELECT * FROM user u,maison_user m where m.username =u.username ';
               <tbody>
                 <?php
                 while($ligne = $query->fetch())
-                {
-                 if ($ligne['role'] = '1' ) $role= 'tous les priviléges';
-                else if($ligne['role'] = '2') $role= 'utilisateur';
-                else $role= 'aucun';
-                
-                echo "<tr>";
-                echo "<td align='center'><input name='checkbox[]' type='checkbox' id='checkbox[]' value='".$ligne['username']."'>"."</td>";
+                { if($ligne['role'] = '2') $role= 'utilisateur';
+                ?>
+                <tr>
+                <td align='center'><input name='checkbox[]' type='checkbox' id='checkbox[]' value=<?php echo $ligne['username']; ?>></td>
 
-                echo "<td align='center'>".$ligne['username']."</td>";
-                
-                echo "<td align='center'>".$ligne['email']."</td>";
-                echo "<td align='center'>".$role."</td>";
-                echo'<td align="center"><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target="#edit_user" onclick="triggerModal('.$ligne['username'].');"></a></td>';
-                echo'<td align="center"><a class="menu-icon fa fa-trash"  id="'.$ligne["username"].'"></a></td>';
-                echo "</tr>";
-              }
+               <td align='center'><?php echo $ligne['username'];?></td>
+                <td align='center'><?php echo $ligne['email'];?></td>
+                <td align='center'> <?php echo $role ;?></td>
+                <td align="center"><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target="#edit_user"> </a></td>
+                    <form action="" method="post">
+                    <td align="center"><button class="menu-icon fa fa-trash"  type="submit" name=<?php echo $ligne["username"] ;?>></button>
+                        </form>
+                        </td>
+                </tr>
+            <?php  }
               ?>
             </tbody>
 
@@ -162,9 +173,6 @@ $sql='SELECT * FROM user u,maison_user m where m.username =u.username ';
 
 
 <!-- /.row -->
-<?php 
-include 'modals/add_user.php';
-include 'modals/edit_user.php'; ?>
 
 <?php
 include 'includes/footer.php';
