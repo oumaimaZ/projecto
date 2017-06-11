@@ -25,8 +25,15 @@
                 	if ($ligne['role'] = '1' ) $role= 'tous les priviléges';
 	                else if($ligne['role'] = '2') $role= 'utilisateur';
 	                else $role= 'aucun';
+                 // just test
+                 
+                 if($ligne['username']== "admin"){
 
-	           echo "  <div class='panel panel-default '>";
+	           echo "  <div class='panel panel-green '>";
+                 }else {
+                     	           echo "  <div class='panel panel-red '>";
+
+                 }
              echo "<div class='panel-body '>";
 
                 echo "<label class='control-label col-md-5' for='user'>Membre :  ".$ligne['username']."</label>";

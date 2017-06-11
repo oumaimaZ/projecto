@@ -115,7 +115,7 @@ include 'modals/view_portail.php';
                                   <div class="panel panel-danger " >
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Chambres</h3>
-                                          </div> <a href="eclairages.php">
+                                          </div> <a href="room.php">
                                           <div class="panel-body">
                                               <center> <img src="images/door.png"></center>
                                              

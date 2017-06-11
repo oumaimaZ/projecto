@@ -1,6 +1,4 @@
-<?php 
-include 'modals/add_user.php';
-include 'modals/edit_user.php'; ?>
+
 <?php
 include 'includes/header.php';
 include 'includes/side_bar.php';
@@ -173,7 +171,10 @@ $sql='SELECT * FROM user u,maison_user m where m.username =u.username AND role=2
 
 
 <!-- /.row -->
-
+<?php 
+include 'modals/add_user.php';
+include 'modals/edit_user.php'; ?>
 <?php
 include 'includes/footer.php';
 ?>
+
