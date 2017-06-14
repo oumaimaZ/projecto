@@ -6,13 +6,13 @@
 		
 		if(isset($_SESSION['role'])){
 
-			if($_SESSION['role'] == '1') header('location: page1.php');
-			else if($_SESSION['role'] == '2') header('location: page1.php');
+			if($_SESSION['role'] == '1') header('location: index.php');
+			else if($_SESSION['role'] == '2') header('location: index.php');
 		//	else if($_SESSION['role'] == '3') echo "compte desactivé";
 }
 		} 	else {
 
-		header('Location: login.php');
+		header('Location: login-2.php');
 	}
 
 ?>

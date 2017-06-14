@@ -16,6 +16,8 @@ include 'style.scss';
         </div>
         <div class="row">
         <div class="col-lg-12">
+                <span id="oumaima">
+
             <?php 
             $bd=new PDO('mysql:local=localhost;dbname=domotique_data;char set=utf8','root','');
             $sql='SELECT * FROM piece p,equipement e where e.type="porte" and e.piece=id_piece';
@@ -29,9 +31,13 @@ include 'style.scss';
                 
                 ?>
                         <div class="col-lg-3 col-md-6">
-                            <?php if($ligne['etat']==1){ ?>
+                            <?php if($ligne['etat']==1){
+                                if($ligne['connect']==1){
+                            ?>
+                         <div class="panel panel-green">
+                            <?php }else{ ?>
                         <div class="panel panel-primary">
-                            <?php } else { ?>
+                            <?php } } else { ?>
                         <div class="panel panel-yellow">
                             <?php } ?>
                             <div class="panel-heading">
@@ -46,10 +52,10 @@ include 'style.scss';
                                        if($ligne['etat']==1){
                                         if($ligne['connect']==0){   
                                         ?>
-                                        <img src="images/door_b.png">
+                                        <img src="images/door_a.png">
                                         <?php }else{
                                             ?>
-                                        <img src="images/door_a.png">
+                                        <img src="images/door_c.png">
                                         <?php } ?>
                                         <?php
                                         }else{
@@ -58,18 +64,24 @@ include 'style.scss';
                                         <?php } ?>
                                         <!-- fin test pour l'etat -->
                                     </div>
-                                    <div class="col-xs-9 text-right">    
+                                    <div class="col-xs-9 text-right">
                                         <li class="tg-list-item">
-                    
-    <input class="tgl tgl-flat" id=<?php echo $ligne['id_equipement'];?> type="checkbox" <?php if($ligne['connect']==1){ echo 'checked' ;} else echo '';?>/>
-    <label class="tgl-btn pull-right" for=<?php echo $ligne['id_equipement'];?>></label>
+                   
+     <input class="tgl tgl-flat" id=<?php echo "'".$ligne['id_equipement']."'"; ?> value=<?php echo "'".$ligne['id_equipement']."'"; ?> onchange="request(this);" type="checkbox" <?php if($ligne['connect']==1){ echo 'checked' ;} else echo '';?>/>
+    <label class="tgl-btn pull-right" for=<?php echo "'".$ligne['id_equipement']."'";?>></label>
                                             
   </li> 
                                         
+                                        
+                                        <!-- script stock id -->
+                             <script>
+                                       tab.push(<?php echo $ligne['id_equipement']; ?>);
+                             </script>              
+                                        
                                           
                                     </div>
-                                    <div style="width:80%"> <h4 style="font-family:arial-times;font-size:25"><center><?php echo $ligne['nom'];?></center></h4></div>
-                                    <div style="width:80%;margin:auto"> <center><h6><?php echo $ligne[1] ?></h6></center></div>
+                                     <div style="width:80%"> <h4 style="font-family:arial-times;font-size:25"><center><?php echo $ligne['nom'];?></center></h4></div>
+                                    <div style="width:80%;margin:auto"> <center><h6><?php echo  "piece :".$ligne[1]; ?></h6></center></div>
                                     
                                 </div> 
                                 
@@ -81,8 +93,44 @@ include 'style.scss';
             </div>
             </div>
         </div>
+            </span>
     </div>
 </div>
 <?php 
 include 'includes/footer.php';
 ?> 
+  <script type="text/javascript">
+                function getXMLHttpRequest() {
+	var xhr = null;
+	
+	if (window.XMLHttpRequest || window.ActiveXObject) {
+		if (window.ActiveXObject) {
+			try {
+				xhr = new ActiveXObject("Msxml2.XMLHTTP");
+			} catch(e) {
+				xhr = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+		} else {
+			xhr = new XMLHttpRequest(); 
+		}
+	} else {
+		alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+		return null;
+	}
+	return xhr;
+}           
+     function request(nbr) {
+       ide=nbr.value;  
+	var xhr = getXMLHttpRequest();
+	
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+		document.getElementById("oumaima").innerHTML=xhr.responseText;     
+		}
+	};
+         xhr.open("POST", "traitement/trait_rooms.php", true);
+	     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	     xhr.send("id="+ide);
+    
+     }
+      </script>

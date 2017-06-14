@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(isset($_SESSION['is_connected'])) header("Location: indexc.php");
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -30,10 +36,11 @@
 	<h1>DOMOTIC MINOS</h1>
 
 	<div class="w3layoutscontaineragileits">
+        <!-- Login Work correctly -->
 	<h2>Login here</h2>
-		<form action="login.php" method="post">
-			<input type="email" Name="Username" placeholder="EMAIL" required="">
-			<input type="password" Name="Password" placeholder="PASSWORD" required="">
+		<form action="login-2.php" method="post">
+			<input type="email" Name="email" placeholder="EMAIL" required="">
+			<input type="password" Name="mdp" placeholder="password" required="">
 			<ul class="agileinfotickwthree">
 				<li>
 					<input type="checkbox" id="brand1" value="">
@@ -42,27 +49,44 @@
 				</li>
 			</ul>
 			<div class="aitssendbuttonw3ls">
-				<input type="submit" value="LOGIN">
+				<input type="submit" name="connexion" value="LOGIN">
 				<p> To register new account <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> Click Here</a></p>
 				<div class="clear"></div>
 			</div>
 		</form>
 	</div>
-	
+                        <!-- end  Login -->
+	                       <!-- Sing Up  Start -->
 	<!-- for register popup -->
 	<div id="small-dialog1" class="mfp-hide">
 		<div class="contact-form1">
 			<div class="contact-w3-agileits">
 				<h3>Register Form</h3>
-				<form action="#" method="post">
+				<form action="login-2.php" method="post">
 						<div class="form-sub-w3ls">
-							<input placeholder="User Name"  type="text" required="">
+							<input placeholder="First Name" name="nom" type="text" required="">
+							<div class="icon-agile">
+								<i class="fa fa-user" aria-hidden="true"></i>
+							</div>
+						</div><div class="form-sub-w3ls">
+							<input placeholder="Last Name " name="prenom" type="text" required="">
+							<div class="icon-agile">
+								<i class="fa fa-user" aria-hidden="true"></i>
+							</div>
+						</div><div class="form-sub-w3ls">
+							<input placeholder="Phone" name="phone" type="text" required="">
+							<div class="icon-agile">
+								<i class="fa fa-user" aria-hidden="true"></i>
+							</div>
+						</div>
+                    <div class="form-sub-w3ls">
+							<input placeholder="UserName" name="username" type="text" required="">
 							<div class="icon-agile">
 								<i class="fa fa-user" aria-hidden="true"></i>
 							</div>
 						</div>
 						<div class="form-sub-w3ls">
-							<input placeholder="Email" class="mail" type="email" required="">
+							<input placeholder="Address mail" class="mail" name="email" type="email" required="">
 							<div class="icon-agile">
 								<i class="fa fa-envelope-o" aria-hidden="true"></i>
 							</div>
@@ -83,7 +107,7 @@
 						 <label class="checkbox"><input type="checkbox" name="checkbox" checked="">I Accept Terms & Conditions</label>
 					</div>
 					<div class="submit-w3l">
-						<input type="submit" value="Register">
+						<input type="submit" name="inscription" value="Register">
 					</div>
 				</form>
 			</div>

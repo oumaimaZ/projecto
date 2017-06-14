@@ -1,5 +1,5 @@
 <?php
-	
+	// Connexion  en Marche ! 
 	if(isset($_POST['connexion'])){
 		$db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
 $query = $db->prepare('SELECT * FROM user as u 
@@ -32,6 +32,7 @@ $query = $db->prepare('SELECT * FROM user as u
 	}
 //*****************fin connection******************** 
 
+// ************** début inscription *************
 	if (isset($_POST['inscription'])){
   $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
   $nom =$_POST['nom'];
@@ -42,25 +43,20 @@ $query = $db->prepare('SELECT * FROM user as u
   $email=$_POST['email'];
    
               if($username != "" && $nom != "" && $prenom !="" && $mdp != "" && $username !="" && $phone !="" && $email !="" ){
-              
+                  $sqll='insert into user (id_user,username,phone,email,mdp,nom,prenom) values (?,?,?,?,?,?,?)';
+                $reqq=$db->prepare($sqll);
+                  $reqq->execute(array(0,$username,$phone,$email,$mdp,$nom,$prenom));
+                  $sqll2='insert into maison_user(id_maison,username,role) values(?,?,?)';
+                  $reqq2=$db->prepare($sqll2);
+                  //**** probléme d'id_maison  ****
+                  $reqq2->execute(array(2,$username,1));
+                  
 
-
- $db->exec('INSERT INTO user (username,nom,prenom,mdp,phone,email)
-                VALUES (
-                  "'.$username.'",
-                  "'.$nom.'",
-                  "'.$prenom.'",
-                  "'.$mdp.'",
-                  "'.$phone.'",
-                  "'.$email.'")
-                  ');
-$id = $db->lastInsertId();
-$db>exec('INSERT INTO maison_user (id_maison,username,role) VALUES (
-                  null,$id,"1")');
 
 
  echo "Inscription termine";
-        }else{
+        }
+        else{
             echo "Echec lors de votre inscription";
         }
 

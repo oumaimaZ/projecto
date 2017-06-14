@@ -1,4 +1,5 @@
-<?php  
+<?php 
+session_start() ;
 	
 		if(isset($_POST['maison'])){
 			$maison = $_POST['maison'];
@@ -8,9 +9,13 @@
 $db->exec('INSERT INTO maison (nom) VALUES ("'.$maison.'")');
 
 $id = $db->lastInsertId();
-$_SESSION['maison']=$maison;
+
 
 $user=$_POST['iduser'];
+
+$r =$db->exec("INSERT INTO maison_user(role,id_maison,username) VALUES('2','$id','$user')");
+$_SESSION['maison']=$maison;
+
 $ii = 0;
 while($ii<sizeof($_POST['type'])) {
 	$type=$_POST['type'][$ii];
@@ -21,10 +26,11 @@ $reponse =$db->exec("INSERT INTO piece(nom,type,maison,etage,username) VALUES('$
 
 
 $ii++;	
-}
-echo 'exec';
 
-//header('Location: ../page1.php');  
+}
+
+
+header('Location: ../confmaison_equi.php');  
 exit;
 
 }

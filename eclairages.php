@@ -42,20 +42,19 @@ include 'style.scss';
                     <?php if($ligne['etat']==1){ 
                             if($ligne['connect']==1){
                      ?>
-                        
                         <div class="panel panel-green">
                             <?php }else{ ?>
                          <div class="panel panel-primary">
-
                        <?php     }
-                 
                  }else{ ?>
                             <div class="panel panel-yellow">
                         <?php    } ?>
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
+                                        <!-- test pour l'etat -->
                                         <?php if($ligne['etat']==1){
+                                                // test pour l'connect
                                                 if($ligne['connect']==1){
                                         ?>
                                         <i style="color:yellow" class="fa fa-lightbulb-o fa-5x"></i>
@@ -63,11 +62,13 @@ include 'style.scss';
                                         <i  class="fa fa-lightbulb-o fa-5x"></i>
 
                                                     <?php
-                                                } }else{ ?>
+                                                } }
+                                else{ ?>
                                         <img src="images/lamp-desac.png">
                                         <?php } ?>
                                     </div>
-                                    <div class="col-xs-9 text-right">    
+                                    <div class="col-xs-9 text-right"> 
+                                    
                                         <li class="tg-list-item">
                                                 <!-- CHEKBOX -->
     <input class="tgl tgl-flat" id=<?php echo "'".$ligne['id_equipement']."'"; ?> value=<?php echo "'".$ligne['id_equipement']."'"; ?> onchange="request(this);" type="checkbox" <?php if($ligne['connect']==1){ echo 'checked' ;} else echo '';?>/>
@@ -89,13 +90,7 @@ include 'style.scss';
              }
              ?>
                </div>
-            
-           
-               		
-                
-                
-            
-            
+   
             </div>
         
         </div>
@@ -130,41 +125,23 @@ include 'style.scss';
 		alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
 		return null;
 	}
-	
 	return xhr;
-}
-                
+}           
      function request(nbr) {
-       ide=nbr.value;
-      
-      
-            
-       
+       ide=nbr.value;  
 	var xhr = getXMLHttpRequest();
 	
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-		document.getElementById("oumaima").innerHTML=xhr.responseText;
-            
+		document.getElementById("oumaima").innerHTML=xhr.responseText;     
 		}
 	};
-	
-         xhr.open("POST", "trait_eclairage.php", true);
+         xhr.open("POST", "traitement/trait_eclairage.php", true);
 	     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	     xhr.send("id="+ide);
-
-          
-         
-     }
-         
-	
-        
-                                  
     
-
-                    
-                      
-            </script>
+     }
+      </script>
 
 
 
