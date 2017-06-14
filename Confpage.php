@@ -51,7 +51,8 @@
                     <option value="couloir" >couloir</option>
                     <option value="couloir" >salle de bain</option>
                     <option value="couloir" >garage</option> 
-                    <option value="couloir" >balcon</option><option value="couloir" >terrasse</option> 
+                    <option value="couloir" >balcon</option>
+                    <option value="couloir" >terrasse</option> 
                   </select></div>
                   <div class="col-lg-2"><input type="text" name="nom[]" class="form-control" placeholder="nom" ></div>
                   <div class="col-md-2"><select class="form-control" name="etage[]">
@@ -74,7 +75,7 @@
          
           </div>
         </div>
-         <button class=" btn btn-sm btn-info pull-right" type="submit" id="ok"><i class="fa fa-plus-circle"></i> créer
+         <button class=" btn btn-sm btn-info pull-right" type="submit" name ="creer"id="ok"><i class="fa fa-plus-circle"></i> créer
              </button>
     </div>
 </div>
