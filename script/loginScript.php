@@ -43,13 +43,10 @@ $query = $db->prepare('SELECT * FROM user as u
   $email=$_POST['email'];
    
               if($username != "" && $nom != "" && $prenom !="" && $mdp != "" && $username !="" && $phone !="" && $email !="" ){
-                  $sqll='insert into user (id_user,username,phone,email,mdp,nom,prenom) values (?,?,?,?,?,?,?)';
+                  $sqll='insert into user (username,phone,email,mdp,nom,prenom) values (?,?,?,?,?,?,?)';
                 $reqq=$db->prepare($sqll);
-                  $reqq->execute(array(0,$username,$phone,$email,$mdp,$nom,$prenom));
-                  $sqll2='insert into maison_user(id_maison,username,role) values(?,?,?)';
-                  $reqq2=$db->prepare($sqll2);
+                  $reqq->execute(array($username,$phone,$email,$mdp,$nom,$prenom));
                   //**** probléme d'id_maison  ****
-                  $reqq2->execute(array(2,$username,1));
                   
 
 
