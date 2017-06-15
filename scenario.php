@@ -1,5 +1,6 @@
 <?php include 'includes/header.php';
   include 'includes/side_bar.php';
+  
  ?>
 
 <div id="page-wrapper">
@@ -40,27 +41,28 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-			<div class="offer offer-success">
-				<div class="shape">
-					<div class="shape-text">
-						<span class="glyphicon glyphicon glyphicon-th"></span>							
-					</div>
-				</div>
-				<div class="offer-content">
-					<h3 class="lead">
-						  <label class="label label-success">creer un scenario </label>
-					</h3>
-					<p>
-						
-						<br> 
-                        
-                   </div>
-					</p>
-				</div>
-			</div>
-		</div>
 	
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					<div class="offer offer-success" >
+						<div class="shape">
+							<div class="shape-text">
+								<span class="glyphicon glyphicon glyphicon-th"></span>							
+							</div>
+						</div>
+								<div class="offer-content">
+								<h3 class="lead">
+								
+								  <label class="label label-success" data-toggle="modal" data-target="#creerscena">creer un scenario </label>
+								
+
+								</h3>
+								</div>
+							
+						</div>
+					</div>
+			
+	</div>
+	</div>
         </div>
 </div>
 <table class="table table-sm">
@@ -105,7 +107,11 @@
 	transform:rotate(360deg);
 }
 .offer{
-	background:#fff; border:1px solid #ddd; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); margin: 15px 0; overflow:hidden;
+	background:#fff;
+	 border:1px solid #ddd; 
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	  margin: 15px 0; 
+	  overflow:hidden;
 }
 .offer:hover {
     -webkit-transform: scale(1.1); 
@@ -121,33 +127,33 @@ transition: all 0.4s ease-in-out;
 .shape {
 	border-color: rgba(255,255,255,0) #d9534f rgba(255,255,255,0) rgba(255,255,255,0);
 }
-.offer-radius{
+	.offer-radius{
 	border-radius:7px;
-}
-.offer-danger {	border-color: #d9534f; }
-.offer-danger .shape{
+		}
+	.offer-danger {	border-color: #d9534f; }
+	.offer-danger .shape{
 	border-color: transparent #d9534f transparent transparent;
-}
-.offer-success {	border-color: #5cb85c; }
-.offer-success .shape{
+	}
+	.offer-success {	border-color: #5cb85c; }
+	.offer-success .shape{
 	border-color: transparent #5cb85c transparent transparent;
-}
-.offer-default {	border-color: #999999; }
-.offer-default .shape{
+	}	
+	.offer-default {	border-color: #999999; }
+	.offer-default .shape{
 	border-color: transparent #999999 transparent transparent;
-}
-.offer-primary {	border-color: #428bca; }
-.offer-primary .shape{
+	}
+		.offer-primary {	border-color: #428bca; }
+	.offer-primary .shape{
 	border-color: transparent #428bca transparent transparent;
-}
-.offer-info {	border-color: #5bc0de; }
-.offer-info .shape{
+	}
+	.offer-info {	border-color: #5bc0de; }
+	.offer-info .shape{
 	border-color: transparent #5bc0de transparent transparent;
-}
-.offer-warning {	border-color: #f0ad4e; }
-.offer-warning .shape{
+	}
+	.offer-warning {	border-color: #f0ad4e; }
+	.offer-warning .shape{
 	border-color: transparent #f0ad4e transparent transparent;
-}
+	}
 
 .shape-text{
 	color:#fff; font-size:12px; font-weight:bold; position:relative; right:-40px; top:2px; white-space: nowrap;
@@ -155,28 +161,28 @@ transition: all 0.4s ease-in-out;
 	-o-transform: rotate(360deg);  /* Opera 10.5 */
 	-webkit-transform:rotate(30deg); /* Safari and Chrome */
 	transform:rotate(30deg);
-}	
-.offer-content{
+	}	
+	.offer-content{
 	padding:0 20px 10px;
-}
-@media (min-width: 487px) {
+	}
+	@media (min-width: 487px) {
   .container {
     max-width: 750px;
   }
   .col-sm-6 {
     width: 50%;
   }
-}
-@media (min-width: 900px) {
+	}
+	@media (min-width: 900px) {
   .container {
     max-width: 970px;
   }
   .col-md-4 {
     width: 33.33333333333333%;
   }
-}
+	}	
 
-@media (min-width: 1200px) {
+	@media (min-width: 1200px) {
   .container {
     max-width: 1170px;
   }
@@ -199,5 +205,23 @@ transition: all 0.4s ease-in-out;
 </div>
 </div>
 </div>
+<div id="creerscena" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
 
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title">Nouvel utilisateur</h3>
+       
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" role="form"  action="user.php" method="POST" autocomplete="off">
+                        <div class="form-group">
+                              
+        </form>
+      </div>
+    </div>
+</div>
+  </div>
  
