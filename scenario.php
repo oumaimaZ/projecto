@@ -25,26 +25,80 @@ include 'modals/view_user.php';
                 
         <div class="container">
     
+<div class ='row'>
+   <button class="btn btn-primary" data-toggle="modal" data-target="#add_confpiece"><i class="fa fa-plus-circle"></i> scénario</button>
+</div>
     <div class="row">
     
-		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-			<div class="offer offer-success" >
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-6">
+			<div class="offer offer-radius offer-primary">
 				<div class="shape">
 					<div class="shape-text">
-						<span class="glyphicon glyphicon glyphicon-th"></span>							
+						<span class="glyphicon  glyphicon-th"></span>							
 					</div>
 				</div>
 				<div class="offer-content">
 					<h3 class="lead">
-						  <label class="label label-success"> Quitter la maison</label>
+						  <label class="label label-primary"> Quitter la maison</label>
 					</h3>
 					
 				</div>
 			</div>
 		</div>
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-6">
+			<div class="offer offer-radius offer-primary">
+				<div class="shape">
+					<div class="shape-text">
+						<span class="glyphicon  glyphicon-th"></span>							
+					</div>
+				</div>
+				<div class="offer-content">
+					<h3 class="lead">
+						  <label class="label label-primary"> allumer tout </label>
+					</h3>
+						<p>
+						temps :
+						<br> 
+ <div class="input-group bootstrap-timepicker timepicker">
+            <input id="timepicker1" type="text" class="form-control input-small">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+        </div>
+ 
+        <script type="text/javascript">
+            $('#timepicker1').timepicker();
+        </script>
+                   </div>
+					</p>
+					
+				</div>
+			</div>
+		</div>
+		<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+</div>
+
+
+
+        
 	
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" >
-					<div class="offer offer-success">
+					<div class="offer offer-success "data-toggle="modal" data-target="#view_user">
 						<div class="shape">
 							<div class="shape-text">
 								<span class="glyphicon glyphicon glyphicon-th"></span>							
@@ -53,7 +107,7 @@ include 'modals/view_user.php';
 								<div class="offer-content">
 								<h3 class="lead">
 								
-								  <label class="label label-success"data-toggle="modal" data-target="#view_user">creer un scenario </label>
+								  <label class="label label-success">creer un scenario </label>
 								
 
 								</h3>
@@ -63,6 +117,7 @@ include 'modals/view_user.php';
 					</div>
 			
 	</div>
+
 	</div>
         </div>
          
@@ -226,5 +281,7 @@ transition: all 0.4s ease-in-out;
     </div>
 </div>
   </div>
+
     <?php include 'includes/footer.php'; ?>
- 
+
+

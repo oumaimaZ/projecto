@@ -1,10 +1,13 @@
 <?php include 'includes/header.php';
         include 'includes/side_bar.php';
-if($_SESSION['back']=0)
-  header('Location: maison.php')
-  ;
-$_SESSION['back']=1;
 
+
+
+
+
+if($_SESSION['backv']){
+  header('Location: gestion_maison.php');}
+else{
 
 ?>
 <div id="page-wrapper">
@@ -106,5 +109,5 @@ $_SESSION['back']=1;
   });
   
 </script>
-<?php include 'includes/footer.php'; 
+<?php include 'includes/footer.php'; }
 ?>

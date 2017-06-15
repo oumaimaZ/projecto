@@ -4,7 +4,7 @@
 include 'includes/header.php';
         include 'includes/side_bar.php';
  
-$_SESSION['back']=0;
+$_SESSION['backv']=0;
 ?>
 <div id="page-wrapper">
     <div class="container-fluid">
