@@ -52,13 +52,13 @@ include 'includes/header.php';
                               </div>
 
                 <div class="col-lg-2">
-                  <input type="text" name="nom[]" class="form-control" placeholder="nom" for="name" >
+                  <input type="text" name="nom[]" class="form-control" placeholder="nom" for="nom" >
                 </div>
                   <div class="col-md-2">
                     <select class="form-control" name="piece[]"> 
                      <?php $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
 
-                     $sql='SELECT Distinct p.* FROM piece p,maison m where m.id_maison=p.maison and m.nom="'.$_SESSION['maison'].'" 
+                     $sql='SELECT  p.* FROM piece p,maison m where m.id_maison=p.maison and m.nom="'.$_SESSION['maison'].'" 
                      and username="'.$_SESSION['username'].'"';
                   
                   $result = $db->query($sql); 

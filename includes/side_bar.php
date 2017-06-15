@@ -2,7 +2,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> tableau de bord</a>
+                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Tableau de bord</a>
                     </li>
                    
                       
@@ -11,14 +11,12 @@
                     </li>
 
                     <li>
-                        <a href="Confpage.php"><i class="fa fa-fw fa-user"></i> Configuration Maison</a>
+                        <a href="Confpage.php"><i class="fa fa-fw fa-user"></i> Configuration de la  maison</a>
                     </li>
                     <li>
-                        <a href="user.php"><i class="fa fa-fw fa-user"></i> collaborateur</a>
+                        <a href="user.php"><i class="fa fa-fw fa-user"></i> Collaborateur</a>
                     </li>
-                    <li>
-                        <a href="page1.php"><i class="fa fa-fw fa-user"></i> test ajout emplacement</a>
-                    </li>
+                   
                    <!--  <li>
                         <a href="dash.php"><i class="fa fa-fw fa-user"></i> dash</a>
                     </li>
@@ -35,29 +33,16 @@
                     </li>
                     <li>
                         <a href="bootstrap-elements.php"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                    </li>
+                    </li>  -->
  <li>
-                        <a href="grid.php"><i class="fa fa-fw fa-wrench"></i>Grid</a>
+                        <a href="scenario.php"><i class="fa fa-fw fa-wrench"></i>Scénario</a>
                     </li>
-                -->
-                   <li >
-                        <a href="historique.php"><i class="fa fa-fw fa-file"></i> historique </a>
+              
+                   <li>
+                        <a href="historique.php"><i class="fa fa-fw fa-file"></i> Historique </a>
                     </li>
                     
-                    <li >
-                        <a href="blank-page.php"><i class="fa fa-fw fa-file"></i> test </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                        </ul>
-                    </li>
+                
                    
                 </ul>
             </div>

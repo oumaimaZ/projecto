@@ -2,60 +2,70 @@
   include 'includes/side_bar.php';
  ?>
 
-<style type="text/css">
-input[type="range"] {
-    position: relative;
-    margin-left: 1em;
-}
-input[type="range"]:after,
-input[type="range"]:before {
-    position: absolute;
-    top: 1em;
-    color: #aaa;
-}
-input[type="range"]:before {
-    left:0em;
-    content: attr(min);
-}
-input[type="range"]:after {
-    right: 0em;
-    content: attr(max);
-}
-</style>
-
-
-  <div id="page-wrapper">
-
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
+<div id="page-wrapper">
+    <div class="container-fluid">
+       
+              <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Forms
+                            
+                            Historique <small></small>
                         </h1>
                        
                     </div>
                 </div>
                 <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-6">
-
-                       
-
-                            <div class="form-group">
-                                <label>Text Input</label>
-                               <input type="range" value="15" max="50" min="0" step="5">
-                                
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-             </div>
+ <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+                
         
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Equipement</th>
+      <th>Date</th>
+       <th>Par</th>
+        
+    </tr>
+  </thead>
+  <tbody>
+ <?php 
+            $bd=new PDO('mysql:local=localhost;dbname=domotique_data;char set=utf8','root','');
+            $sql='SELECT * ,h.type as t FROM historique h,equipement e 
+                                                            where e.id_equipement=h.id_equipement
+                                                         
+                                                         and h.username= ? 
+                                                         order by h.date';
+            $query= $bd->prepare($sql);
+            $query->execute(array($_SESSION['username']));
+             while($row = $query->fetch()){
+                echo '<tr>
+                        <td scope="row">';
+                        echo $row['t'];
+                        echo '</td><td>'.$row['nom'].'</td>';
+                        echo '<td>'.$row['date'].'</td>';
+                        echo '<td>'.$row['user'].'</td>';
 
+             }
+          ?>
 
+   
+   
+    
+  </tbody>
+</table>
+</form>
 
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
 
  
