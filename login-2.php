@@ -33,24 +33,24 @@
 <body>
     <?php include 'script/loginScript.php'; ?>
 
-	<h1>DOMOTIC MINOS</h1>
+	<h1>DOMOTIC APP</h1>
 
 	<div class="w3layoutscontaineragileits">
         <!-- Login Work correctly -->
-	<h2>Login here</h2>
+	<h2>Se connecter ici</h2>
 		<form action="login-2.php" method="post">
 			<input type="email" Name="email" placeholder="EMAIL" required="">
 			<input type="password" Name="mdp" placeholder="password" required="">
 			<ul class="agileinfotickwthree">
 				<li>
 					<input type="checkbox" id="brand1" value="">
-					<label for="brand1"><span></span>Remember me</label>
-					<a href="#">Forgot password?</a>
+					<label for="brand1"><span></span>se souvenir de moi</label>
+					
 				</li>
 			</ul>
 			<div class="aitssendbuttonw3ls">
 				<input type="submit" name="connexion" value="LOGIN">
-				<p> To register new account <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> Click Here</a></p>
+				<p> Pour créer un compte  <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> cliquez ici </a></p>
 				<div class="clear"></div>
 			</div>
 		</form>
@@ -61,53 +61,51 @@
 	<div id="small-dialog1" class="mfp-hide">
 		<div class="contact-form1">
 			<div class="contact-w3-agileits">
-				<h3>Register Form</h3>
+				<h3>Inscription</h3>
 				<form action="login-2.php" method="post">
 						<div class="form-sub-w3ls">
-							<input placeholder="First Name" name="nom" type="text" required="">
+							<input placeholder="Nom" name="nom" type="text" required="">
 							<div class="icon-agile">
 								<i class="fa fa-user" aria-hidden="true"></i>
 							</div>
 						</div><div class="form-sub-w3ls">
-							<input placeholder="Last Name " name="prenom" type="text" required="">
+							<input placeholder="Prénom" name="prenom" type="text" required="">
 							<div class="icon-agile">
 								<i class="fa fa-user" aria-hidden="true"></i>
 							</div>
 						</div><div class="form-sub-w3ls">
-							<input placeholder="Phone" name="phone" type="text" required="">
+							<input placeholder="téléphone" name="phone" type="text" required="">
 							<div class="icon-agile">
 								<i class="fa fa-user" aria-hidden="true"></i>
 							</div>
 						</div>
                     <div class="form-sub-w3ls">
-							<input placeholder="UserName" name="username" type="text" required="">
+							<input placeholder="Username" name="username" type="text" required="">
 							<div class="icon-agile">
 								<i class="fa fa-user" aria-hidden="true"></i>
 							</div>
 						</div>
 						<div class="form-sub-w3ls">
-							<input placeholder="Address mail" class="mail" name="email" type="email" required="">
+							<input placeholder="Addresse mail" class="mail" name="email" type="email" required="">
 							<div class="icon-agile">
 								<i class="fa fa-envelope-o" aria-hidden="true"></i>
 							</div>
 						</div>
 						<div class="form-sub-w3ls">
-							<input placeholder="Password"  type="password" required="">
+							<input placeholder="Mot de passe"  type="password" required="">
 							<div class="icon-agile">
 								<i class="fa fa-unlock-alt" aria-hidden="true"></i>
 							</div>
 						</div>
 						<div class="form-sub-w3ls">
-							<input placeholder="Confirm Password"  type="password" required="">
+							<input placeholder="Confirmer le mot de passe "  type="password" required="">
 							<div class="icon-agile">
 								<i class="fa fa-unlock-alt" aria-hidden="true"></i>
 							</div>
 						</div>
-					<div class="login-check">
-						 <label class="checkbox"><input type="checkbox" name="checkbox" checked="">I Accept Terms & Conditions</label>
-					</div>
+					
 					<div class="submit-w3l">
-						<input type="submit" name="inscription" value="Register">
+						<input type="submit" name="inscription" value="créer ">
 					</div>
 				</form>
 			</div>

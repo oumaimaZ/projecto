@@ -7,11 +7,11 @@
                    
                       
                     <li>
-                        <a href="maison.php"><i class="fa fa-fw fa-user"></i> Maison</a>
+                        <a href="maison.php"><i class="fa fa-fw fa-home"></i> Maison</a>
                     </li>
 
                     <li>
-                        <a href="Confpage.php"><i class="fa fa-fw fa-user"></i> Configuration de la  maison</a>
+                        <a href="Confpage.php"><i class="fa fa-fw fa-wrench"></i> Configuration de la  maison</a>
                     </li>
                     <li>
                         <a href="user.php"><i class="fa fa-fw fa-user"></i> Collaborateur</a>
@@ -35,11 +35,11 @@
                         <a href="bootstrap-elements.php"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
                     </li>  -->
  <li>
-                        <a href="scenario.php"><i class="fa fa-fw fa-wrench"></i>Scénario</a>
+                        <a href="scenario.php"><i class="fa fa-fw fa-calendar-o"></i>Scénario</a>
                     </li>
               
                    <li>
-                        <a href="historique.php"><i class="fa fa-fw fa-file"></i> Historique </a>
+                        <a href="historique.php"><i class="fa fa-fw fa-history"></i> Historique </a>
                     </li>
                     
                 
