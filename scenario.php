@@ -44,7 +44,7 @@ include 'modals/view_user.php';
 		</div>
 	
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" >
-					<div class="offer offer-success">
+					<div class="offer offer-success"data-toggle="modal" data-target="#view_user">
 						<div class="shape">
 							<div class="shape-text">
 								<span class="glyphicon glyphicon glyphicon-th"></span>							
@@ -53,7 +53,7 @@ include 'modals/view_user.php';
 								<div class="offer-content">
 								<h3 class="lead">
 								
-								  <label class="label label-success"data-toggle="modal" data-target="#view_user">creer un scenario </label>
+								  <label class="label label-success">creer un scenario </label>
 								
 
 								</h3>
