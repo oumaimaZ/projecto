@@ -98,12 +98,9 @@ include 'modals/view_user.php';
         
 	
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" >
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> origin/master
 					<div class="offer offer-success"data-toggle="modal" data-target="#view_user">
 
 						<div class="shape">
