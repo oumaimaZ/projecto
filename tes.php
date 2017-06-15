@@ -1,31 +1,23 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Slider - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#slider" ).slider();
-  } );
-  </script>
-</head>
-<body>
- 
-<div id="slider"></div>
- 
- 
-    <fieldset desabled>
-    <input type="checkbox"> hello
-         <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">Disabled Checkbox
-                                    </label>
-                                </div>
-    </fieldset>
-</body>
-</html>
+<? include 'includes/header.php';
+    include 'includes/side_bar.php';    ?>
+<div class="container">
+    <div class="col-sm-6" style="height:130px;">
+        <div class="form-group">
+            <div class='input-group date' id='datetimepicker9'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar">
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker9').datetimepicker({
+                viewMode: 'years'
+            });
+        });
+    </script>
+</div>
+<? include 'includes/footer.php'; ?>
