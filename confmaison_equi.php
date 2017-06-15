@@ -1,9 +1,10 @@
 <?php
+
+
 include 'includes/header.php';
         include 'includes/side_bar.php';
-
  
-
+$_SESSION['back']=0;
 ?>
 <div id="page-wrapper">
     <div class="container-fluid">
@@ -31,9 +32,6 @@ include 'includes/header.php';
             <?php echo '<input type="hidden" name="iduser" value='.$_SESSION['username'].'>';
             
             ?>
-
-               
-
 
             <div class="form-group">
 
@@ -88,7 +86,19 @@ include 'includes/header.php';
     </div>
 </div>
 </form>
+<script type="text/javascript">
 
+function noBack(){window.history.forward()}
+
+noBack();
+
+window.onload=noBack;
+
+window.onpageshow=function(evt){if(evt.persisted)noBack()}
+
+window.onunload=function(){void(0)}
+
+</script>
 <script>
   $(document).ready(function(){
     

@@ -1,6 +1,7 @@
 <?php 
 session_start() ;
 	
+
 		if(isset($_POST['maison'])){
 			$maison = $_POST['maison'];
 		

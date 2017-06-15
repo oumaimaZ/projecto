@@ -1,5 +1,9 @@
 <?php include 'includes/header.php';
         include 'includes/side_bar.php';
+if($_SESSION['back']=0)
+  header('Location: maison.php')
+  ;
+$_SESSION['back']=1;
 
 
 ?>

@@ -27,6 +27,7 @@
     <tr>
       <th></th>
       <th>Equipement</th>
+      <th>Etat</th>
       <th>Date</th>
        <th>Par</th>
         
@@ -35,8 +36,9 @@
   <tbody>
  <?php 
             $bd=new PDO('mysql:local=localhost;dbname=domotique_data;char set=utf8','root','');
-            $sql='SELECT * ,h.type as t FROM historique h,equipement e 
-                                                            where e.id_equipement=h.id_equipement
+            $sql='SELECT * ,h.type as t
+                                                        FROM historique h,equipement e 
+                                                        where e.id_equipement=h.id_equipement
                                                          
                                                          and h.username= ? 
                                                          order by h.date';
@@ -47,6 +49,8 @@
                         <td scope="row">';
                         echo $row['t'];
                         echo '</td><td>'.$row['nom'].'</td>';
+                        if($row['etatt']==1)
+                            echo '<td>on</td>';else echo '<td>on</td>';
                         echo '<td>'.$row['date'].'</td>';
                         echo '<td>'.$row['user'].'</td>';
 
