@@ -17,7 +17,7 @@
 
                 <?php 
                 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-                $sql='SELECT * FROM user u,maison_user m where m.username =u.username ';
+                $sql='SELECT Distinct u.* FROM user u,maison_user m where m.username =u.username ';
                      $query = $db->prepare($sql);
                   $query->execute();
   			 while($ligne = $query->fetch())
