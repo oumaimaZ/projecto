@@ -1,5 +1,6 @@
 <?php include 'includes/header.php';
   include 'includes/side_bar.php';
+include 'modals/view_user.php';
   
  ?>
 
@@ -19,7 +20,7 @@
                 <!-- /.row -->
  <div class="row">
     <div class="col-lg-12">
-      <div class="panel panel-default">
+      <div class="panel panel-default" >
         <div class="panel-body">
                 
         <div class="container">
@@ -27,7 +28,7 @@
     <div class="row">
     
 		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-			<div class="offer offer-success">
+			<div class="offer offer-success" >
 				<div class="shape">
 					<div class="shape-text">
 						<span class="glyphicon glyphicon glyphicon-th"></span>							
@@ -42,8 +43,8 @@
 			</div>
 		</div>
 	
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-					<div class="offer offer-success" >
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" >
+					<div class="offer offer-success">
 						<div class="shape">
 							<div class="shape-text">
 								<span class="glyphicon glyphicon glyphicon-th"></span>							
@@ -52,7 +53,7 @@
 								<div class="offer-content">
 								<h3 class="lead">
 								
-								  <label class="label label-success" data-toggle="modal" data-target="#creerscena">creer un scenario </label>
+								  <label class="label label-success"data-toggle="modal" data-target="#view_user">creer un scenario </label>
 								
 
 								</h3>
@@ -64,6 +65,7 @@
 	</div>
 	</div>
         </div>
+         
 </div>
 <table class="table table-sm">
   <thead>
@@ -224,4 +226,5 @@ transition: all 0.4s ease-in-out;
     </div>
 </div>
   </div>
+    <?php include 'includes/footer.php'; ?>
  
