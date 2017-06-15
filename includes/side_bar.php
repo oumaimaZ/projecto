@@ -7,7 +7,7 @@
                    
                       
                     <li>
-                        <a href="maison.php"><i class="fa fa-fw fa-home"></i> Maison</a>
+                        <a href="gestion_maison.php"><i class="fa fa-fw fa-home"></i> Maison</a>
                     </li>
 
                     <li>

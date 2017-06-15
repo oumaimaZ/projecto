@@ -10,18 +10,15 @@ while($ii<sizeof($_POST['type'])) {
 	$nom=$_POST['nom'][$ii];
 	$p=$_POST['piece'][$ii];
 	$type=$_POST['type'][$ii];
-	$db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root','');
+	$db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
 $re=$db->exec("INSERT INTO equipement (piece,nom,user,type) VALUES ('$p','$nom','$user','$type')");
 	$ii++;	
 	 $db = null;
-
-
-
 }
 }
 
-//header('Location: ../index.php');  
-//exit;
+header('Location: ../index.php');  
+exit;
 
 
 
