@@ -228,7 +228,7 @@ include 'modals/view_portail.php';
                                               <h3 class="panel-title">Securité (porte)</h3>
                                           </div><a href="portail.php">
                                           <div class="panel-body">
-                                            <center> <img src="images/lock.png"></center>
+                                            <center> <img src="images/calendar.png"></center>
                                       </div></a>
                                       <div data-toggle="modal" data-target="#view_user">
                                              <center> <label>
