@@ -22,7 +22,6 @@ while($ii<sizeof($_POST['equip'])) {
 $re=$db->exec("INSERT INTO scenario_equipement (`id_scenario`,`id_equipement`) VALUES ('$id','$e')");
   $ii++;  
   
- 
 }
  $db = null;
 

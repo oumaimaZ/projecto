@@ -82,20 +82,32 @@ if(isset($_POST[$data["id_scenario"]])){
                                         echo '<td><label class="label label-success">on</label></td>';
                                     else  echo '<td><label class="label label-danger">off</label></td>';
                                     ?>
-                                  <td ><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target="#edit_scenario"> </a></td>
+                                  <td>
+<button class=" btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target=<?php echo "#".$row['id_scenario']; ?> >
+  <span class="glyphicon glyphicon-pencil"></span></button>
+                                  </td>
                     <form action="" method="post">
-                    <td align="center"><button class="menu-icon fa fa-trash"  type="submit" name=<?php echo $row["id_scenario"] ;?> ></button>
+                    <td ><button class="menu-icon fa fa-trash"  type="submit" name=<?php echo $row["id_scenario"] ;?> ></button>
                         </form>
                         </td>
-                                </tr>
-                                <?php 
+                          </tr>
 
-                       }?>
+
+<!-- Modal -->
+    <?php include 'modals/modal_maj_scenario.php';
+
+                              }
+                                
+
+
+                     ?>
                   
 
             </tbody>
 </table>
 
+
+  
 
 </div>
 
@@ -105,6 +117,12 @@ if(isset($_POST[$data["id_scenario"]])){
 </div>
 </div>
  
+<!-- Modal -->
+
+
+
+
+
 
     <?php include 'includes/footer.php'; ?>
 
