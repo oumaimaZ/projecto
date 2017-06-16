@@ -101,7 +101,7 @@ while($leg=$dataa->fetch()){
             <div class="form-group">
               <label class="control-label col-md-3" for="piece">type de piece</label>
               <div class="col-md-9">
-                <select class="form-control" name="p_type">
+                <select class="form-control" name="m_type">
                               
                               <option value="cuisine" >cuisine</option>
                               <option value="chambre" >chambre</option>
@@ -115,14 +115,14 @@ while($leg=$dataa->fetch()){
             <div class="form-group">
               <label class="control-label col-md-3" for="user"> piece</label>
                 <div class="col-md-9">
-                 <input type="text" name="p_nom" class="form-control" placeholder="nom" required>
+                 <input type="text" name="m_nom" class="form-control" placeholder="nom" required>
                </div>
              </div>
              
             <div class="form-group">
               <label class="control-label col-md-3" for="user"> etages</label>
                  <div class="col-md-9">
-                    <select class="form-control" name="p_etage">
+                    <select class="form-control" name="m_etage">
                                   
                                   <option value="etage1" >etage 1</option>
                                    <option value="etage2" >etage 2</option>
@@ -139,7 +139,7 @@ while($leg=$dataa->fetch()){
          <div class="row">
            <div class="col-md-12">
           
-           <button class="btn btn-warning pull-right" type="submit" name="add_piece">Modify Piece</button>
+           <button class="btn btn-warning pull-right" type="submit" name=<?php echo $ligne['id_piece'];?>>Modify Piece</button>
            </div>
          </div>
        </form>  
