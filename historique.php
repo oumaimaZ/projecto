@@ -25,8 +25,9 @@
 <table class="table table-sm">
   <thead>
     <tr>
-      <th></th>
+        <th></th>
       <th>Equipement</th>
+      <th>Type</th>
       <th>Etat</th>
       <th>Date</th>
        <th>Par</th>
@@ -45,15 +46,20 @@
             $query= $bd->prepare($sql);
             $query->execute(array($_SESSION['username']));
              while($row = $query->fetch()){
-                echo '<tr>
-                        <td scope="row">';
-                        echo $row['t'];
-                        echo '</td><td>'.$row['nom'].'</td>';
-                        if($row['etatt']==1)
-                            echo '<td> <label class="label label-success">on</label></td>';else echo '<td><label class="label label-warning">off</label></td>';
-                        echo '<td>'.$row['date'].'</td>';
-                        echo '<td>'.$row['user'].'</td>';
-
+                ?><tr>
+                        <td scope="row">
+                        <?php echo $row['t']; ?>
+                            
+                        </td><td><?php echo $row['nom'] ;?></td>
+      <td><?php echo $row['type'] ;?></td>
+      <?php
+           
+                 if($row['etatt']==1){
+                 ?>
+                     <td> <label class="label label-success">on</label></td><?php }else{ ?> <td><label class="label label-warning">off</label></td><?php }?>
+                        <td><?php echo $row['date'];?></td>
+                        <td><?php echo $row['user'];?></td>
+<?php
              }
 
 

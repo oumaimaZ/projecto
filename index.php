@@ -195,7 +195,7 @@ include 'modals/view_portail.php';
                        
 
                                               <center>
-                                              <img src="images/tesportal.png"></center>
+                                              <img src="images/climat.png"></center>
                                       </div>        </a>
                                       
                                                   <div data-toggle="modal" data-target="#view_user">
@@ -225,7 +225,7 @@ include 'modals/view_portail.php';
                           <div class="col-lg-3">
                                   <div class="panel panel-danger ">
                                           <div class="panel-heading">
-                                              <h3 class="panel-title">Securité  (porte)</h3>
+                                              <h3 class="panel-title">Scenario</h3>
                                           </div><a href="scenario.php">
                                           <div class="panel-body">
                                             <center> <img src="images/calendar.png"></center>
