@@ -126,6 +126,7 @@ include 'style.scss';
 }           
      function request(nbr) {
        ide=nbr.value;  
+         
 	var xhr = getXMLHttpRequest();
 	
 	xhr.onreadystatechange = function() {
