@@ -97,7 +97,7 @@ include 'modals/view_portail.php';
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Activités</h3>
                                           </div>
-                                          <a href="eclairages.php"><div class="panel-body">
+                                          <a href="historique.php"><div class="panel-body">
                                              <center> <img src ='images/activities.png'></center>
                                             
                                      
@@ -211,7 +211,7 @@ include 'modals/view_portail.php';
                                   <div class="panel panel-danger  ">
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Cameras</h3>
-                                          </div><a href="portail.php">
+                                          </div><a href="camera.php">
                                           <div class="panel-body">
                                             <center> <img src="images/cam64.png"></center>
                                       </div></a>
@@ -225,7 +225,7 @@ include 'modals/view_portail.php';
                           <div class="col-lg-3">
                                   <div class="panel panel-danger ">
                                           <div class="panel-heading">
-                                              <h3 class="panel-title">Securité  (porte)</h3>
+                                              <h3 class="panel-title">Securité (porte)</h3>
                                           </div><a href="portail.php">
                                           <div class="panel-body">
                                             <center> <img src="images/lock.png"></center>
