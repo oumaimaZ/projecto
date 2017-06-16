@@ -93,7 +93,7 @@ while($leg=$dataa->fetch()){
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h3 class="modal-title">Nouvelle piece</h3>
+        <h3 class="modal-title">Modification piece</h3>
       </div>
       <div class="modal-body">
         <form role="form" action="script/modif_piece_script.php" method="POST" class="form-horizontal" id="tache_form">
@@ -139,7 +139,7 @@ while($leg=$dataa->fetch()){
          <div class="row">
            <div class="col-md-12">
           
-           <button class="btn btn-warning pull-right" type="submit" name="add_piece">Add Piece</button>
+           <button class="btn btn-warning pull-right" type="submit" name="add_piece">Modify Piece</button>
            </div>
          </div>
        </form>  
