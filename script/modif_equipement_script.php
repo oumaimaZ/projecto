@@ -1,14 +1,16 @@
 <?php
  $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-$req4='select * from piece ';
+$req4='select * from equipement ';
 $dataa=$db->prepare($req4);
 $dataa->execute();
 
 while($leg=$dataa->fetch()){
-    if(isset($_POST[$leg['id_piece']])){
-        $type=$_POST['m_type'];
-        $etage=$_POST['m_etage'];
-        $nom=$_POST['m_nom'];
+    if(isset($_POST[$leg['id_equipement']])){
+        
+        
+        $type=$_POST['me_type'];
+        $piece=$_POST['me_piece'];
+        $nom=$_POST['me_nom'];
         
         if(empty($type)){
             $type=$leg['type'];
@@ -18,16 +20,16 @@ while($leg=$dataa->fetch()){
         }
         if(empty($etage)){
             
-            $etage=$leg['etage'];
+            $piece=$leg['piece'];
         }
-         $upd=$db->prepare('update  piece set type=?,nom=?,etage=?  where id_piece=?');
-        $upd->execute(array($type,$nom,$etage,$leg['id_piece']));
+         $upd=$db->prepare('update  equipement set type=?,nom=?,piece=?  where id_equipement=?');
+        $upd->execute(array($type,$nom,$piece,$leg['id_equipement']));
         
         
         
   
     header('location:../gestion_maison.php');
-    break;
+    break; 
     }
     echo  " dont work ";
 }
