@@ -27,30 +27,62 @@
                           </div>
                         </div>
 
+
                                 <div class="panel panel-default col-md-12">
                                                   <div class="panel-body">
                                                      <?php 
-                                                                $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-                                                                $sql='SELECT * FROM scenario s,scenario_equipement se where s.id_scenario=se.id_scenario and s.id_scenario=?
+                  $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
+                  $sql='SELECT p.nom as piece,e.nom as equip,e.id_equipement
+                  FROM scenario_equipement se,piece as p,equipement as e 
+                  where se.id_scenario=?
+                   and e.piece=p.id_piece
+                   and e.id_equipement=se.id_equipement
 
-                                                                 ';
-                                                                  $query = $db->prepare($sql);
-                                                                  $query->execute(array($_SESSION['id']));
-$i=0;
+
+                   ';
+                    $query = $db->prepare($sql);
+                    $query->execute(array($_SESSION['id']));
+
                                                          while($ligne = $query->fetch())
-                                                                {$i++;
-
-
-                                                ?>
+                                                                { ?>
 
                                                                     <div class=" row ">
                                                                       <label class="form-check-label col-md-4">
-                                                                                <?php echo  '<input class="form-check-input" type="checkbox" name="equip[]" value="'.$ligne['id_equipement'].'" checked>' ?>
-                                                                        <label class="control-label " ><?php echo $ligne['piece']?> - <?php echo $ligne['equip']?></label></label>
+                                                                    <?php echo  '<input class="form-check-input" type="checkbox" name="equip[]" 
+                                                                    value="'.$ligne['id_equipement'].'" checked>' ?>
+                                                          <label class="control-label " ><label class="label label-primary"><?php echo $ligne['piece']?> </label>- <?php echo $ligne['equip']?></label></label>
                                                                     </div>
                                                                     <hr>
 
-                                                            <?php } echo $_SESSION['id'];?> </div>
+                                                            <?php } ?> 
+
+                   <?php 
+                  $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
+                  $sql='SELECT p.nom as piece,e.nom as equip,e.id_equipement
+                  FROM piece as p,equipement as e 
+                  where p.maison=?
+                   and e.piece=p.id_piece
+                   and e.id_equipement not in (select id_equipement from scenario_equipement where id_scenario=?)';
+                    $query = $db->prepare($sql);
+                    $query->execute(array($_SESSION['id_maison'],$_SESSION['id']));
+
+                                                         while($ligne = $query->fetch())
+                                                                { ?>
+
+                          <div class=" row ">
+                            <label class="form-check-label col-md-4">
+                          <?php echo  '<input class="form-check-input" type="checkbox" name="equip[]" value="'.$ligne['id_equipement'].'" >' ?>
+                                     <label class="control-label " ><label class="label label-primary"><?php echo $ligne['piece']?> </label>- <?php echo $ligne['equip']?></label></label>
+                                                                    </div>
+                                                                    <hr>
+
+                                                            <?php } ?>
+
+
+
+
+
+                                                          </div>
                                 </div>
             
 

@@ -73,10 +73,8 @@ if(isset($_POST[$data["id_scenario"]])){
                       $query= $bd->prepare($sql);
                       $query->execute(array($_SESSION['id_maison']));
                        while($row = $query->fetch()){
-                          echo '<tr>
-                                  ';
-                                 
-                                  echo '<td><h4><label class="label label-primary">'.$row['nom'].'</label></h4></td>';
+                         
+                                  echo '<tr><td><h4><label class="label label-primary">'.$row['nom'].'</label></h4></td>';
                               echo '<td>'.$row['date'].'</td>';
                                   if($row['etat']==1)
                                         echo '<td><label class="label label-success">on</label></td>';
@@ -88,11 +86,11 @@ if(isset($_POST[$data["id_scenario"]])){
                                   </td>
                     <form action="" method="post">
                     <td ><button class="menu-icon fa fa-trash"  type="submit" name=<?php echo $row["id_scenario"] ;?> ></button>
-                        </form>
-                        </td>
+                       </td>  </form>
+                       
                           </tr>
 
-
+ </tbody>
 <!-- Modal -->
     <?php include 'modals/modal_maj_scenario.php';
 
@@ -103,7 +101,7 @@ if(isset($_POST[$data["id_scenario"]])){
                      ?>
                   
 
-            </tbody>
+           
 </table>
 
 
