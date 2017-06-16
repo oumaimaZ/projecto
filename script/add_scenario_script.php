@@ -1,12 +1,13 @@
 <?php 
-if(isset($_POST['nom']))
+if(isset($_POST['creer']))
 {
+    $nom=$_POST['nom'];
+    $date=$_POST['date'];
    $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-
-$sql='insert into scenario(nom,date,id_maison,etat) values(?,?,?,1)';
+            $sql='insert into scenario(nom,id_maison,etat) values(?,?,?)';
 
     $sel=$db->prepare($sql);
-    $sel->execute(array($_POST['nom'],2011-08-19 T13:45:00,$_SESSION['id_maison'],0));
+    $sel->execute(array($nom,2,1));
    /*   $id=$bd->lastInsertId();
 $ii = 0;
 
@@ -22,5 +23,5 @@ $re=$db->exec("INSERT INTO scenario_equip (`id_scenario`,`id_equipement`) VALUES
 }*/
 
   header('Location: ../scenario.php');
-} else echo "wtf";               
+}              
 ?>

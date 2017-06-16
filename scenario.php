@@ -52,9 +52,7 @@ include 'modals/add_scenario.php';
             <tbody>
            <?php 
                       $bd=new PDO('mysql:local=localhost;dbname=domotique_data;char set=utf8','root','');
-                      $sql='SELECT *
-                        FROM scenario
-                        where id_maison=?
+                      $sql='SELECT * FROM scenario where id_maison=?
                          order by h.date';
                       $query= $bd->prepare($sql);
                       $query->execute(array($_SESSION['id_maison']));
