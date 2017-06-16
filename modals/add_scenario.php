@@ -26,7 +26,7 @@
               </div>
 
             </div>
-<!--
+
           <div class="form-group">
               
          
@@ -35,35 +35,34 @@
                          
 
   <div class="col-md-6">
-    <input class="form-control" type="datetime-local" name="dt" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+    <input class="form-control" type="datetime-local" name="dt" />
   </div>
-</div>-->
+</div>
 
 <div class="panel panel-default col-md-12">
   <div class="panel-body">
-     <?php /*
+     <?php 
                 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
                 $sql='SELECT p.`nom` as piece ,e.nom  as equip,id_equipement FROM piece p,equipement e where p.maison=? and p.id_piece=e.piece order by piece';
                   $query = $db->prepare($sql);
                   $query->execute(array($_SESSION['id_maison']));
          while($ligne = $query->fetch())
                 {
-*/
+
 ?>
-  <!--
+
 <div class=" row ">
   <label class="form-check-label col-md-4">
-<<<<<<< HEAD
-  <?php echo  '<input class="form-check-input" type="checkbox" name="equip " value="'.$ligne['id_equipement'].'">' ?>
+
+  <?php echo  '<input class="form-check-input" type="checkbox" name="equip[]" value="'.$ligne['id_equipement'].'">' ?>
     <label class="control-label " ><?php echo $ligne['piece']?> - <?php echo $ligne['equip']?>
-=======
-  <input class="form-check-input" type="checkbox" name="equip" value=<?php //echo $ligne['id_equipement'] ; ?>>
-    <label class="control-label "><?php //echo $ligne['piece'] ;?> - <?php //echo $ligne['equip'] ;?>
->>>>>>> origin/master
+
+ 
+
   </label></label>
 </div><hr>
--->
-<?php// } ?>
+
+<?php } ?>
 
 
   </div>

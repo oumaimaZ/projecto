@@ -1,26 +1,30 @@
 <?php 
+session_start();
 if(isset($_POST['creer']))
 {
     $nom=$_POST['nom'];
-    $date=$_POST['date'];
+    $date=$_POST['dt'];
    $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-            $sql='insert into scenario(nom,id_maison,etat) values(?,?,?)';
+            $sql='insert into scenario(nom,date,id_maison) values(?,?,?)';
 
     $sel=$db->prepare($sql);
-    $sel->execute(array($nom,2,1));
-   /*   $id=$bd->lastInsertId();
+    $sel->execute(array($nom,$date,$_SESSION['id_maison']));
+  
+$id = $db->lastInsertId();
 $ii = 0;
 
-while($ii<sizeof($_POST['id_equipement'])) {
+while($ii<sizeof($_POST['equip'])) {
  
   $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root','');
-$n=$_POST['nom'][$ii];
+
   $e=$_POST['equip'][$ii];
 
-$re=$db->exec("INSERT INTO scenario_equip (`id_scenario`,`id_equipement`) VALUES ('$p','$n')");
+$re=$db->exec("INSERT INTO scenario_equipement (`id_scenario`,`id_equipement`) VALUES ('$id','$e')");
   $ii++;  
-   $db = null;
-}*/
+  
+ 
+}
+ $db = null;
 
   header('Location: ../scenario.php');
 }              
