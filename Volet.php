@@ -69,7 +69,7 @@ include 'style.scss';
                                     </div>
                                     <div class="col-xs-9 text-right"> 
                                     
-                                            <input type="range" name=<?php $ligne['id_equipement'] ;?>   value=<?php echo $ligne['id_equipement'] ;?> onchange="request(this);">
+                                            <input type="range" name=<?php $ligne['id_equipement'] ;?>   value=<?php echo $ligne['id_equipement'] ;?> onchange="request(this);"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
                                         <span id="hey"></span>
                                         
                                         <!-- script stock id -->

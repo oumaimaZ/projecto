@@ -1,31 +1,28 @@
 <?php include 'includes/header.php';
     include 'includes/side_bar.php';    ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div class="container">
+     <h3>Animated button</h3>
+	<input type="range" ><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+</div>
+<style>
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
 
- <script src="https://jonthornton.github.io/jquery-timepicker/jquery.timepicker.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://jonthornton.github.io/jquery-timepicker/jquery.timepicker.css" />
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.standalone.css" />
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+</style>
 
 
-  <p id="jqueryExample">
-                    <input type="text" class="date start" />
-                    <input type="text" class="time start" /> to
-                    <input type="text" class="time end" />
-                    <input type="text" class="date end" />
-                </p>
-       <script>
-                $('#jqueryExample .time').timepicker({
-                    'showDuration': true,
-                    'timeFormat': 'g:ia'
-                });
-
-                $('#jqueryExample .date').datepicker({
-                    'format': 'm/d/yyyy',
-                    'autoclose': true
-                });
-            </script>
 
             
 <?php include 'includes/footer.php'; ?>
