@@ -1,6 +1,34 @@
 <?php
 	// Connexion  en Marche ! 
-	if(isset($_POST['connexion'])){
+	if(isset($_POST['connexion'])and !isset($_SESSION['id_maison'])){
+		$db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
+$query = $db->prepare('SELECT * FROM user as u 
+		
+			where u.email = ?
+			AND u.mdp = ?');
+
+
+		
+			$query-> bindValue(1,$_POST['email'],PDO::PARAM_STR);
+			$query-> bindValue(2,$_POST['mdp'],PDO::PARAM_STR);
+
+		$query->execute();
+
+		if($query->rowCount() >= 1){
+			$row = $query->fetch();
+			$_SESSION['is_connected'] = true;
+			$_SESSION['role'] = $row['role'];
+			
+			$_SESSION['username'] = $row['username'];
+	
+
+			header("Location: indexc.php");
+
+		
+			}
+		
+	}else
+	if(isset($_POST['connexion'])and isset($_SESSION['id_maison'])){
 		$db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
 $query = $db->prepare('SELECT * FROM user as u 
 			, maison_user as m 
@@ -24,12 +52,13 @@ $query = $db->prepare('SELECT * FROM user as u
 	
 
 			header("Location: indexc.php");
+			echo "inscription 2";
 
-		}else{
+		}}else{
 			echo 'Something went wrong';
 			
 		}
-	}
+	
 //*****************fin connection******************** 
 
 // ************** début inscription *************
