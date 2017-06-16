@@ -9,7 +9,7 @@ include 'style.scss';
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">           
-                <small> Alarmes</small>
+                <small> Volets</small>
             </h1>
             
         
@@ -69,7 +69,8 @@ include 'style.scss';
                                     </div>
                                     <div class="col-xs-9 text-right"> 
                                     
-                                            <input type="range" >
+                                            <input type="range" name=<?php $ligne['id_equipement'] ;?>   value=<?php echo $ligne['id_equipement'] ;?> onchange="request(this);">
+                                        <span id="hey"></span>
                                         
                                         <!-- script stock id -->
                              <script>
@@ -132,7 +133,7 @@ include 'style.scss';
 		document.getElementById("oumaima").innerHTML=xhr.responseText;     
 		}
 	};
-         xhr.open("POST", "traitement/trait_volet   .php", true);
+         xhr.open("POST", "traitement/trait_volet.php", true);
 	     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	     xhr.send("id="+ide);
     
