@@ -17,7 +17,7 @@ $re=$db->exec("INSERT INTO equipement (piece,nom,user,type,etat,connect) VALUES 
 }
 }
 
-header('Location: ../index.php');  
+header('Location: ../gestion_maison.php');  
 exit;
 
 

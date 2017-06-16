@@ -5,14 +5,44 @@
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Tableau de bord</a>
                     </li>
                    
-                      
-                    <li>
-                        <a href="gestion_maison.php"><i class="fa fa-fw fa-home"></i> Maison</a>
-                    </li>
+<?php
 
-                    <li>
+        $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
+$query = $db->prepare('SELECT * FROM user as u 
+            , maison_user as m 
+            WHERE u.username = m.username 
+            and m.username=?
+           ');
+
+        
+            $query-> bindValue(1,$_SESSION['username'],PDO::PARAM_STR);
+        
+
+        $query->execute();
+
+        if($query->rowCount() >= 1){
+            $row = $query->fetch();
+            $_SESSION['id_maison'] = $row['id_maison'];
+        
+        echo ' <li>
+                        <a href="gestion_maison.php"><i class="fa fa-fw fa-home"></i> Maison</a>
+                    </li>';
+           
+
+        
+        }else{
+           echo'  <li>
                         <a href="Confpage.php"><i class="fa fa-fw fa-wrench"></i> Configuration de la  maison</a>
-                    </li>
+                    </li>';
+           
+            
+        }
+    
+
+      ?>                
+                   
+
+                   
                     <li>
                         <a href="user.php"><i class="fa fa-fw fa-user"></i> Collaborateur</a>
                     </li>

@@ -3,9 +3,8 @@
 	if(isset($_POST['connexion'])){
 		$db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
 $query = $db->prepare('SELECT * FROM user as u 
-			, maison_user as m 
-			WHERE u.username = m.username 
-			AND u.email = ?
+			
+			WHERE  u.email = ?
 			AND u.mdp = ?');
 
 
@@ -19,7 +18,7 @@ $query = $db->prepare('SELECT * FROM user as u
 			$row = $query->fetch();
 			$_SESSION['is_connected'] = true;
 			$_SESSION['role'] = $row['role'];
-			$_SESSION['id_maison'] = $row['id_maison'];
+		
 			$_SESSION['username'] = $row['username'];
 	
 
