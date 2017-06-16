@@ -27,7 +27,10 @@
     <tr>
         <th></th>
       <th>Equipement</th>
-      <th>Type</th>
+     
+    
+      <th>type</th>
+        <th>Piece</th>
       <th>Etat</th>
       <th>Date</th>
        <th>Par</th>
@@ -37,28 +40,25 @@
   <tbody>
  <?php 
             $bd=new PDO('mysql:local=localhost;dbname=domotique_data;char set=utf8','root','');
-            $sql='SELECT * ,h.type as t
-                                                        FROM historique h,equipement e 
-                                                        where e.id_equipement=h.id_equipement
-                                                         
-                                                         and h.username= ? 
-                                                         order by h.date';
+            $sql='select username,etatt,date,type,piece,type_equip ,equip FROM historique where username=? ORDER by date';
             $query= $bd->prepare($sql);
             $query->execute(array($_SESSION['username']));
              while($row = $query->fetch()){
                 ?><tr>
                         <td scope="row">
-                        <?php echo $row['t']; ?>
+                        <?php echo $row['type']; ?>
                             
-                        </td><td><?php echo $row['nom'] ;?></td>
-      <td><?php echo $row['type'] ;?></td>
+                        </td><td><?php echo $row['equip'] ;?></td>
+                        
+      <td><?php echo $row['type_equip'] ;?></td>
+      <td><?php echo $row['piece'] ;?></td>
       <?php
            
                  if($row['etatt']==1){
                  ?>
                      <td> <label class="label label-success">on</label></td><?php }else{ ?> <td><label class="label label-warning">off</label></td><?php }?>
                         <td><?php echo $row['date'];?></td>
-                        <td><?php echo $row['user'];?></td>
+                        <td><?php echo $row['username'];?></td>
 <?php
              }
 
