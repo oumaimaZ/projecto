@@ -59,7 +59,7 @@
   
   </tbody>
 </table>
-</form>
+
 
 </div>
 

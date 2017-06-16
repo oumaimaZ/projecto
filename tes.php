@@ -8,28 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.standalone.css" />
 
-<!--
-<div class="container">
-    <div class="col-sm-6" style="height:130px;">
-        <div class="form-group">
-            <div class='input-group date' id='datetimepicker9'>
-                <input type='text' class="form-control" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar">
-                    </span>
-                </span>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker9').datetimepicker({
-                viewMode: 'years'
-            });
-        });
-    </script>
-</div>
--->
+
   <p id="jqueryExample">
                     <input type="text" class="date start" />
                     <input type="text" class="time start" /> to
@@ -47,4 +26,9 @@
                     'autoclose': true
                 });
             </script>
+
+            
 <?php include 'includes/footer.php'; ?>
+
+
+

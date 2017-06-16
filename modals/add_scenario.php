@@ -1,58 +1,79 @@
+
 <!-- Modal -->
-<div id="add_scénario" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+
+<div id="add_scénario" class="modal fade " role="dialog">
+  <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h3 class="modal-title">Nouvelle piece</h3>
+        <h3 class="modal-title">Nouveau scénario</h3>
       </div>
       <div class="modal-body">
-        <form role="form" action="Confpage.php" method="POST" class="form-horizontal" id="tache_form">
+        <form role="form" action="add_scenario.php" method="POST" class="form-horizontal" >
+        
+
         <div id="holder">
+            
+
             <div class="form-group">
-              <label class="control-label col-md-3" for="piece">type de piece</label>
-              <div class="col-md-9">
-                <select class="form-control" name="type">
-                              
-                              <option value="cuisine" >cuisine</option>
-                              <option value="chambre" >chambre</option>
-                              <option value="salon" >salon</option>
-                              <option value="couloir" >couloir</option>
-                              
-                              
-                </select>
+              <label class="control-label col-md-2" for="piece">scénario</label>
+             
+              <div class="col-md-4">
+                 <input type="text" name="nom" class="form-control" placeholder="nom" required>
+                
               </div>
+
             </div>
-            <div class="form-group">
-              <label class="control-label col-md-3" for="user"> piece</label>
-                <div class="col-md-9">
-                 <input type="text" name="titres[]" class="form-control" placeholder="nom" required>
-               </div>
-             </div>
+
+          <div class="form-group">
+              
+         
+
+<label class="control-label col-md-2" for="piece">TIME Date</label>  
+                         
+
+  <div class="col-md-4">
+    <input class="form-control" type="datetime-local" name="dt" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+  </div>
+</div>
+
+<div class="panel panel-default col-md-12">
+  <div class="panel-body">
+     <?php 
+                $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
+                $sql='SELECT p.nom as piece ,e.nom,id_equipement as equip FROM piece p,equipement e
+                              where p.maison=?
+                              and p.id_piece=e.piece
+                              order by piece';
+                  $query = $db->prepare($sql);
+                  $query->execute(array($_SESSION['id_maison']));
+         while($ligne = $query->fetch())
+                {
+
+?>
+  
+<div class=" row ">
+  <label class="form-check-label col-md-4">
+    <input class="form-check-input" type="checkbox" nom="equip "value="<?php $ligne['id_equipement']?>"> <label class="control-label col-md-2" ><?php $ligne['piece']?>-</label><?php $ligne['equip']?>
+  </label>
+</div>
+
+<?php } ?>
+
+
+  </div>
+</div>
+           
              
-            <div class="form-group">
-              <label class="control-label col-md-3" for="user"> etages</label>
-                 <div class="col-md-9">
-                    <select class="form-control" name="etage">
-                                  
-                                  <option value="etage1" >etage 1</option>
-                                   <option value="etage2" >etage 2</option>
-                                    <option value="etage3" >etage 3</option>
-                                    <option value="etage4" >etage 4</option>
-                                  
-                                  
-                    </select>
-                  </div>
-             
-           </div>
+            
          </div>
          <br><br>
          <div class="row">
            <div class="col-md-12">
           
-             <button class="btn btn-sm btn-warning pull-left" type="button" id="add_group">+</button>
+             <button class="btn btn-sm btn-warning pull-right" type="button" name="creer">+</button>
            </div>
          </div>
        </form>  
@@ -60,3 +81,30 @@
    </div>
  </div>
 </div>
+
+<?php 
+if(isset($_POST['creer']))
+{
+   $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
+
+$sql='insert into senario(nom,date,id_maison,etat) values(?,?,?,1)';
+
+    $sel=$db->prepare($sql);
+    $sel->execute(array($_POST['nom'],$_POST['dt'],$_SESSION['id_maison'],0));
+      $id=$bd->lastInsertId();
+$ii = 0;
+
+while($ii<sizeof($_POST['id_equipement'])) {
+ 
+  $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root','');
+$n=$_POST['nom'][$ii];
+  $e=$_POST['equip'][$ii];
+
+$re=$db->exec("INSERT INTO scenario_equip (`id_scenario`,`id_equipement`) VALUES ('$p','$n')");
+  $ii++;  
+   $db = null;
+}
+
+  header('Location: ../scenario.php');
+}                
+?>

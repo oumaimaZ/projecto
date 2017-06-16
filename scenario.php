@@ -84,7 +84,6 @@ include 'modals/add_scenario.php';
 </div>
  
 
-
     <?php include 'includes/footer.php'; ?>
 
 
