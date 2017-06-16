@@ -2,7 +2,25 @@
   include 'includes/side_bar.php';
 include 'modals/add_scenario.php';
   
- ?>
+
+
+$db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
+
+$reqt=$db->query('select * from scenario ');
+while($data=$reqt->fetch()){
+if(isset($_POST[$data["id_scenario"]])){
+     $delet2=$db->prepare('delete from scenario where id_scenario=?');
+        $delet2->execute(array($data['id_scenario']));
+        $delet=$db->prepare('delete from scenario_equipement where id_scenario=?');
+        $delet->execute(array($data['id_scenario']));
+       
+        break;
+    
+}
+}
+?>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
  <script src="https://jonthornton.github.io/jquery-timepicker/jquery.timepicker.js"></script>
@@ -31,8 +49,6 @@ include 'modals/add_scenario.php';
         <div class="panel-body">
                 
 
-
-
  
         
 
@@ -44,30 +60,38 @@ include 'modals/add_scenario.php';
   <thead>
     <tr>
       <th>Scenario</th>
-      <th> date</th>
+      <th> Date  </th>
       <th>  etat  </th>
-        
+      <th>    </th>
     </tr>
   </thead>
             <tbody>
            <?php 
                       $bd=new PDO('mysql:local=localhost;dbname=domotique_data;char set=utf8','root','');
                       $sql='SELECT * FROM scenario where id_maison=?
-                         order by h.date';
+                         order by date';
                       $query= $bd->prepare($sql);
                       $query->execute(array($_SESSION['id_maison']));
                        while($row = $query->fetch()){
                           echo '<tr>
-                                  <td scope="row">';
-                                  echo $row['t'];
-                                  echo '</td><td>'.$row['nom'].'</td>';
-                                  if($row['etatt']==1)
-                                      echo '<td>on</td>';else echo '<td>on</td>';
-                                  echo '<td>'.$row['date'].'</td>';
-                                  echo '<td>'.$row['user'].'</td>';
+                                  ';
+                                 
+                                  echo '<td><h4><label class="label label-primary">'.$row['nom'].'</label></h4></td>';
+                              echo '<td>'.$row['date'].'</td>';
+                                  if($row['etat']==1)
+                                        echo '<td><label class="label label-success">on</label></td>';
+                                    else  echo '<td><label class="label label-danger">off</label></td>';
+                                    ?>
+                                  <td ><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target="#edit_scenario"> </a></td>
+                    <form action="" method="post">
+                    <td align="center"><button class="menu-icon fa fa-trash"  type="submit" name=<?php echo $row["id_scenario"] ;?> ></button>
+                        </form>
+                        </td>
+                                </tr>
+                                <?php 
 
-                       }
-                    ?>
+                       }?>
+                  
 
             </tbody>
 </table>
