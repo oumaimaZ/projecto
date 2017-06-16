@@ -1,4 +1,3 @@
-
 <?php
 include 'includes/header.php';
 include 'includes/side_bar.php';
@@ -42,7 +41,7 @@ $requ=$db->prepare('INSERT INTO user(username,phone,email,mdp,nom,prenom) VALUES
     $requ->execute(array($username,$phone,$email,$mdp,$nom,$prenom));
   $req2=$db->prepare('INSERT INTO maison_user(id_maison,username,role) VALUES(?,?,?)');
     // a Voir pour ID_MAISON 
-    $req2->execute(array('1',$username,$role));
+    $req2->execute(array($_SESSION['id_maison'],$username,$role));
 }
 
 
@@ -94,7 +93,7 @@ $query->execute();
 ?>
 <?php
  $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-$sql='SELECT  Distinct u.* FROM user u,maison_user m where m.username =u.username AND role=2  ';
+$sql='SELECT  Distinct u.* FROM user u,maison_user m where m.username =u.username AND m.role=2  ';
      $query = $db->prepare($sql);
   $query->execute();
   
@@ -124,7 +123,7 @@ $sql='SELECT  Distinct u.* FROM user u,maison_user m where m.username =u.usernam
               <thead >
                 <tr>
  <!--************************************ TABLEAU D'AFFICHAGE **************************** -->                 
-                  <th text-align:'center'>#</th>
+
                   <th align='center'>Username</th>
                   <th align='center'>e_mail</th>
                   <th align='center'>role</th>
@@ -138,7 +137,6 @@ $sql='SELECT  Distinct u.* FROM user u,maison_user m where m.username =u.usernam
                 { if($ligne['role'] = '2') $role= 'utilisateur';
                 ?>
                 <tr>
-                <td align='center'><input name='checkbox[]' type='checkbox' id='checkbox[]' value=<?php echo $ligne['username']; ?>></td>
 
                <td align='center'><?php echo $ligne['username'];?></td>
                 <td align='center'><?php echo $ligne['email'];?></td>
