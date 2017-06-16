@@ -11,7 +11,7 @@
         <h3 class="modal-title">Nouveau scénario</h3>
       </div>
       <div class="modal-body">
-        <form role="form" action="add_scenario.php" method="POST" class="form-horizontal" >
+        <form role="form" action="../script/add_scenario_script.php" method="POST" class="form-horizontal" >
         
 
         <div id="holder">
@@ -43,7 +43,7 @@
   <div class="panel-body">
      <?php 
                 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-                $sql='SELECT p.`nom` as piece ,e.nom  as equip FROM piece p,equipement e where p.maison=? and p.id_piece=e.piece order by piece';
+                $sql='SELECT p.`nom` as piece ,e.nom  as equip,id_equipement FROM piece p,equipement e where p.maison=? and p.id_piece=e.piece order by piece';
                   $query = $db->prepare($sql);
                   $query->execute(array($_SESSION['id_maison']));
          while($ligne = $query->fetch())
@@ -53,10 +53,10 @@
   
 <div class=" row ">
   <label class="form-check-label col-md-4">
-    <input class="form-check-input" type="checkbox" nom="equip "value="<?php echo $ligne['id_equipement']?>"> 
+  <?php echo  '<input class="form-check-input" type="checkbox" nom="equip " value="'.$ligne['id_equipement'].'">' ?>
     <label class="control-label " ><?php echo $ligne['piece']?> - <?php echo $ligne['equip']?>
   </label></label>
-</div>
+</div><hr>
 
 <?php } ?>
 
@@ -80,29 +80,3 @@
  </div>
 </div>
 
-<?php 
-if(isset($_POST['creer']))
-{
-   $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-
-$sql='insert into senario(nom,date,id_maison,etat) values(?,?,?,1)';
-
-    $sel=$db->prepare($sql);
-    $sel->execute(array($_POST['nom'],$_POST['dt'],$_SESSION['id_maison'],0));
-      $id=$bd->lastInsertId();
-$ii = 0;
-
-while($ii<sizeof($_POST['id_equipement'])) {
- 
-  $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root','');
-$n=$_POST['nom'][$ii];
-  $e=$_POST['equip'][$ii];
-
-$re=$db->exec("INSERT INTO scenario_equip (`id_scenario`,`id_equipement`) VALUES ('$p','$n')");
-  $ii++;  
-   $db = null;
-}
-
-  header('Location: ../scenario.php');
-}                
-?>
