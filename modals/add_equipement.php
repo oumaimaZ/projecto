@@ -27,6 +27,7 @@
                               <option value="alarme" >Alarme</option>
                               <option value="volet" >Volet</option>
                               <option value="camera" >Camera</option>
+                               <option value="climatiseur" >climatiseur</option>
                               
                               
                 </select>
