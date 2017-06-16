@@ -189,13 +189,13 @@ include 'modals/view_portail.php';
                           <div class="col-lg-3">
                                   <div class="panel panel-danger ">
                                           <div class="panel-heading">
-                                              <h3 class="panel-title">Portails</h3>
-                                          </div> <a href="portail.php">
+                                              <h3 class="panel-title">Climatiseur</h3>
+                                          </div> <a href="Climatiseur.php">
                                           <div class="panel-body">
                        
 
                                               <center>
-                                              <img src="images/tesportal.png"></center>
+                                              <img src="images/climat.png"></center>
                                       </div>        </a>
                                       
                                                   <div data-toggle="modal" data-target="#view_user">

@@ -9,6 +9,7 @@ include 'style.scss';
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">           
+                <small> Climatiseur</small>
             </h1>
             
         
@@ -19,7 +20,9 @@ include 'style.scss';
                 <span id="oumaima">
                 <?php 
                 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
+                $sql='SELECT * FROM piece p,equipement e  where e.type=? and e.piece=id_piece';
                   $query = $db->prepare($sql);
+                  $query->execute(array("climatiseur"));
                 ?>
                   <div class='row'>
                       <script type="text/javascript">
@@ -54,14 +57,14 @@ include 'style.scss';
                                                 // test pour l'connect
                                                 if($ligne['connect']==1){
                                         ?>
-                                        <i style="color:yellow" class="fa fa-lightbulb-o fa-5x"></i>
+                                        <img src="images/climat_play.png">
                                         <?php }else{ ?>
-                                        <i  class="fa fa-lightbulb-o fa-5x"></i>
+                                        <img src="images/climat_act.png">
 
                                                     <?php
                                                 } }
                                 else{ ?>
-                                        <img src="images/lamp-desac.png">
+                                        <img src="images/climat_desac.png">
                                         <?php } ?>
                                     </div>
                                     <div class="col-xs-9 text-right"> 
@@ -133,7 +136,7 @@ include 'style.scss';
 		document.getElementById("oumaima").innerHTML=xhr.responseText;     
 		}
 	};
-         xhr.open("POST", "traitement/trait_eclairage.php", true);
+         xhr.open("POST", "traitement/trait_climatiseur.php", true);
 	     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	     xhr.send("id="+ide);
     

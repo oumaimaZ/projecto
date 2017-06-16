@@ -5,9 +5,7 @@
 
 
 
-if($_SESSION['backv']){
-  header('Location: gestion_maison.php');}
-else{
+
 
 ?>
 <div id="page-wrapper">
@@ -109,5 +107,5 @@ else{
   });
   
 </script>
-<?php include 'includes/footer.php'; }
+<?php include 'includes/footer.php'; 
 ?>
