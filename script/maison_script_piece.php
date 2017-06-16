@@ -15,7 +15,7 @@ $id = $db->lastInsertId();
 $user=$_POST['iduser'];
 
 $r =$db->exec("INSERT INTO maison_user(role,id_maison,username) VALUES('2','$id','$user')");
-$_SESSION['maison']=$maison;
+$_SESSION['id_maison']=$id;
 
 $ii = 0;
 while($ii<sizeof($_POST['type'])) {

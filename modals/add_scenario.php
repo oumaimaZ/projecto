@@ -2,7 +2,7 @@
 <!-- Modal -->
 
 <div id="add_scénario" class="modal fade " role="dialog">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog ">
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -18,9 +18,9 @@
             
 
             <div class="form-group">
-              <label class="control-label col-md-2" for="piece">scénario</label>
+              <label class="control-label col-md-3" for="piece">scénario</label>
              
-              <div class="col-md-4">
+              <div class="col-md-6">
                  <input type="text" name="nom" class="form-control" placeholder="nom" required>
                 
               </div>
@@ -31,10 +31,10 @@
               
          
 
-<label class="control-label col-md-2" for="piece">TIME Date</label>  
+<label class="control-label col-md-3" for="piece">TIME Date</label>  
                          
 
-  <div class="col-md-4">
+  <div class="col-md-6">
     <input class="form-control" type="datetime-local" name="dt" value="2011-08-19T13:45:00" id="example-datetime-local-input">
   </div>
 </div>
@@ -43,10 +43,7 @@
   <div class="panel-body">
      <?php 
                 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-                $sql='SELECT p.nom as piece ,e.nom,id_equipement as equip FROM piece p,equipement e
-                              where p.maison=?
-                              and p.id_piece=e.piece
-                              order by piece';
+                $sql='SELECT p.`nom` as piece ,e.nom  as equip FROM piece p,equipement e where p.maison=? and p.id_piece=e.piece order by piece';
                   $query = $db->prepare($sql);
                   $query->execute(array($_SESSION['id_maison']));
          while($ligne = $query->fetch())
@@ -56,8 +53,9 @@
   
 <div class=" row ">
   <label class="form-check-label col-md-4">
-    <input class="form-check-input" type="checkbox" nom="equip "value="<?php $ligne['id_equipement']?>"> <label class="control-label col-md-2" ><?php $ligne['piece']?>-</label><?php $ligne['equip']?>
-  </label>
+    <input class="form-check-input" type="checkbox" nom="equip "value="<?php echo $ligne['id_equipement']?>"> 
+    <label class="control-label " ><?php echo $ligne['piece']?> - <?php echo $ligne['equip']?>
+  </label></label>
 </div>
 
 <?php } ?>
