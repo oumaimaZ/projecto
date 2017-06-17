@@ -8,13 +8,13 @@ include 'includes/side_bar.php';
 // *********************** Suprimer *****************
 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
 
-$reqt=$db->query('select * from maison_user where role=1');
+$reqt=$db->prepare('select * from user');
+$reqt->execute();
 while($data=$reqt->fetch()){
 if(isset($_POST[$data['username']])){
      $delet2=$db->prepare('delete from user where username=?');
         $delet2->execute(array($data['username']));
-        $delet=$db->prepare('delete from maison_user where username=?');
-        $delet->execute(array($data['username']));
+     
        
         break;
     
@@ -93,7 +93,7 @@ $query->execute();
 ?>
 <?php
  $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-$sql='SELECT  Distinct u.* FROM user u,maison_user m where m.username =u.username AND m.role=2  ';
+$sql='SELECT m.role as m_role,u.* FROM user u,maison_user m where m.username =u.username ';
      $query = $db->prepare($sql);
   $query->execute();
   
@@ -134,13 +134,16 @@ $sql='SELECT  Distinct u.* FROM user u,maison_user m where m.username =u.usernam
               <tbody>
                 <?php
                 while($ligne = $query->fetch())
-                { if($ligne['role'] = '2') $role= 'utilisateur';
+                { 
+                 
                 ?>
                 <tr>
 
                <td align='center'><?php echo $ligne['username'];?></td>
                 <td align='center'><?php echo $ligne['email'];?></td>
-                <td align='center'> <?php echo $role ;?></td>
+                <td align='center'> <?php if ($ligne['m_role']==1) echo " tout les privileges" ;
+                 else echo "utilisateur";
+                    ?></td>
                 <td align="center"><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target="#edit_user"> </a></td>
                     <form action="" method="post">
                     <td align="center"><button class="menu-icon fa fa-trash"  type="submit" name=<?php echo $ligne["username"] ;?>></button>
