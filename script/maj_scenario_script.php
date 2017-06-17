@@ -1,6 +1,6 @@
 <?php 
 
-
+session_start();
 if(isset($_POST['mettreajour']))
 {
     $nom=$_POST['nom'];
@@ -8,13 +8,13 @@ if(isset($_POST['mettreajour']))
     $id=$_SESSION['id'];
      $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
            
-            $delet2=$db->prepare('delete all from scenario_equipement where id_scenario=?');
+          $delet2=$db->prepare('delete from scenario_equipement where id_scenario=?');
         $delet2->execute(array($id));
    
 
   
-        $up=$db->prepare('update scenario set nom =? and date=? where id_scenario=?');
-        $up->execute(array($nom,$date,$id));
+        $up=$db->prepare('update scenario set nom =? where id_scenario=?');
+        $up->execute(array($nom,$id));
   $db = null;
 
 $ii = 0;
@@ -31,8 +31,11 @@ $re=$db->exec("INSERT INTO scenario_equipement (`id_scenario`,`id_equipement`) V
 }
  
  $db= null;
+ echo $nom.'nom <br>';
+ echo $date.'<br>';
+ echo $id;
 
-   header('Location: ../scenario.php');
+  header('Location: ../scenario.php');
 
 
 
