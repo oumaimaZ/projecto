@@ -31,7 +31,7 @@ while($leg=$dataa->fetch()){
     header('location:../gestion_maison.php');
     break; 
     }
-    echo  " dont work ";
+    echo  " doesn't work ";
 }
 
 

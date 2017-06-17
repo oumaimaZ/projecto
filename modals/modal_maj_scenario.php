@@ -6,7 +6,7 @@
                     $query->execute(array( $_SESSION['id_maison']));
                 while($ligne = $query->fetch())
                                                                 {
-                                                              $_SESSION['id']=$ligne['id_scenario'];
+                                                             
                                                                
                                                                  ?>
 <div class="modal fade" role="dialog" id=<?php echo $ligne['id_scenario'];?>  >
@@ -16,6 +16,7 @@
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal">&times;</button>
                       <h3 class="modal-title">Modifier <?php echo $ligne['id_scenario'];?> </h3>
+                       <input type="hidden" name="page" value=<?php echo "'".$ligne['id_scenario']."'"; ?> />
                     </div>
 
 <div class="modal-body">
@@ -37,8 +38,10 @@
 
                                     <?php   
                  
-                  $sql='SELECT p.nom as piece,e.nom as equip,e.id_equipement
+                  $sql='SELECT p.nom as piece,e.nom as equip,e.id_equipement,id_scenario 
+
                   FROM scenario_equipement se,piece as p,equipement as e 
+
                   where se.id_scenario=?
                    and e.piece=p.id_piece
                    and e.id_equipement=se.id_equipement';
@@ -76,14 +79,20 @@
                                                                     </div>
                                                                     <hr>
 
-                                                            <?php } ?>
+                                                            <?php } 
+                                                            
+
+
+                                                            ?>
 
 
 <br>
+
                  <div class="row">
                    <div class="col-md-12">
-                  
-                     <button class="btn btn-sm btn-warning pull-right" type="submit" name="mettreajour">+</button>
+      
+
+                     <button class="btn btn-sm btn-warning pull-right" type="submit" name=<?php echo $ligne['id_scenario']; ?>>+</button>
                    </div>
                  </div>
 
