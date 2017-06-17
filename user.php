@@ -1,6 +1,7 @@
 <?php
 include 'includes/header.php';
 include 'includes/side_bar.php';
+include 'modals/edit_user.php';
 ?>
 
 <?php

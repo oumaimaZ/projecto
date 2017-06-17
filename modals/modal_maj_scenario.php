@@ -1,22 +1,23 @@
  <?php 
+session_start();
 
                   $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
                   $sql='SELECT *, id_scenario as id FROM scenario where id_maison=? ';
                     $query = $db->prepare($sql);
                     $query->execute(array( $_SESSION['id_maison']));
-                while($ligne = $query->fetch())
+                while($lignes = $query->fetch())
                                                                 {
                                                              
                                                                
                                                                  ?>
-<div class="modal fade" role="dialog" id=<?php echo $ligne['id_scenario'];?>  >
+<div class="modal fade" role="dialog" id=<?php echo $lignes['id_scenario'];?>>
   <div class="modal-dialog ">
     <!-- Modal content-->
 <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h3 class="modal-title">Modifier <?php echo $ligne['id_scenario'];?> </h3>
-                       <input type="hidden" name="page" value=<?php echo "'".$ligne['id_scenario']."'"; ?> />
+                      <h3 class="modal-title">Modifier <?php echo $lignes['id_scenario'];?> </h3>
+                       <input type="hidden" name="page" value=<?php echo "'".$lignes['id_scenario']."'"; ?> />
                     </div>
 
 <div class="modal-body">
@@ -26,7 +27,7 @@
                               <label class="control-label col-md-3" for="piece">scénario</label>
                              
                               <div class="col-md-6">
-                                <?php echo'<input type="text" name="nom" class="form-control" placeholder="nom" value= "'.$ligne['nom'].'"required>'?> 
+                                <?php echo'<input type="text" name="nom" class="form-control" placeholder="nom" value= "'.$lignes['nom'].'"required>'?> 
                               </div>
                             </div>
 
@@ -46,9 +47,9 @@
                    and e.piece=p.id_piece
                    and e.id_equipement=se.id_equipement';
                     $q = $db->prepare($sql);
-                    $q->execute(array($ligne['id_scenario']));
+                    $q->execute(array($lignes['id_scenario']));
 
-                                                        while($ligne = $q->fetch())
+                                                        while($ligne= $q->fetch())
                                                                 { ?>
 
                           <div class=" form-group row ">
@@ -70,12 +71,12 @@
                     $query2 = $db->prepare($sql2);
                     $query2->execute(array($_SESSION['id_maison'],$ligne['id_scenario']));
 
-                                                         while($ligne = $query2->fetch())
+                                                         while($ligna = $query2->fetch())
                                                                 { ?>
                           <div class=" row ">
                             <label class="form-check-label col-md-4">
-                          <?php echo  '<input class="form-check-input" type="checkbox" name="equi[]" value="'.$ligne['id_equipement'].'" >' ?>
-                                     <label class="control-label " ><label class="label label-primary"><?php echo $ligne['piece']?> </label>- <?php echo $ligne['equip']?></label></label>
+                          <?php echo  '<input class="form-check-input" type="checkbox" name="equi[]" value="'.$ligna['id_equipement'].'" >' ?>
+                                     <label class="control-label " ><label class="label label-primary"><?php echo $ligna['piece']?> </label>- <?php echo $ligna['equip']?></label></label>
                                                                     </div>
                                                                     <hr>
 
@@ -92,7 +93,11 @@
                    <div class="col-md-12">
       
 
+<<<<<<< HEAD
                      <button class="btn btn-sm btn-warning pull-right" type="submit" name=<?php echo $ligne['id']; ?>>+</button>
+=======
+                     <button class="btn btn-sm btn-warning pull-right" type="submit" name=<?php echo $lignes['id_scenario']; ?>>+</button>
+>>>>>>> origin/master
                    </div>
                  </div>
 
