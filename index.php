@@ -1,7 +1,7 @@
 <?php
   include 'includes/header.php';
   include 'includes/side_bar.php';
-   include 'modals/add_piece.php';
+   include 'modals/view_scenrio.php';
    include 'modals/view_clime.php';
    include 'modals/view_eclairage.php';
     include 'modals/view_volet.php';
@@ -230,16 +230,15 @@ include 'modals/view_room.php';
                                   <div class="panel panel-danger ">
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Scenario</h3>
-                                          </div><a href="scenario.php">
+                                          </div><a href="scenario_tb.php">
                                           <div class="panel-body">
                                             <center> <img src="images/calendar.png"></center>
                                       </div></a>
-                                      
-                                            <center> <br><label>
-                                                   
-                                                </label></center>
-                                          
-                                  </div>
+                                        <div data-toggle="modal" data-target="#view_scenario">
+                                            <center> <label>
+                                                   <span class="pull-left">Détails</span>
+                                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
+                                          </div>
                           </div>
               
                         </div><!-- /.row -->

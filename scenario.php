@@ -1,6 +1,7 @@
 <?php include 'includes/header.php';
   include 'includes/side_bar.php';
 include 'modals/add_scenario.php';
+
   
 
 
@@ -80,25 +81,17 @@ if(isset($_POST[$data["id_scenario"]])){
                                         echo '<td><label class="label label-success">on</label></td>';
                                     else  echo '<td><label class="label label-danger">off</label></td>';
                                     ?>
-                                  <td>
-<button class=" btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target=<?php echo "#".$row['id_scenario']; ?> >
-  <span class="glyphicon glyphicon-pencil"></span></button>
-                                  </td>
+                                  <td align="center"><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target=<?php echo "#".$row['id_scenario']; ?>> </a></td>
                     <form action="" method="post">
-                    <td ><button class="menu-icon fa fa-trash"  type="submit" name=<?php echo $row["id_scenario"] ;?> ></button>
-                       </td>  </form>
-                       
-                          </tr>
-
- </tbody>
+                    <td align="center"><button class="menu-icon fa fa-trash"  type="submit" name=<?php echo $row["id_scenario"] ;?>></button>
+                        </form>
+                        </td>
+                </tr>
+            <?php }
+              ?>
+            </tbody>
 <!-- Modal -->
-    <?php include 'modals/modal_maj_scenario.php';
-
-                              }
-                                
-
-
-                     ?>
+   
                   
 
            
@@ -122,6 +115,10 @@ if(isset($_POST[$data["id_scenario"]])){
 
 
 
-    <?php include 'includes/footer.php'; ?>
+    <?php    
+include 'modals/modal_maj_scenario.php'
+;
+
+     include 'includes/footer.php'; ?>
 
 
