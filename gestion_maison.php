@@ -65,13 +65,14 @@ while($leg=$dataa->fetch()){
                 <td align='center'> <?php echo $ligne['etage'] ;?></td>
 
 
-                <td align="center"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target=<?php echo "#".$ligne['id_piece']; ?> >
-                  <span class="glyphicon glyphicon-pencil"></span></button></td>
+             
 
 
                 <td align="center"><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target=<?php echo "#".$ligne['id_piece']; ?>> </a></td>
 
-                    
+                    <form action="" method="post">
+                    <td align="center"><button class= class="btn btn-primary btn-xs"   type="submit" name=<?php echo $ligne["id_piece"] ;?>><span class="glyphicon glyphicon-trash"></span></button>
+                        </form>
                         </td>
                 </tr>
               
