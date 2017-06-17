@@ -1,5 +1,15 @@
 <!-- Modal -->
-<div id="edit_user" class="modal fade" role="dialog">
+<?php
+$db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
+$sql='SELECT m.role as m_role,u.* FROM user u,maison_user m where m.username =u.username ';
+     $query = $db->prepare($sql);
+  $query->execute();
+ while($ligne = $query->fetch())
+     
+ {
+     ?>
+<div id=<?php echo $ligne['username']; ?>
+     class="modal fade" role="dialog">
  <!-- Modal -->
 
   <div class="modal-dialog modal-lg">
@@ -63,7 +73,7 @@
                                     <br>
                           <div class="form-group">
                           <div class="col-sm-6">
-                            <button class="btn btn-primary pull-right" type="submit" name="submit">creer</button>
+                            <button class="btn btn-primary pull-right" type="submit" name=<?php echo $ligne['username']; ?>>Modifier</button>
                           </div>
                         </div>
                         </div>                               
@@ -75,5 +85,5 @@
     </div>
 </div>
   </div>
-
+<?php } ?>
 

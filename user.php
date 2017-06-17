@@ -1,6 +1,7 @@
 <?php
 include 'includes/header.php';
 include 'includes/side_bar.php';
+include 'modals/edit_user.php';
 ?>
 
 <?php
@@ -144,7 +145,7 @@ $sql='SELECT m.role as m_role,u.* FROM user u,maison_user m where m.username =u.
                 <td align='center'> <?php if ($ligne['m_role']==1) echo " tout les privileges" ;
                  else echo "utilisateur";
                     ?></td>
-                <td align="center"><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target="#edit_user"> </a></td>
+                <td align="center"><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target=<?php echo $ligne['username']; ?> > </a></td>
                     <form action="" method="post">
                     <td align="center"><button class="menu-icon fa fa-trash"  type="submit" name=<?php echo $ligne["username"] ;?>></button>
                         </form>
