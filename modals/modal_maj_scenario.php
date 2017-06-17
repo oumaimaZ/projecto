@@ -1,7 +1,7 @@
  <?php 
 
                   $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-                  $sql='SELECT *FROM scenario where id_maison=? ';
+                  $sql='SELECT *, id_scenario as id FROM scenario where id_maison=? ';
                     $query = $db->prepare($sql);
                     $query->execute(array( $_SESSION['id_maison']));
                 while($ligne = $query->fetch())
@@ -92,7 +92,7 @@
                    <div class="col-md-12">
       
 
-                     <button class="btn btn-sm btn-warning pull-right" type="submit" name=<?php echo $ligne['id_scenario']; ?>>+</button>
+                     <button class="btn btn-sm btn-warning pull-right" type="submit" name=<?php echo $ligne['id']; ?>>+</button>
                    </div>
                  </div>
 
