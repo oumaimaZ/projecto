@@ -1,5 +1,5 @@
  <?php 
-session_start();
+
 
                   $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
                   $sql='SELECT *, id_scenario as id FROM scenario where id_maison=? ';
