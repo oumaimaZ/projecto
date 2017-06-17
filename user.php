@@ -1,7 +1,6 @@
 <?php
 include 'includes/header.php';
 include 'includes/side_bar.php';
-include 'modals/edit_user.php';
 ?>
 
 <?php
@@ -170,12 +169,12 @@ $sql='SELECT m.role as m_role,u.* FROM user u,maison_user m where m.username =u.
 
 
 
-
+</div>
 
 <!-- /.row -->
 <?php 
 include 'modals/add_user.php';
-include 'modals/edit_user.php'; ?>
+ ?>
 <?php
 include 'includes/footer.php';
 ?>
