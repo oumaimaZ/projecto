@@ -8,7 +8,7 @@
                       <h3 class="modal-title">Modifier scénario</h3>
                     </div>
  <div class="modal-body">
-  <form role="form" action="script/add_scenario_script.php" method="POST" class="form-horizontal" >
+  <form role="form" action="script/maj_scenario_script.php" method="POST" class="form-horizontal" >
  
                             <div class="form-group row ">
                               <label class="control-label col-md-3" for="piece">scénario</label>
@@ -48,9 +48,8 @@
 
                                                                     <div class=" row ">
                                                                       <label class="form-check-label col-md-4">
-                                                                    <?php echo  '<input class="form-check-input" type="checkbox" name="equip[]" 
-                                                                    value="'.$ligne['id_equipement'].'" checked>' ?>
-                                                          <label class="control-label " ><label class="label label-primary"><?php echo $ligne['piece']?> </label>- <?php echo $ligne['equip']?></label></label>
+                                                    <?php echo  '<input class="form-check-input" type="checkbox" name="equi[]" value="'.$ligne['id_equipement'].'" checked>' ?>
+                          <h4> <label class="label label-primary"><?php echo $ligne['piece']?> </label> </h4>- <label class="control-label " > <?php echo $ligne['equip']?></label></label>
                                                                     </div>
                                                                     <hr>
 
@@ -71,7 +70,7 @@
 
                           <div class=" row ">
                             <label class="form-check-label col-md-4">
-                          <?php echo  '<input class="form-check-input" type="checkbox" name="equip[]" value="'.$ligne['id_equipement'].'" >' ?>
+                          <?php echo  '<input class="form-check-input" type="checkbox" name="equi[]" value="'.$ligne['id_equipement'].'" >' ?>
                                      <label class="control-label " ><label class="label label-primary"><?php echo $ligne['piece']?> </label>- <?php echo $ligne['equip']?></label></label>
                                                                     </div>
                                                                     <hr>
@@ -90,7 +89,7 @@
                  <div class="row">
                    <div class="col-md-12">
                   
-                     <button class="btn btn-sm btn-warning pull-right" type="submit" name="creer">+</button>
+                     <button class="btn btn-sm btn-warning pull-right" type="submit" name="mettreajour">+</button>
                    </div>
                  </div>
        </form>  
