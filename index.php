@@ -2,13 +2,17 @@
   include 'includes/header.php';
   include 'includes/side_bar.php';
    include 'modals/add_piece.php';
-   include 'modals/view_user.php';
+   include 'modals/view_clime.php';
    include 'modals/view_eclairage.php';
     include 'modals/view_volet.php';
-include 'modals/view_securite.php';
+
 include 'modals/view_camera.php';
+
 include 'modals/view_alarm.php';
+
 include 'modals/view_portail.php';
+
+include 'modals/view_room.php';
  ?>
 
         <div id="page-wrapper">
@@ -103,11 +107,11 @@ include 'modals/view_portail.php';
                                      
                                           
                                   </div></a>
-                                       <div data-toggle="modal" data-target="#view_user">
-                                             <center> <label>
-                                                   <span class="pull-left">View Details</span>
-                                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
-                                          </div>
+                                     
+                                             <center> <br><label>
+                                                   
+                                                </label></center>
+                                        
                                       
                           </div>
                             </div>
@@ -120,9 +124,9 @@ include 'modals/view_portail.php';
                                               <center> <img src="images/door.png"></center>
                                              
                                           </div>
-                                      </a><div data-toggle="modal" data-target="#view_user">
+                                      </a><div data-toggle="modal" data-target="#view_room">
                                              <center> <label>
-                                                   <span class="pull-left">View Details</span>
+                                                   <span class="pull-left"> Détails</span>
                                                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
                                           </div>
                                   </div>
@@ -137,9 +141,9 @@ include 'modals/view_portail.php';
                                               <center> <img src="images/alarm.png"></center>
                                              
                                           </div> </a>
-                                       <div data-toggle="modal" data-target="#view_eclairage">
+                                       <div data-toggle="modal" data-target="#view_alarm">
                                        <center> <label>
-                                                   <span class="pull-left">View Details</span>
+                                                   <span class="pull-left">Détails</span>
                                                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
                                       
                                       
@@ -158,7 +162,7 @@ include 'modals/view_portail.php';
                                           </div></a>
                                       <div data-toggle="modal" data-target="#view_eclairage">
                                              <center> <label>
-                                                   <span class="pull-left">View Details</span>
+                                                   <span class="pull-left">Détails</span>
                                                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
                                           </div>
                                   </div>
@@ -179,9 +183,9 @@ include 'modals/view_portail.php';
                                             <center> <img src="images/volet.png"></center>
                                               
                                                   </div></a>
-                                        <div data-toggle="modal" data-target="#view_user">
+                                        <div data-toggle="modal" data-target="#view_volet">
                                              <center> <label>
-                                                   <span class="pull-left">View Details</span>
+                                                   <span class="pull-left">Détails</span>
                                                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
                                           </div>
                                   </div>
@@ -198,9 +202,9 @@ include 'modals/view_portail.php';
                                               <img src="images/climat.png"></center>
                                       </div>        </a>
                                       
-                                                  <div data-toggle="modal" data-target="#view_user">
+                                                  <div data-toggle="modal" data-target="#view_clime">
                                              <center> <label>
-                                                   <span class="pull-left">View Details</span>
+                                                   <span class="pull-left">Détails</span>
                                                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
                                           </div>
                                               
@@ -215,9 +219,9 @@ include 'modals/view_portail.php';
                                           <div class="panel-body">
                                             <center> <img src="images/cam64.png"></center>
                                       </div></a>
-                                      <div data-toggle="modal" data-target="#view_user">
+                                      <div data-toggle="modal" data-target="#view_camera">
                                              <center> <label>
-                                                   <span class="pull-left">View Details</span>
+                                                   <span class="pull-left">Détails</span>
                                                  <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
                                           </div>
                                   </div>
@@ -230,11 +234,11 @@ include 'modals/view_portail.php';
                                           <div class="panel-body">
                                             <center> <img src="images/calendar.png"></center>
                                       </div></a>
-                                      <div data-toggle="modal" data-target="#view_user">
-                                             <center> <label>
-                                                   <span class="pull-left">View Details</span>
-                                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span></label></center>
-                                          </div>
+                                      
+                                            <center> <br><label>
+                                                   
+                                                </label></center>
+                                          
                                   </div>
                           </div>
               

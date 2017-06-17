@@ -92,7 +92,7 @@
 							</div>
 						</div>
 						<div class="form-sub-w3ls">
-							<input placeholder="Mot de passe"  type="password" required="">
+							<input placeholder="Mot de passe"  type="password" name="password" required="">
 							<div class="icon-agile">
 								<i class="fa fa-unlock-alt" aria-hidden="true"></i>
 							</div>

@@ -8,7 +8,7 @@ if(isset($_POST['mettreajour']))
     $id=$_SESSION['id'];
      $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
            
-            $delet2=$db->prepare('delete from scenario where id_scenario=?');
+            $delet2=$db->prepare('delete all from scenario_equipement where id_scenario=?');
         $delet2->execute(array($id));
    
 
