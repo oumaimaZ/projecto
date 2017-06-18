@@ -20,9 +20,9 @@ include 'style.scss';
 
             <?php 
             $bd=new PDO('mysql:local=localhost;dbname=domotique_data;char set=utf8','root','');
-            $sql='SELECT * FROM piece p,equipement e where e.type="porte" and e.piece=id_piece';
+            $sql='SELECT * FROM piece p,equipement e where e.type="porte" and e.piece=id_piece and p.maison=?';
             $query= $bd->prepare($sql);
-            $query->execute();
+            $query->execute(array($_SESSION['id_maison']));
           ?>
             <div class='row'>
             <?php 

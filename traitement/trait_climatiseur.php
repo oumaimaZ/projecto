@@ -1,4 +1,9 @@
-<?php if(isset($_POST['id'])){
+<?php 
+ session_start();
+
+if(isset($_POST['id'])){
+
+
     $bd = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
     $req2=$bd->prepare("select * from equipement where id_equipement= ?");
         $req2->execute(array($_POST['id']));
@@ -18,9 +23,9 @@
 <span id="oumaima">
                 <?php 
                 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-                $sql='SELECT * FROM piece p,equipement e  where e.type=? and e.piece=id_piece';
+                $sql='SELECT * FROM piece p,equipement e  where e.type=? and e.piece=id_piece and p.maison=?';
                   $query = $db->prepare($sql);
-                  $query->execute(array("climatiseur"));
+                  $query->execute(array("climatiseur",$_SESSION['id_maison']));
                 ?>
                   <div class='row'>
                       <script type="text/javascript">

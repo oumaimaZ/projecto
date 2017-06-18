@@ -26,7 +26,7 @@
                      <div class='panel panel-default '>
                         <div class='panel-body '>
 
-                <label class='control-label col-md-4' for='alarme'>Alarme : <?php echo $ligne['equip'] ;?></label>
+                <label class='control-label col-md-4' for='alarme'>portes : <?php echo $ligne['equip'] ;?></label>
                 
                 <label class='control-label col-md-3' for='alarme'> 
                     <?php if($ligne['etat']==1){
@@ -49,7 +49,7 @@
                     
                     ?></label>
              
-                   <label class='control-label col-md-4' for='alarme'>   <?php echo $ligne['piece'];?> à <?php  echo $ligne['etage']  ;?></label>
+                   <label class='control-label col-md-4' for='alarme'>   <?php echo $ligne['piece'];?> à l'<?php  echo $ligne['etage']  ;?></label>
                   
                 </div>
                 </div>

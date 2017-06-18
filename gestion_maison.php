@@ -39,9 +39,9 @@ while($leg=$dataa->fetch()){
 
 // ****************** Requete for piece ****************
  $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-$sql='SELECT * FROM piece ';
+$sql='SELECT * FROM piece where maison=?';
      $query = $db->prepare($sql);
-  $query->execute();
+  $query->execute(array($_SESSION['id_maison']));
 ?>
 <div id="page-wrapper">
   <div class="row">
@@ -136,9 +136,12 @@ $sql='SELECT * FROM piece ';
                                             <!-- *******************Début GESTION  Equipement******************** -->
 <?php
 // ****************** Requete for piece ****************
-                $req2='SELECT  p.nom as p_nom, p.type as p_type,p.etage as p_etage ,e.*  FROM piece p,equipement e  where  e.piece=id_piece order by e.type';
+                $req2='SELECT  p.nom as p_nom, p.type as p_type,p.etage as p_etage ,e.*  FROM piece p,equipement e  
+                where  e.piece=id_piece
+                and p.maison=?
+                 order by e.type';
 $data=$db->prepare($req2);
-$data->execute();
+$data->execute(array($_SESSION['id_maison']));
 
 ?>
 

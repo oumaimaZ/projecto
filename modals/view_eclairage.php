@@ -19,7 +19,11 @@
                 <?php 
 
                 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-                $sql="SELECT *,p.nom as piece ,e.nom as equip FROM equipement e, piece p where p.id_piece=e.piece and e.type='lampe' and maison=?";
+                $sql="SELECT *,p.nom as piece ,e.nom as equip 
+                FROM equipement e, piece p 
+                where p.id_piece=e.piece 
+                and e.type='lampe' 
+                and maison=?";
                      $query = $db->prepare($sql);
                   $query->execute(array($_SESSION['id_maison']));
          while($ligne = $query->fetch())
@@ -28,7 +32,7 @@
                          <div class='panel panel-default '>
                         <div class='panel-body '>
 
-                <label class='control-label col-md-4' for='alarme'>Alarme : <?php echo $ligne['equip'] ;?></label>
+                <label class='control-label col-md-4' for='alarme'>lampe : <?php echo $ligne['equip'] ;?></label>
                 
                 <label class='control-label col-md-3' for='alarme'> 
                     <?php if($ligne['etat']==1){

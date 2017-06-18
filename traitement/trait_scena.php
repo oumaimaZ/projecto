@@ -29,7 +29,7 @@ if(isset($_POST['id'])){
                 ?>
                     <div class='row'>
                       
-  		<?php
+    <?php
                 while($ligne = $query->fetch()) {
                     
                      ?>

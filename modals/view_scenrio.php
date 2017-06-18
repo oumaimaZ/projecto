@@ -32,7 +32,7 @@
                        <div class='panel panel-default '>
                         <div class='panel-body '>
 
-                <label class='control-label col-md-4' for='alarme'>Alarme : <?php echo $ligne['equip'] ;?></label>
+                <label class='control-label col-md-4' for='alarme'>Alarme : <?php echo $ligne['nom'] ;?></label>
                 
                 <label class='control-label col-md-3' for='alarme'> 
                     <?php if($ligne['etat']==1){
@@ -42,20 +42,9 @@
                  }else{
                     ?>
                     <label class="label label-danger">désactivé</label>
-                    <?php } ?> : <?php 
-                                if($ligne['connect']==1){
-                                    ?>
-                        <label class="label label-success">on</label>
-                    <?php
-                                }else{
-                                    ?>
-                    <label class="label label-danger">off</label>
-                    <?php
-                                }
-                    
-                    ?></label>
+                    <?php } ?> </label>
              
-                   <label class='control-label col-md-4' for='alarme'>   <?php echo $ligne['piece'];?> à <?php  echo $ligne['etage']  ;?></label>
+                   <label class='control-label col-md-4' for='alarme'>Alarme : <?php echo $ligne['date'] ;?></label>
                   
                 </div>
                 </div>

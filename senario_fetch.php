@@ -27,7 +27,7 @@ include 'style.scss';
                 ?>
                     <div class='row'>
                       
-  		<?php
+    <?php
                 while($ligne = $query->fetch()) {
                     
                      ?>
@@ -71,39 +71,36 @@ include 'style.scss';
 ?>
 <script type="text/javascript">
                 function getXMLHttpRequest() {
-	var xhr = null;
-	
-	if (window.XMLHttpRequest || window.ActiveXObject) {
-		if (window.ActiveXObject) {
-			try {
-				xhr = new ActiveXObject("Msxml2.XMLHTTP");
-			} catch(e) {
-				xhr = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-		} else {
-			xhr = new XMLHttpRequest(); 
-		}
-	} else {
-		alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
-		return null;
-	}
-	return xhr;
+ var xhr = null;
+ 
+ if (window.XMLHttpRequest || window.ActiveXObject) {
+  if (window.ActiveXObject) {
+   try {
+    xhr = new ActiveXObject("Msxml2.XMLHTTP");
+   } catch(e) {
+    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+   }
+  } else {
+   xhr = new XMLHttpRequest(); 
+  }
+ } else {
+  alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+  return null;
+ }
+ return xhr;
 }           
      function request(nbr) {
        ide=nbr.value;  
-	var xhr = getXMLHttpRequest();
-	
-	xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-		document.getElementById("oumaima").innerHTML=xhr.responseText;     
-		}
-	};
+ var xhr = getXMLHttpRequest();
+ 
+ xhr.onreadystatechange = function() {
+  if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+  document.getElementById("oumaima").innerHTML=xhr.responseText;     
+  }
+ };
          xhr.open("POST", "traitement/trait_scena.php", true);
-	     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	     xhr.send("id="+ide);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.send("id="+ide);
     
      }
       </script>
-                
-                                    
-                                    
