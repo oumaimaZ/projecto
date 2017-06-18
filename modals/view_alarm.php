@@ -23,17 +23,7 @@
                   $query->execute(array($_SESSION['id_maison']));
   			 while($ligne = $query->fetch())
                 {
-<<<<<<< HEAD
-                	if ($ligne['etat'] = '1' ) $etat= '<label class="label label-warning">Activé</label>';
-	                else  $etat= '<label class="label label-danger">désactivé</label>';
-                  if ($ligne['connect'] = '1' ) $connect= '<label class="label label-success">on</label>';
-                  else  $connect= '<label class="label label-danger">off</label>';
-                  
-=======
-                	
-                 ?>
->>>>>>> origin/master
-	                
+	             ?>   
                   <div class='panel panel-default '>
                         <div class='panel-body '>
 

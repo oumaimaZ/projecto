@@ -5,11 +5,20 @@
                    
 <?php
 
+                    
        
 
         if(isset($_SESSION['id_maison'])){
-           
-        echo ' <li>
+            $bd=  new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
+            $sql='select role from maison_user where id_maison=? and username=?';
+            $req=$bd->prepare($sql);
+            $req->execute(array($_SESSION['id_maison'],$_SESSION['username']));
+            while($ligne=$req->fetch()){
+                $_SESSION['admin']=$ligne['role'];
+            }
+            if($_SESSION['admin']==1){
+           ?>
+        <li>
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Tableau de bord</a>
                     </li>
         <li>
@@ -22,17 +31,31 @@
 <li>
                         <a href="user.php"><i class="fa fa-fw fa-user"></i> Collaborateur</a>
                     </li>
-
-                    ';
+                      <li>
+                        <a href="historique.php"><i class="fa fa-fw fa-history"></i> Historique </a>
+                    </li>
+                    
+<?php
+                    }else{
+                ?>
+                    <li>
+                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Tableau de bord</a>
+                    </li>
+                        <li>
+                        <a href="historique.php"><i class="fa fa-fw fa-history"></i> Historique </a>
+                    </li>
+                    <?php
+            }
            
 
         
         }else if(!isset($_SESSION['id_maison'])){
-           echo'  <li>
+           ?>
+             <li>
                         <a href="Confpage.php"><i class="fa fa-fw fa-wrench"></i> Configuration de la  maison</a>
-                    </li>';
+                    </li>
            
-            
+            <?php
         }
     
 
@@ -61,9 +84,8 @@
                     </li>  -->
  
               
-                   <li>
-                        <a href="historique.php"><i class="fa fa-fw fa-history"></i> Historique </a>
-                    </li>
+                 
+                    
                     
                 
                    

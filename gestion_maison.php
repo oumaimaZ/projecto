@@ -9,24 +9,39 @@ include 'modals/modif_equipement.php';
 ?>
 
 <?php
+
+$req3='select * from equipement ';
+$datas=$db->prepare($req3);
+$datas->execute();
+
+while($lego=$datas->fetch()){
+    if(isset($_POST[$lego['id_equipement']])){
+         $delet2=$db->prepare('delete from equipement where id_equipement=?');
+        $delet2->execute(array($lego['id_equipement']));
+        
+        break;
+        
+    }
+
+}
+$req4='select * from piece ';
+$dataa=$db->prepare($req4);
+$dataa->execute();
+while($leg=$dataa->fetch()){
+    if(isset($_POST[$leg['id_piece']])){
+         $delet2=$db->prepare('delete from piece where id_piece=?');
+        $delet2->execute(array($leg['id_piece']));
+        break;      
+    }
+}
+
+
+
 // ****************** Requete for piece ****************
  $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
 $sql='SELECT * FROM piece ';
      $query = $db->prepare($sql);
   $query->execute();
-
-$req4='select * from piece ';
-$dataa=$db->prepare($req4);
-$dataa->execute();
-
-while($leg=$dataa->fetch()){
-    if(isset($_POST[$leg['id_piece']])){
-         $delet2=$db->prepare('delete from piece where id_piece=?');
-        $delet2->execute(array($leg['id_piece']));
-        
-        break;      
-    }
-}
 ?>
 <div id="page-wrapper">
   <div class="row">
@@ -70,7 +85,7 @@ while($leg=$dataa->fetch()){
 
                 <td align="center"><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target=<?php echo "#".$ligne['id_piece']; ?>> </a></td>
 
-                    <form action="" method="post">
+                    <form action="gestion_maison.php" method="post">
                     <td align="center"><button class= class="btn btn-primary btn-xs"   type="submit" name=<?php echo $ligne["id_piece"] ;?>><span class="glyphicon glyphicon-trash"></span></button>
                         </form>
                         </td>
@@ -127,24 +142,7 @@ $data->execute();
 
 ?>
 
-<?php
 
-$req3='select * from equipement ';
-$datas=$db->prepare($req3);
-$datas->execute();
-
-while($lego=$datas->fetch()){
-    if(isset($_POST[$lego['id_equipement']])){
-         $delet2=$db->prepare('delete from equipement where id_equipement=?');
-        $delet2->execute(array($lego['id_equipement']));
-        
-        break;
-        
-    }
-
-}
-
-?>
 
                                                 
 <div class="row">
@@ -183,7 +181,7 @@ while($lego=$datas->fetch()){
                 <td align='center'><?php echo $row['type'];?></td>
                 <td align='center'> <?php echo $row['p_nom'] ;?></td>
                 <td align="center"><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target=<?php echo "#".$row['id_equipement']; ?>> </a></td>
-                    <form action="" method="post">
+                    <form action="gestion_maison.php" method="post">
                     <td align="center"><button class="menu-icon fa fa-trash"  type="submit" name=<?php echo $row["id_equipement"] ;?>></button>
                         </form>
                         </td>

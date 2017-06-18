@@ -1,17 +1,21 @@
 <?php 
+session_start();
  $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-$req='select * from user ';
+$req='SELECT m.role as m_role,m.id_maison,u.* FROM user u,maison_user m where m.username =u.username and id_maison=? ';
 $data=$db->prepare($req);
-$data->execute();
+$data->execute(array($_SESSION['id_maison']));
 while($ligne=$data->fetch()){
     if(isset($_POST[$ligne['username']])){
-        $nom=$_POST['m_nom'];
-        $prenom=$_POST['m_prenom'];
-        $email=$_POST['m_email'];
-        $role=$_POST['m_priv'];
-        $mdp=$_POST['m_mdp'];
-        $tel=$_POST['m_phone'];
-        $user=$_POST['m_username'];
+        echo "work";
+       
+       $nom=$_POST['mod_nom'];
+        $prenom=$_POST['mod_prenom'];
+        $email=$_POST['mod_email'];
+          $mdp=$_POST['mod_mdp'];
+          $tel=$_POST['mod_phone'];
+        $role=$_POST['mod_priv'];
+      
+        
         if(empty($nom)){
             $nom=$ligne['nom'];
         }
@@ -32,15 +36,15 @@ while($ligne=$data->fetch()){
         if(empty($tel)){
             $tel=$ligne['phone'];
         }
-        if(empty($user)){
-            $user=$ligne['username'];
-        }
-        $update=$db->prepare('update user set nom=?,prenom=?,phone=?,mdp=?,email=?,role=?');
-        $update->execute(array($nom,$prenom,$phone,$mdp,$email,$role));
+
+        
+        $update=$db->prepare('update user set nom=?,prenom=?,phone=?,mdp=?,email=?,role=? where username=?');
+        $update->execute(array($nom,$prenom,$phone,$mdp,$email,$role,$ligne['username']));
             header('location:../user.php');
         break;
-    }
-    echo "don't work";
+  }else
+    echo "dont work";
+  
 }
 
 

@@ -64,12 +64,12 @@
                             <button class="btn btn-primary pull-right" type="submit" name="creer">creer</button>
                           </div>
                         </div>
-                        </div>                               
+                                                   
                         
           
 
         </form>
+        </div>
       </div>
     </div>
 </div>
-  </div>

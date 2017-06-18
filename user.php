@@ -1,32 +1,24 @@
 <?php
 include 'includes/header.php';
 include 'includes/side_bar.php';
+include 'modals/edit_user.php';
 ?>
-
 <?php
-
 // *********************** Suprimer *****************
 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
 
-$reqt=$db->prepare('select * from user');
-$reqt->execute();
+$reqt=$db->prepare('select * from maison_user where id_maison=?');
+$reqt->execute(array($_SESSION['id_maison']));
 while($data=$reqt->fetch()){
 if(isset($_POST[$data['username']])){
-     $delet2=$db->prepare('delete from user where username=?');
-        $delet2->execute(array($data['username']));
-     
-       
+     $delet2=$db->prepare('delete from maison_user where username=?');
+        $delet2->execute(array($data['username']));   
         break;
-    
-}
+    }
 }
 ?>
-
-
-
-
 <?php 
-//    **********Creation user ************************
+//    **********Creation user version final ************************
 if(isset($_POST['creer'])){
 $nom=$_POST['nom'];
 $prenom=$_POST['prenom'];
@@ -43,8 +35,6 @@ $requ=$db->prepare('INSERT INTO user(username,phone,email,mdp,nom,prenom) VALUES
     // a Voir pour ID_MAISON 
     $req2->execute(array($_SESSION['id_maison'],$username,$role));
 }
-
-
     //*********************************** CREATION *******************************************************************
 /*
 if (isset($_POST['creer'])){
@@ -91,21 +81,8 @@ $query->execute();
 //header("location: index.php");
 */
 ?>
-<?php
- $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-$sql='SELECT m.role as m_role,u.* FROM user u,maison_user m where m.username =u.username ';
-     $query = $db->prepare($sql);
-  $query->execute();
-  
-
-
-
-?>
-
-
 
   <div id="page-wrapper">
-
   <div class="row">
     <div class="col-md-12">
       <h1 class="page-header">Utilisateur</h1>
@@ -123,7 +100,6 @@ $sql='SELECT m.role as m_role,u.* FROM user u,maison_user m where m.username =u.
               <thead >
                 <tr>
  <!--************************************ TABLEAU D'AFFICHAGE **************************** -->                 
-
                   <th align='center'>Username</th>
                   <th align='center'>e_mail</th>
                   <th align='center'>role</th>
@@ -132,29 +108,30 @@ $sql='SELECT m.role as m_role,u.* FROM user u,maison_user m where m.username =u.
                 </tr>
               </thead>
               <tbody>
+                  <?php
+$sql='SELECT m.role as m_role,m.id_maison ,u.* FROM user u,maison_user m where m.username =u.username and id_maison=? ';
+     $query = $db->prepare($sql);
+  $query->execute(array($_SESSION['id_maison']));
+?>
                 <?php
                 while($ligne = $query->fetch())
-                { 
-                 
+                {  
                 ?>
                 <tr>
-
                <td align='center'><?php echo $ligne['username'];?></td>
                 <td align='center'><?php echo $ligne['email'];?></td>
                 <td align='center'> <?php if ($ligne['m_role']==1) echo " tout les privileges" ;
                  else echo "utilisateur";
                     ?></td>
-                <td align="center"><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target=<?php echo $ligne['username']; ?>> </a></td>
+                 <td align="center"><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target=<?php echo "#".$ligne['username']; ?>> </a></td>
                     <form action="" method="post">
-                    <td align="center"><button class="menu-icon fa fa-trash"  type="submit" name=<?php echo $ligne["username"] ;?>></button>
+                    <td align="center"><button class="menu-icon fa fa-trash"  type="submit" name=<?php echo $ligne["username"];?>></button>
                         </form>
                         </td>
                 </tr>
             <?php  }
               ?>
             </tbody>
-
-          
         </table>
       </div>
       <!-- /.table-responsive -->
@@ -166,17 +143,12 @@ $sql='SELECT m.role as m_role,u.* FROM user u,maison_user m where m.username =u.
 <!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
-
-
-
 </div>
-
 <!-- /.row -->
 <?php 
 include 'modals/add_user.php';
-include 'modals/edit_user.php';
+
  ?>
 <?php
 include 'includes/footer.php';
 ?>
-
