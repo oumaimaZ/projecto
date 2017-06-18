@@ -1,8 +1,8 @@
- <?php 
+<?php 
 
 
                   $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-                  $sql='SELECT *, id_scenario as id FROM scenario where id_maison=? ';
+                  $sql='SELECT * FROM scenario where id_maison=? ';
                     $query = $db->prepare($sql);
                     $query->execute(array( $_SESSION['id_maison']));
                 while($lignes = $query->fetch())
@@ -53,7 +53,7 @@
                                                                 { ?>
 
                           <div class=" form-group row ">
-                            <label class="form-check-label col-md-4">
+                            <label class="form-check-label col-md-8">
                           <?php echo  '<input class="form-check-input" type="checkbox" name="equi[]" value="'.$ligne['id_equipement'].'" checked>' ?>
                                      <label class="control-label " ><label class="label label-primary"><?php echo $ligne['piece']?> </label>- <?php echo $ligne['equip']?></label></label>
                                                                     </div>
@@ -74,7 +74,7 @@
                                                          while($ligna = $query2->fetch())
                                                                 { ?>
                           <div class=" row ">
-                            <label class="form-check-label col-md-4">
+                            <label class="form-check-label col-md-8">
                           <?php echo  '<input class="form-check-input" type="checkbox" name="equi[]" value="'.$ligna['id_equipement'].'" >' ?>
                                      <label class="control-label " ><label class="label label-primary"><?php echo $ligna['piece']?> </label>- <?php echo $ligna['equip']?></label></label>
                                                                     </div>
@@ -93,10 +93,10 @@
                    <div class="col-md-12">
       
 
-<!--
-                     <button class="btn btn-sm btn-warning pull-right" type="submit" name=<?php //echo $ligne['id']; ?>>+</button>
--->
-                     <button class="btn btn-sm btn-warning pull-right" type="submit" name=<?php echo $lignes['id_scenario']; ?>>+</button>
+
+                   <input type ="hidden" name='test' value="<?php echo $lignes['id_scenario']; ?>">
+
+                     <button class="btn btn-sm btn-warning pull-right" type="submit" name="maj">+</button>
 
                    </div>
                  </div>
