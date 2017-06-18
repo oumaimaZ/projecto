@@ -28,24 +28,38 @@
                      $query = $db->prepare($sql);
                   $query->execute(array($_SESSION['id_maison']));
   			 while($ligne = $query->fetch())
-                {
-                	if ($ligne['etat'] = '0' ) $etat= '<label class="label label-success">on</label>';
-	                else if($ligne['etat'] = '1') $etat= '<label class="label label-danger">off</label>';
-                
-                  
-	                
+                {?>
+                       <div class='panel panel-default '>
+                        <div class='panel-body '>
 
-	           echo "  <div class='panel panel-default '>";
-             echo "<div class='panel-body '>";
-
-                echo "<label class='control-label col-md-4' for='alarme'> ".$ligne['nom']."</label>";
+                <label class='control-label col-md-4' for='alarme'>Alarme : <?php echo $ligne['equip'] ;?></label>
                 
-                echo " <label class='control-label col-md-4' for='alarme'>   ".$etat."</label>";
+                <label class='control-label col-md-3' for='alarme'> 
+                    <?php if($ligne['etat']==1){
+                     ?>
+                    <label class="label label-warning">Activé</label>
+                    <?php
+                 }else{
+                    ?>
+                    <label class="label label-danger">désactivé</label>
+                    <?php } ?> : <?php 
+                                if($ligne['connect']==1){
+                                    ?>
+                        <label class="label label-success">on</label>
+                    <?php
+                                }else{
+                                    ?>
+                    <label class="label label-danger">off</label>
+                    <?php
+                                }
+                    
+                    ?></label>
              
+                   <label class='control-label col-md-4' for='alarme'>   <?php echo $ligne['piece'];?> à <?php  echo $ligne['etage']  ;?></label>
                   
-                echo "</div>";
-                echo "</div>";
-               		
+                </div>
+                </div>
+               	<?php	
                 }
                 ?>
               </div>

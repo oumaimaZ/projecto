@@ -23,25 +23,41 @@
                   $query->execute(array($_SESSION['id_maison']));
          while($ligne = $query->fetch())
                 {
-                  if ($ligne['etat'] = '1' ) $etat= '<label class="label label-warning">Activé</label>';
-                  else if($ligne['etat'] = '2') $etat= '<label class="label label-danger">désactivé</label>';
-                  if ($ligne['connect'] = '1' ) $connect= '<label class="label label-success">on</label>';
-                  else if($ligne['connect'] = '2') $connect= '<label class="label label-danger">off</label>';
-                  
-                  
-
-             echo "  <div class='panel panel-default '>";
-             echo "<div class='panel-body '>";
-
-                echo "<label class='control-label col-md-4' for='alarme'>camera : ".$ligne['equip']."</label>";
+            ?>
                 
-                echo " <label class='control-label col-md-3' for='alarme'>   ".$etat." :".$connect."</label>";
+                  <div class='panel panel-default '>
+                        <div class='panel-body '>
+
+                <label class='control-label col-md-4' for='alarme'>Alarme : <?php echo $ligne['equip'] ;?></label>
+                
+                <label class='control-label col-md-3' for='alarme'> 
+                    <?php if($ligne['etat']==1){
+                     ?>
+                    <label class="label label-warning">Activé</label>
+                    <?php
+                 }else{
+                    ?>
+                    <label class="label label-danger">désactivé</label>
+                    <?php } ?> : <?php 
+                                if($ligne['connect']==1){
+                                    ?>
+                        <label class="label label-success">on</label>
+                    <?php
+                                }else{
+                                    ?>
+                    <label class="label label-danger">off</label>
+                    <?php
+                                }
+                    
+                    ?></label>
              
-                  echo " <label class='control-label col-md-4' for='alarme'>   ".$ligne['piece']." à l'".$ligne['etage']."</label>";
-                   
-                echo "</div>";
-                echo "</div>";
+                   <label class='control-label col-md-4' for='alarme'>   <?php echo $ligne['piece'];?> à <?php  echo $ligne['etage']  ;?></label>
                   
+                </div>
+                </div>    
+                  
+                  
+                  <?php
                 }
                 ?>
               </div>

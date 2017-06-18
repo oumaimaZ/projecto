@@ -1,14 +1,15 @@
 <!-- Modal -->
 <?php
 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-$sqla='select * from user ';
+$sqla='SELECT m.role as m_role,u.* FROM user u,maison_user m where m.username =u.username ';
+
      $queryt = $db->prepare($sqla);
   $queryt->execute();
- while($pat = $queryt->fetch())
+ while($pat=$queryt->fetch()){
      
- {
+     
      ?>
-<div class="modal fade" id=<?php echo $pat['username']; ?>
+<div  id=<?php echo $pat['role']; ?> class="modal fade"
       role="dialog">
  <!-- Modal -->
 
@@ -22,7 +23,7 @@ $sqla='select * from user ';
        
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" role="form"  action="script/modif_user_script.php" method="POST" autocomplete="off">
+        <form class="form-horizontal" role="form"  action="script/modif_user_script.php" method="POST">
                         <div class="form-group">
                           <label  class="col-sm-2 control-label" for="nom">Nom</label>
                                   <div class="col-xs-3">

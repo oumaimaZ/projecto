@@ -40,7 +40,7 @@ while($ligne=$data->fetch()){
             header('location:../user.php');
         break;
     }
-    echo "don't work"
+    echo "don't work";
 }
 
 
