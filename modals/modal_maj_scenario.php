@@ -93,11 +93,11 @@
                    <div class="col-md-12">
       
 
-<<<<<<< HEAD
-                     <button class="btn btn-sm btn-warning pull-right" type="submit" name=<?php echo $ligne['id']; ?>>+</button>
-=======
+<!--
+                     <button class="btn btn-sm btn-warning pull-right" type="submit" name=<?php //echo $ligne['id']; ?>>+</button>
+-->
                      <button class="btn btn-sm btn-warning pull-right" type="submit" name=<?php echo $lignes['id_scenario']; ?>>+</button>
->>>>>>> origin/master
+
                    </div>
                  </div>
 
