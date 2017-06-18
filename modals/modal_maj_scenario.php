@@ -69,7 +69,7 @@
                    and e.piece=p.id_piece
                    and e.id_equipement not in (select id_equipement from scenario_equipement where id_scenario=?)';
                     $query2 = $db->prepare($sql2);
-                    $query2->execute(array($_SESSION['id_maison'],$ligne['id_scenario']));
+                    $query2->execute(array($_SESSION['id_maison'],$lignes['id_scenario']));
 
                                                          while($ligna = $query2->fetch())
                                                                 { ?>

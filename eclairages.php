@@ -25,9 +25,7 @@ include 'style.scss';
                   $query->execute();
                 ?>
                   <div class='row'>
-                      <script type="text/javascript">
-                          var tab=new Array();
-                      </script>
+                    
   		<?php
                 while($ligne = $query->fetch())
                 {/*
@@ -76,13 +74,14 @@ include 'style.scss';
                                             
   </li> 
                                         <!-- script stock id -->
-                             <script>
-                                       tab.push(<?php echo $ligne['id_equipement']; ?>);
-                             </script>              
+                                          
                                     </div>
                                     <div style="width:80%"> <h4 style="font-family:arial-times;font-size:25"><center><?php echo $ligne['nom'];?></center></h4></div>
                                     <div style="width:80%;margin:auto"> <center><h6><?php echo  "piece :".$ligne[1]; ?></h6></center></div>
+                                    <!-- /div row -->
                                 </div> 
+                                          <!-- /div panel heading -->
+
                             </div>
                 </div>
                 </div>

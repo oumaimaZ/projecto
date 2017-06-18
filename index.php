@@ -230,7 +230,7 @@ include 'modals/view_room.php';
                                   <div class="panel panel-danger ">
                                           <div class="panel-heading">
                                               <h3 class="panel-title">Scenario</h3>
-                                          </div><a href="scenario_tb.php">
+                                          </div><a href="senario_fetch.php">
                                           <div class="panel-body">
                                             <center> <img src="images/calendar.png"></center>
                                       </div></a>

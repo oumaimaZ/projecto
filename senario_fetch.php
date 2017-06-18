@@ -1,24 +1,22 @@
 <?php
-session_start();
-if(isset($_POST['id'])){
-  
-    $bd = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-
-    $req2=$bd->prepare("select * from scenario where id_scenario=?");
-        $req2->execute(array($_POST['id']));
-        $ligne=$req2->fetch();
-        if($ligne['etat']==1){
-   
-    $req=$bd->prepare("update scenario set etat=? where id_scenario=?");
-            $req->execute(array('0',$_POST['id']));
-    }else{
-            $req=$bd->prepare("update scenario set etat=? where id_scenario=?");
-            $req->execute(array('1',$_POST['id']));
-
-    }
-
-?>
-           <span id="oumaima">
+  include 'includes/header.php';
+  include 'includes/side_bar.php';
+include 'style.scss';
+ ?>
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">           
+                <small> Scenario</small>
+            </h1>
+            
+        
+        </div>
+        </div>
+         <div class="row">
+            <div class="col-lg-12">
+                <span id="oumaima">
                 <?php 
                 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
                 $sql='SELECT *
@@ -58,10 +56,54 @@ if(isset($_POST['id'])){
                                  </div>
                              </div>
                                   </div>
-                            </div>
+                             </div>
                              <?php } ?>
-                             
+                            
                         </div>
                     </div>
                 </span>
-<?php }?>
+             </div>
+        </div>
+    </div>
+</div>
+<?php
+  include 'includes/footer.php';
+?>
+<script type="text/javascript">
+                function getXMLHttpRequest() {
+	var xhr = null;
+	
+	if (window.XMLHttpRequest || window.ActiveXObject) {
+		if (window.ActiveXObject) {
+			try {
+				xhr = new ActiveXObject("Msxml2.XMLHTTP");
+			} catch(e) {
+				xhr = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+		} else {
+			xhr = new XMLHttpRequest(); 
+		}
+	} else {
+		alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+		return null;
+	}
+	return xhr;
+}           
+     function request(nbr) {
+       ide=nbr.value;  
+	var xhr = getXMLHttpRequest();
+	
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+		document.getElementById("oumaima").innerHTML=xhr.responseText;     
+		}
+	};
+         xhr.open("POST", "traitement/trait_scena.php", true);
+	     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	     xhr.send("id="+ide);
+    
+     }
+      </script>
+                
+                                    
+                                    
