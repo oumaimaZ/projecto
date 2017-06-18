@@ -24,9 +24,9 @@
   			 while($ligne = $query->fetch())
                 {
                 	if ($ligne['etat'] = '1' ) $etat= '<label class="label label-warning">Activé</label>';
-	                else if($ligne['etat'] = '2') $etat= '<label class="label label-danger">désactivé</label>';
+	                else  $etat= '<label class="label label-danger">désactivé</label>';
                   if ($ligne['connect'] = '1' ) $connect= '<label class="label label-success">on</label>';
-                  else if($ligne['connect'] = '2') $connect= '<label class="label label-danger">off</label>';
+                  else  $connect= '<label class="label label-danger">off</label>';
                   
 	                
 
