@@ -22,11 +22,11 @@
               <div class="col-md-9">
                 <select class="form-control" name="e_type">
                               
-                              <option value="lampe" >Lampe</option>
-                              <option value="porte" >Porte</option>
-                              <option value="alarme" >Alarme</option>
-                              <option value="volet" >Volet</option>
-                              <option value="camera" >Camera</option>
+                              <option value="lampe" >lampe</option>
+                              <option value="porte" >porte</option>
+                              <option value="alarme" >alarme</option>
+                              <option value="volet" >volet</option>
+                              <option value="camera" >camera</option>
                                <option value="climatiseur" >climatiseur</option>
                               
                               

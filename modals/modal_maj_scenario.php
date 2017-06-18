@@ -53,7 +53,7 @@
                                                                 { ?>
 
                           <div class=" form-group row ">
-                            <label class="form-check-label col-md-4">
+                            <label class="form-check-label col-md-8">
                           <?php echo  '<input class="form-check-input" type="checkbox" name="equi[]" value="'.$ligne['id_equipement'].'" checked>' ?>
                                      <label class="control-label " ><label class="label label-primary"><?php echo $ligne['piece']?> </label>- <?php echo $ligne['equip']?></label></label>
                                                                     </div>
@@ -74,7 +74,7 @@
                                                          while($ligna = $query2->fetch())
                                                                 { ?>
                           <div class=" row ">
-                            <label class="form-check-label col-md-4">
+                            <label class="form-check-label col-md-8">
                           <?php echo  '<input class="form-check-input" type="checkbox" name="equi[]" value="'.$ligna['id_equipement'].'" >' ?>
                                      <label class="control-label " ><label class="label label-primary"><?php echo $ligna['piece']?> </label>- <?php echo $ligna['equip']?></label></label>
                                                                     </div>

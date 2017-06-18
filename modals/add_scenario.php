@@ -52,7 +52,7 @@
 ?>
 
 <div class=" row ">
-  <label class="form-check-label col-md-4">
+  <label class="form-check-label col-md-8">
 
   <?php echo  '<input class="form-check-input" type="checkbox" name="equip[]" value="'.$ligne['id_equipement'].'">' ?>
     <label class="control-label " ><?php echo $ligne['piece']?> - <?php echo $ligne['equip']?>
