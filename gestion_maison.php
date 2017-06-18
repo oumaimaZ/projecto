@@ -121,7 +121,7 @@ while($leg=$dataa->fetch()){
                                             <!-- *******************Début GESTION  Equipement******************** -->
 <?php
 // ****************** Requete for piece ****************
-                $req2='SELECT  p.nom as p_nom, p.type as p_type,p.etage as p_etage ,e.*  FROM piece p,equipement e  where  e.piece=id_piece';
+                $req2='SELECT  p.nom as p_nom, p.type as p_type,p.etage as p_etage ,e.*  FROM piece p,equipement e  where  e.piece=id_piece order by e.type';
 $data=$db->prepare($req2);
 $data->execute();
 
