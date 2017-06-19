@@ -59,8 +59,7 @@ include 'style.scss';
                                         ?>
                                         <img src="images/volet.png">
                                         <?php }else{ ?>
-                                        <img src="images/alarm_off.png">
-
+                                        <img src="images/volet.png">
                                                     <?php
                                                 } }
                                 else{ ?>
@@ -68,14 +67,14 @@ include 'style.scss';
                                         <?php } ?>
                                     </div>
                                     <div class="col-xs-9 text-right"> 
-                                    
-                                            <input type="range" name=<?php $ligne['id_equipement'] ;?>   value=<?php echo $ligne['id_equipement'] ;?> onchange="request(this);"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
-                                        <span id="hey"></span>
-                                        
-                                        <!-- script stock id -->
-                             <script>
-                                       tab.push(<?php echo $ligne['id_equipement']; ?>);
-                             </script>              
+                                    <span id=<?php echo $ligne['id_equipement'] ;?> name=<?php echo $ligne['id_equipement'] ;?>  >
+                                        <script>  tab.push(<?php echo $ligne['id_equipement'] ;?>);               </script>
+                                            <input type="range" value=<?php echo $ligne['connect'] ;?> onchange=<?php echo '"request(this,'.$ligne['id_equipement'].');"';?>>
+                                      
+                                        </span>
+                                      <span style="display:none" id=<?php echo "chargement".$ligne['id_equipement'] ; ?>>
+                                          <img src="images/loader.gif" ></span>
+                                      
                                     </div>
                                     <div style="width:80%"> <h4 style="font-family:arial-times;font-size:25"><center><?php echo $ligne['nom'];?></center></h4></div>
                                     <div style="width:80%;margin:auto"> <center><h6><?php echo  "piece :".$ligne[1]; ?></h6></center></div>
@@ -123,25 +122,37 @@ include 'style.scss';
 		return null;
 	}
 	return xhr;
-}           
-     function request(nbr) {
-       ide=nbr.value;  
+}    
+     
+     function request(nbr,mb) {
+       valeur=nbr.value;  
+       
          
 	var xhr = getXMLHttpRequest();
 	
 	xhr.onreadystatechange = function() {
+        $("#chargement"+mb).show();
+        
 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-		document.getElementById("oumaima").innerHTML=xhr.responseText;     
+		document.getElementById("oumaima").innerHTML=xhr.responseText;  
+        $("#chargement"+mb).hide();
 		}
 	};
          xhr.open("POST", "traitement/trait_volet.php", true);
 	     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	     xhr.send("id="+ide);
+	     xhr.send("val="+valeur+"&id="+mb);
+           
+         $("#"+mb).hide(); 
+            
+         }
+        
+        
+            
     
-     }
+
+     
       </script>
-
-
+         
 
 
 
