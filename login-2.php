@@ -31,9 +31,9 @@
 
 <!-- Body -->
 <body>
-    <?php include 'script/loginScript.php'; ?>
+    <?php include 'script/inscription_script.php'; ?>
 
-	<h1>DOMOTIC APP</h1>
+	<h1 style="color:green">DOMOTIC APP</h1>
 
 	<div class="w3layoutscontaineragileits">
         <!-- Login Work correctly -->
@@ -41,6 +41,15 @@
 		<form action="login-2.php" method="post">
 			<input type="email" Name="email" placeholder="EMAIL" required="">
 			<input type="password" Name="mdp" placeholder="password" required="">
+            <div style="width:60%;margin:auto;margin-top:-25px;padding-top:10px;padding-bottom:10px;">
+              
+								<?php
+							    if(isset($erreurconnection))
+								 {
+									echo "<font color=red><b> $erreurconnection </b></font>"; 
+								 }
+                                ?>
+                </div>
 			<ul class="agileinfotickwthree">
 				<li>
 					<input type="checkbox" id="brand1" value="">
@@ -49,71 +58,16 @@
 				</li>
 			</ul>
 			<div class="aitssendbuttonw3ls">
+                 
 				<input type="submit" name="connexion" value="LOGIN">
-				<p> Pour créer un compte  <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> cliquez ici </a></p>
+				<p> Pour créer un compte  <span>→</span> <a href="test_inscription.php"> cliquez ici </a></p>
 				<div class="clear"></div>
 			</div>
+            
 		</form>
 	</div>
+    
                         <!-- end  Login -->
-	                       <!-- Sing Up  Start -->
-	<!-- for register popup -->
-	<div id="small-dialog1" class="mfp-hide">
-		<div class="contact-form1">
-			<div class="contact-w3-agileits">
-				<h3>Inscription</h3>
-				<form action="login-2.php" method="post">
-						<div class="form-sub-w3ls">
-							<input placeholder="Nom" name="nom" type="text" required="">
-							<div class="icon-agile">
-								<i class="fa fa-user" aria-hidden="true"></i>
-							</div>
-						</div><div class="form-sub-w3ls">
-							<input placeholder="Prénom" name="prenom" type="text" required="">
-							<div class="icon-agile">
-								<i class="fa fa-user" aria-hidden="true"></i>
-							</div>
-						</div><div class="form-sub-w3ls">
-							<input placeholder="téléphone" name="phone" type="text" required="">
-							<div class="icon-agile">
-								<i class="fa fa-user" aria-hidden="true"></i>
-							</div>
-						</div>
-                    <div class="form-sub-w3ls">
-							<input placeholder="Username" name="username" type="text" required="">
-							<div class="icon-agile">
-								<i class="fa fa-user" aria-hidden="true"></i>
-							</div>
-						</div>
-						<div class="form-sub-w3ls">
-							<input placeholder="Addresse mail" class="mail" name="email" type="email" required="">
-							<div class="icon-agile">
-								<i class="fa fa-envelope-o" aria-hidden="true"></i>
-							</div>
-						</div>
-						<div class="form-sub-w3ls">
-							<input placeholder="Mot de passe"  type="password" name="password" required="">
-							<div class="icon-agile">
-								<i class="fa fa-unlock-alt" aria-hidden="true"></i>
-							</div>
-						</div>
-						<div class="form-sub-w3ls">
-							<input placeholder="Confirmer le mot de passe "  type="password" required="">
-							<div class="icon-agile">
-								<i class="fa fa-unlock-alt" aria-hidden="true"></i>
-							</div>
-						</div>
-					
-					<div class="submit-w3l">
-						<input type="submit" name="inscription" value="créer ">
-					</div>
-				</form>
-			</div>
-		</div>	
-	</div>
-	<!-- //for register popup -->
-	
-	
 
 	
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>

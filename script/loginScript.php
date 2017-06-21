@@ -36,12 +36,13 @@ $query = $db->prepare('SELECT * FROM user as u
   $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
   $nom =$_POST['nom'];
   $prenom=$_POST['prenom'];
-  $mdp =$_POST['password'] ;
+  $mdp =$_POST['password'];
   $username=$_POST['username'];
   $phone=$_POST['phone'];
   $email=$_POST['email'];
+        $confmdp=$_POST['confmdp'];
    
-              if($username != "" && $nom != "" && $prenom !="" && $mdp != "" && $username !="" && $phone !="" && $email !="" ){
+              if($username != "" && $nom != "" && $prenom !="" && $mdp != "" && $username !="" && $phone !="" && $email !="" && $confmdp!=""){
                   $sqll='insert into user (username,phone,email,mdp,nom,prenom) values (?,?,?,?,?,?)';
                 $reqq=$db->prepare($sqll);
                   $reqq->execute(array($username,$phone,$email,$mdp,$nom,$prenom));

@@ -54,9 +54,10 @@
       <td><?php echo $row['piece'] ;?></td>
       <?php
            
-                 if($row['etatt']==1){
+                 if($row['etatt']==0){
                  ?>
-                     <td> <label class="label label-success">on</label></td><?php }else{ ?> <td><label class="label label-danger">off</label></td><?php }?>
+      <td><label class="label label-danger">off</label></td>
+                     <?php }else{ ?> <td> <label class="label label-success">on</label></td> <?php }?>
                         <td><?php echo $row['date'];?></td>
                         <td><?php echo $row['username'];?></td>
 <?php

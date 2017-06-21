@@ -27,17 +27,7 @@
 
             </div>
 
-          <div class="form-group">
-              
-         
-
-<label class="control-label col-md-3" for="piece">TIME Date</label>  
-                         
-
-  <div class="col-md-6">
-    <input class="form-control" type="datetime-local" name="dt" />
-  </div>
-</div>
+  
 
 <div class="panel panel-default col-md-12">
   <div class="panel-body">
@@ -75,7 +65,7 @@
          <div class="row">
            <div class="col-md-12">
           
-             <button class="btn btn-sm btn-warning pull-right" type="submit" name="creer">+</button>
+             <button class="btn btn-sm btn-warning pull-right" type="submit" name="creer">Ajouter Scenario</button>
            </div>
          </div>
        </form>  

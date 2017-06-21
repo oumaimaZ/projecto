@@ -1,22 +1,13 @@
-<?php
-  include 'includes/header.php';
-  include 'includes/side_bar.php';
-include 'style.scss';
- ?>
-<div id="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">           
-                <small> Scenario</small>
-            </h1>
-            
-        
-        </div>
-        </div>
-         <div class="row">
-            <div class="col-lg-12">
-                <span id="oumaima">
+
+<?php session_start();
+$bd = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
+
+                $req=$bd->prepare("update equipement set connect=?");
+            $req->execute(array('0'));
+
+?>
+
+<span id="oumaima">
                 <?php 
                 $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
                 $sql='SELECT *
@@ -35,7 +26,7 @@ include 'style.scss';
                                 </div>
                                 <div class="col-xs-9 text-right">
                                 <li class="tg-list-item">
-                                  <input  class="tgl tgl-flat"  value="hello" id="hello" type="checkbox" onchange="require();" />
+                                  <input  class="tgl tgl-flat"  id="hello" type="checkbox" value="hello" onchange="require();"  checked/>
       <label class="tgl-btn pull-right" for="hello"></label>     
                                     </li>
                                 </div>
@@ -80,58 +71,3 @@ include 'style.scss';
                         </div>
                     </div>
                 </span>
-             </div>
-        </div>
-    </div>
-</div>
-<?php
-  include 'includes/footer.php';
-?>
-<script type="text/javascript">
-                function getXMLHttpRequest() {
- var xhr = null;
- 
- if (window.XMLHttpRequest || window.ActiveXObject) {
-  if (window.ActiveXObject) {
-   try {
-    xhr = new ActiveXObject("Msxml2.XMLHTTP");
-   } catch(e) {
-    xhr = new ActiveXObject("Microsoft.XMLHTTP");
-   }
-  } else {
-   xhr = new XMLHttpRequest(); 
-  }
- } else {
-  alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
-  return null;
- }
- return xhr;
-}           
-     function require() {
-      
- var xhr = getXMLHttpRequest();
- 
- xhr.onreadystatechange = function() {
-  if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-  document.getElementById("oumaima").innerHTML=xhr.responseText;     
-  }
- };
-         xhr.open("POST", "traitement/trait_scenaout.php", true);
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhr.send();
-    
-     } function request(nbr) {
-       ide=nbr.value;  
- var xhr = getXMLHttpRequest();
- 
- xhr.onreadystatechange = function() {
-  if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-  document.getElementById("oumaima").innerHTML=xhr.responseText;     
-  }
- };
-         xhr.open("POST", "traitement/trait_scena.php", true);
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhr.send("id="+ide);
-    
-     }
-      </script>
