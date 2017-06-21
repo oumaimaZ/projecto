@@ -28,7 +28,7 @@ while($daaq=$dataa->fetch()){
             <div class="form-group">
               <label class="control-label col-md-3" for="user"> equipement</label>
                 <div class="col-md-9">
-                 <input type="text" name="me_nom" class="form-control" placeholder="nom" >
+                 <input type="text" name="me_nom" class="form-control" placeholder="nom" value=<?php echo $daaq['nom'];?> >
                </div>
              </div>
             <div class="form-group">

@@ -39,7 +39,7 @@ include 'style.scss';
       <label class="tgl-btn pull-right" for="hello"></label>     
                                     </li>
                                 </div>
-                                 <div style="width:80%"> <h4 style="font-family:arial-times;font-size:25"><center>quitez maison</center></h4></div>
+                                 <div style="width:80%"> <h4 style="font-family:arial-times;font-size:25"><center>Out House</center></h4></div>
                                 </div>
                             </div>
                             </div>

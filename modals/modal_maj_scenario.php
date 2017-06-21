@@ -16,7 +16,7 @@
 <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h3 class="modal-title">Modifier <?php echo $lignes['id_scenario'];?> </h3>
+                      <h3 class="modal-title">Modifier <?php echo $lignes['nom'];?> </h3>
                        <input type="hidden" name="page" value=<?php echo "'".$lignes['id_scenario']."'"; ?> />
                     </div>
 

@@ -40,7 +40,7 @@
   <tbody>
  <?php 
             $bd=new PDO('mysql:local=localhost;dbname=domotique_data;char set=utf8','root','');
-            $sql='select username,etatt,date,type,piece,type_equip ,equip FROM historique where username=? ORDER by date';
+            $sql='select username,etatt,date,type,piece,type_equip ,equip FROM historique where username=? ORDER by date desc';
             $query= $bd->prepare($sql);
             $query->execute(array($_SESSION['username']));
              while($row = $query->fetch()){

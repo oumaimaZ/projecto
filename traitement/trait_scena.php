@@ -28,6 +28,25 @@ if(isset($_POST['id'])){
                   $query->execute(array($_SESSION['id_maison']));
                 ?>
                     <div class='row'>
+                              <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                <img src="images/cal_fetch.png">
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                <li class="tg-list-item">
+                                  <input  class="tgl tgl-flat"  value="hello" id="hello" type="checkbox" onchange="require();" />
+      <label class="tgl-btn pull-right" for="hello"></label>     
+                                    </li>
+                                </div>
+                                 <div style="width:80%"> <h4 style="font-family:arial-times;font-size:25"><center>Out House</center></h4></div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                      
                       
     <?php
                 while($ligne = $query->fetch()) {

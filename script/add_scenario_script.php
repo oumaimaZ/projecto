@@ -3,12 +3,12 @@ session_start();
 if(isset($_POST['creer']))
 {
     $nom=$_POST['nom'];
-    $date=$_POST['dt'];
+    
    $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-            $sql='insert into scenario(nom,date,id_maison) values(?,?,?)';
+            $sql='insert into scenario(nom,id_maison) values(?,?)';
 
     $sel=$db->prepare($sql);
-    $sel->execute(array($nom,$date,$_SESSION['id_maison']));
+    $sel->execute(array($nom,$_SESSION['id_maison']));
   
 $id = $db->lastInsertId();
 $ii = 0;

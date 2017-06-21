@@ -37,7 +37,7 @@ while($daq=$qquery->fetch()){
             <div class="form-group">
               <label class="control-label col-md-3" for="user"> piece</label>
                 <div class="col-md-9">
-                 <input type="text" name="m_nom" class="form-control" placeholder="nom">
+                 <input type="text" name="m_nom" class="form-control" placeholder="nom" value=<?php echo $daq['nom'];?>>
                </div>
              </div>
              

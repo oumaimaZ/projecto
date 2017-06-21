@@ -2,9 +2,8 @@
 <?php session_start();
 $bd = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
 
-                $req=$bd->prepare("update equipement set connect=?");
-            $req->execute(array('0'));
-
+                $req=$bd->prepare("update equipement,piece set connect=? where id_piece=piece and maison=?");
+            $req->execute(array('0',$_SESSION['id_maison']));
 ?>
 
 <span id="oumaima">
@@ -30,7 +29,7 @@ $bd = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root',
       <label class="tgl-btn pull-right" for="hello"></label>     
                                     </li>
                                 </div>
-                                 <div style="width:80%"> <h4 style="font-family:arial-times;font-size:25"><center>quitez maison</center></h4></div>
+                                 <div style="width:80%"> <h4 style="font-family:arial-times;font-size:25"><center>Out House</center></h4></div>
                                 </div>
                             </div>
                             </div>

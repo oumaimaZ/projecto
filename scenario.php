@@ -1,7 +1,7 @@
 <?php include 'includes/header.php';
   include 'includes/side_bar.php';
 include 'modals/add_scenario.php';
-
+include 'style.scss';
   
 
 
@@ -61,9 +61,9 @@ if(isset($_POST[$data["id_scenario"]])){
   <thead>
     <tr>
       <th>Scenario</th>
-      <th> Date  </th>
-      <th>  etat  </th>
-      <th>    </th>
+      <th> etat</th>
+        <th><center>Modifier</center></th>
+        <th><center>supprimer</center></th>
     </tr>
   </thead>
             <tbody>
@@ -74,13 +74,14 @@ if(isset($_POST[$data["id_scenario"]])){
                       $query= $bd->prepare($sql);
                       $query->execute(array($_SESSION['id_maison']));
                        while($row = $query->fetch()){
-                         
-                                  echo '<tr><td><h4><label class="label label-primary">'.$row['nom'].'</label></h4></td>';
-                              echo '<td>'.$row['date'].'</td>';
-                                  if($row['etat']==1)
-                                        echo '<td><label class="label label-success">on</label></td>';
-                                    else  echo '<td><label class="label label-danger">off</label></td>';
-                                    ?>
+                         ?>
+                                  <tr><td><h4><label class="label label-primary"><?php echo $row['nom']?></label></h4></td>
+                            <?php
+                                  if($row['etat']==1){
+                                      ?>
+                                        <td><label class="label label-success">on</label></td>
+                                <?php    }else{  ?><td><label class="label label-danger">off</label></td>
+                                <?php    }?>
                                   <td align="center"><a class="menu-icon fa fa-pencil" data-toggle="modal" data-target=<?php echo "#".$row['id_scenario']; ?>> </a></td>
                     <form action="" method="post">
                     <td align="center"><button class="menu-icon fa fa-trash"  type="submit" name=<?php echo $row["id_scenario"] ;?>></button>

@@ -40,7 +40,7 @@ if(isset($_POST['inscription'])){
    {//  $date_modification=date("d/m/Y à H:i:s");
 				   /* insertion des données dans la tabe membre */
 				                        $reponse=$bd->prepare('INSERT INTO user(username,nom,prenom,mdp,role,email,phone) VALUES(?,?,?,?,?,?,?)');
-$reponse->execute(array($username,$nom,$prenom,sha1($mdp),1,$email,$phone));
+$reponse->execute(array($username,$nom,$prenom,$mdp,1,$email,$phone));
                      header('location:login-2.php');
 										 
   }
@@ -94,9 +94,7 @@ $query = $db->prepare('SELECT * FROM user as u
 		$query->execute();
 $nb=$query->rowCount();
 		if($nb != 1){
-            ?>
-                     <script> alert("ghhjghg");</script>
-             <?php
+            
 					$erreurconnection= "Email ou mot de passe incorrecte";
 
 		}else{

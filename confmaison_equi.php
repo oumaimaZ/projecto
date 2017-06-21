@@ -40,7 +40,6 @@ include 'includes/header.php';
 
                               <select class="form-control" name="type[]">
                                         <option value="camera" >camera</option>
-                                        <option value="portail" >portail</option>
                                         <option value="lampe" >lampe</option>
                                         <option value="alarme" >alarme</option>
                                         <option value="volet" >volet</option>
