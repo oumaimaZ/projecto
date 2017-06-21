@@ -18,7 +18,7 @@ while($leg=$dataa->fetch()){
         if(empty($nom)){
             $nom=$leg['nom'];
         }
-        if(empty($etage)){
+        if(empty($piece)){
             
             $piece=$leg['piece'];
         }

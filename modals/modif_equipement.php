@@ -57,9 +57,9 @@ while($daaq=$dataa->fetch()){
                                   
                         <?php 
                             $db = new PDO('mysql:host=localhost;dbname=domotique_data;charset=utf8', 'root', '');
-                            $requet='select * from piece ';
+                            $requet='select * from piece where maison= ? ';
                             $flow=$db->prepare($requet);
-                            $flow->execute();
+                            $flow->execute(array($_SESSION['id_maison']));
                             while($ligne=$flow->fetch()){
                         
                         ?>
